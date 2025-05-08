@@ -92,6 +92,49 @@
                     </button>
                 </div>
             </div>
+
+            <!-- Menu de Perfil -->
+            <div class="dux-profile-menu">
+                <div class="dux-profile-menu-header">
+                    <div class="dux-avatar">JD</div>
+                    <div class="dux-profile-user">
+                        <div class="dux-profile-name">John Doe</div>
+                        <div class="dux-profile-email">john.doe@example.com</div>
+                    </div>
+                </div>
+                <ul class="dux-profile-menu-list">
+                    <li class="dux-profile-menu-item">
+                        <a href="#">
+                            <span class="material-icons-round">account_circle</span>
+                            Meu Perfil
+                        </a>
+                    </li>
+                    <li class="dux-profile-menu-item">
+                        <a href="#">
+                            <span class="material-icons-round">settings</span>
+                            Configurações
+                        </a>
+                    </li>
+                    <li class="dux-profile-menu-item">
+                        <a href="#">
+                            <span class="material-icons-round">bookmark</span>
+                            Salvos
+                        </a>
+                    </li>
+                    <li class="dux-profile-menu-item">
+                        <a href="#">
+                            <span class="material-icons-round">help</span>
+                            Ajuda
+                        </a>
+                    </li>
+                </ul>
+                <div class="dux-profile-menu-footer">
+                    <button class="dux-secondary-btn" style="width: 100%;">
+                        <span class="material-icons-round">logout</span>
+                        Sair
+                    </button>
+                </div>
+            </div>
         </header>
 
         <!-- Main Content -->
@@ -139,18 +182,7 @@
                             </div>
                             <div class="dux-code-title">lab-dux.js</div>
                         </div>
-                        <pre class="dux-code-content"><code>// Bem-vindo ao DUX Labs
-function initDuxExperience() {
-  const knowledge = new CollaborativeLearning();
-  const projects = new RealWorldProjects();
-  const community = new PeerMentoring();
-  
-  return knowledge
-    .connect(projects)
-    .enhanceWith(community);
-}
-
-const yourJourney = initDuxExperience();</code></pre>
+                        <pre class="dux-code-content"></pre>
                     </div>
                 </div>
             </section>
@@ -726,79 +758,218 @@ const yourJourney = initDuxExperience();</code></pre>
             </div>
         </footer>
     </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Menu mobile
+            // Elementos globais
+            const body = document.body;
             const menuToggle = document.querySelector('.dux-menu-toggle');
             const navMenu = document.querySelector('.dux-main-nav');
+            const themeToggle = document.querySelector('.dux-theme-toggle');
+            const profileButton = document.querySelector('.dux-user-profile');
+            const profileMenu = document.querySelector('.dux-profile-menu');
+            const filterTabs = document.querySelectorAll('.dux-filter-tab');
+            const pathNavItems = document.querySelectorAll('.dux-path-nav-item');
+            const navLinks = document.querySelectorAll('.dux-nav-item a');
             
+            // Estado do tema
+            let isDarkTheme = localStorage.getItem('darkTheme') === 'true';
+            
+            // Aplicar tema salvo
+            if (isDarkTheme) {
+                body.classList.add('dark-theme');
+                updateThemeToggle(true);
+            }
+            
+            // Menu mobile
             menuToggle.addEventListener('click', () => {
                 const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
                 menuToggle.setAttribute('aria-expanded', !isExpanded);
                 navMenu.classList.toggle('active');
+                
+                // Fechar menu de perfil se aberto
+                if (profileMenu.classList.contains('active')) {
+                    profileMenu.classList.remove('active');
+                    profileButton.setAttribute('aria-expanded', 'false');
+                }
             });
             
             // Alternância de tema
-            const themeToggle = document.querySelector('.dux-theme-toggle');
-            
             themeToggle.addEventListener('click', () => {
-                document.body.classList.toggle('dark-theme');
-                const isDark = document.body.classList.contains('dark-theme');
+                isDarkTheme = !isDarkTheme;
+                body.classList.toggle('dark-theme');
+                localStorage.setItem('darkTheme', isDarkTheme);
+                updateThemeToggle(isDarkTheme);
+            });
+            
+            function updateThemeToggle(isDark) {
                 themeToggle.setAttribute('aria-label', isDark ? 'Alternar para tema claro' : 'Alternar para tema escuro');
                 themeToggle.innerHTML = isDark ? '<span class="material-icons-round">light_mode</span>' : '<span class="material-icons-round">dark_mode</span>';
+            }
+            
+            // Menu de perfil
+            profileButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isExpanded = profileButton.getAttribute('aria-expanded') === 'true';
+                profileButton.setAttribute('aria-expanded', !isExpanded);
+                profileMenu.classList.toggle('active');
+                
+                // Fechar menu de navegação se aberto
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+            
+            // Fechar menus ao clicar fora
+            document.addEventListener('click', (e) => {
+                // Fechar menu de perfil
+                if (!profileMenu.contains(e.target) && e.target !== profileButton) {
+                    profileMenu.classList.remove('active');
+                    profileButton.setAttribute('aria-expanded', 'false');
+                }
+                
+                // Fechar menu de navegação
+                if (!navMenu.contains(e.target) && e.target !== menuToggle) {
+                    navMenu.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+            
+            // Fechar menus ao pressionar Esc
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    profileMenu.classList.remove('active');
+                    profileButton.setAttribute('aria-expanded', 'false');
+                    navMenu.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
             });
             
             // Filtros de projetos
-            const filterTabs = document.querySelectorAll('.dux-filter-tab');
-            
             filterTabs.forEach(tab => {
                 tab.addEventListener('click', () => {
                     filterTabs.forEach(t => t.classList.remove('active'));
                     tab.classList.add('active');
                     // Aqui iria a lógica para filtrar os projetos
+                    filterProjects(tab.textContent.trim());
                 });
             });
             
-            // Navegação de trilhas
-            const pathNavItems = document.querySelectorAll('.dux-path-nav-item');
+            function filterProjects(filter) {
+                console.log(`Filtrando por: ${filter}`);
+                // Implementação real de filtragem iria aqui
+            }
             
+            // Navegação de trilhas
             pathNavItems.forEach(item => {
                 item.addEventListener('click', () => {
                     pathNavItems.forEach(i => i.classList.remove('active'));
                     item.classList.add('active');
                     // Aqui iria a lógica para carregar a trilha selecionada
+                    loadPath(item.textContent.trim());
                 });
             });
             
-            // Scroll suave para seções
-            const navLinks = document.querySelectorAll('.dux-nav-item a');
+            function loadPath(pathName) {
+                console.log(`Carregando trilha: ${pathName}`);
+                // Implementação real de carregamento de trilha iria aqui
+            }
             
+            // Scroll suave para seções
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     const targetId = link.getAttribute('href');
                     if (targetId.startsWith('#')) {
                         e.preventDefault();
+                        
+                        // Fechar menu mobile se aberto
+                        if (navMenu.classList.contains('active')) {
+                            navMenu.classList.remove('active');
+                            menuToggle.setAttribute('aria-expanded', 'false');
+                        }
+                        
                         const targetSection = document.querySelector(targetId);
                         if (targetSection) {
                             targetSection.scrollIntoView({
                                 behavior: 'smooth'
                             });
+                            
+                            // Atualizar item ativo na navegação
+                            navLinks.forEach(lnk => lnk.parentElement.classList.remove('active'));
+                            link.parentElement.classList.add('active');
                         }
                     }
                 });
             });
             
-            // Carregar mais conteúdo ao rolar
-            window.addEventListener('scroll', () => {
-                const scrollPosition = window.scrollY;
+            // Ativar item de navegação com base na seção visível
+            window.addEventListener('scroll', throttle(() => {
+                const scrollPosition = window.scrollY + 100;
+                
+                // Verificar cada seção
+                document.querySelectorAll('section').forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.parentElement.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.parentElement.classList.add('active');
+                            }
+                        });
+                    }
+                });
+                
+                // Carregar mais conteúdo ao chegar no final
                 const windowHeight = window.innerHeight;
                 const documentHeight = document.body.scrollHeight;
                 
                 if (scrollPosition + windowHeight > documentHeight - 500) {
-                    // Aqui iria a lógica para carregar mais conteúdo
+                    loadMoreContent();
                 }
-            });
+            }, 100));
+            
+            // Função para carregar mais conteúdo
+            function loadMoreContent() {
+                console.log('Carregando mais conteúdo...');
+                // Implementação real de carregamento infinito iria aqui
+            }
+            
+            // Função utilitária para throttle
+            function throttle(func, limit) {
+                let lastFunc;
+                let lastRan;
+                return function() {
+                    const context = this;
+                    const args = arguments;
+                    if (!lastRan) {
+                        func.apply(context, args);
+                        lastRan = Date.now();
+                    } else {
+                        clearTimeout(lastFunc);
+                        lastFunc = setTimeout(function() {
+                            if ((Date.now() - lastRan) >= limit) {
+                                func.apply(context, args);
+                                lastRan = Date.now();
+                            }
+                        }, limit - (Date.now() - lastRan));
+                    }
+                };
+            }
+            
+            // Inicialização adicional
+            initCodeWindow();
+            
+            // Simular conteúdo na janela de código
+            function initCodeWindow() {
+                const codeContent = document.querySelector('.dux-code-content');
+                if (codeContent) {
+                    const sampleCode = `// Bem-vindo ao DUX\nfunction initLab() {\n  // Configure seu ambiente\n  const config = {\n    language: 'javascript',\n    libraries: ['lodash', 'axios'],\n    autoSave: true\n  };\n\n  // Comece a codar!\n  console.log('Hello DUX!');\n\n  // Explore nossas APIs\n  api.get('/labs').then(data => {\n    renderLabs(data);\n  });\n}`;
+                    codeContent.textContent = sampleCode;
+                }
+            }
         });
     </script>
 </body>
