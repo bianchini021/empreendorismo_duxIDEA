@@ -266,8 +266,8 @@ button, input, textarea, select {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: var(--white);
+    background: linear-gradient(135deg, #FFD700, #FFA500); /* Gradiente amarelo */
+    color: #000; /* Texto preto para melhor contraste */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1585,9 +1585,11 @@ button, input, textarea, select {
 }
 
 .dux-profile-menu-header .dux-avatar {
-    width: 48px;
-    height: 48px;
-    font-size: 1.125rem;
+    width: 35px;  /* Reduzido de 56px para 40px */
+    height: 35px;  /* Reduzido de 56px para 40px */
+    font-size: 1rem;  /* Reduzido de 1.125rem */
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #000;
 }
 
 .dux-profile-user {
@@ -1727,27 +1729,52 @@ button, input, textarea, select {
     border-width: 0;
 }
 
-/* Dark Theme */
+/* Dark Theme - Versão Aprimorada */
 .dark-theme {
-    --dark-color: #f8f9fa;
-    --light-color: #212529;
-    --lighter-gray: #343a40;
-    --light-gray: #495057;
-    --medium-gray: #6c757d;
-    --gray-color: #adb5bd;
-    --dark-gray: #e9ecef;
-    --white: #212529;
+    /* Cores base redesenhadas para melhor contraste */
+    --dark-color: #f8f9fa;  /* Texto claro */
+    --light-color: #1a1e21; /* Fundo mais escuro (antigo #212529) */
+    --lighter-gray: #2c3135; /* Mais escuro que antes para melhor profundidade */
+    --light-gray: #3d444b;   /* Bordas e elementos secundários */
+    --medium-gray: #6c757d;  /* Mantido para consistência */
+    --gray-color: #adb5bd;   /* Texto secundário */
+    --dark-gray: #e9ecef;    /* Mantido */
+    --white: #1a1e21;        /* Fundo principal */
+    
+    /* Novas cores para melhor harmonia */
+    --primary-dark: #3a56d4; /* Azul mais vibrante no escuro */
+    --accent-color: #4a8bf5; /* Destaque mais claro */
     
     background-color: var(--light-color);
     color: var(--dark-color);
 }
 
+/* Ajustes para o footer não ficar branco */
+.dark-theme .dux-footer,
+.dark-theme .dux-footer-bottom {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    border-color: var(--light-gray);
+}
+
+.dark-theme .dux-footer-column a,
+.dark-theme .dux-footer-bottom p,
+.dark-theme .dux-footer-legal a {
+    color: var(--gray-color);
+}
+
+.dark-theme .dux-footer-column a:hover,
+.dark-theme .dux-footer-legal a:hover {
+    color: var(--dark-color);
+}
+
+/* Componentes redesenhados */
 .dark-theme .dux-header,
 .dark-theme .dux-lab-card,
 .dark-theme .dux-project-card,
 .dark-theme .dux-mentor-card {
-    background-color: #343a40;
-    border-color: #495057;
+    background-color: var(--lighter-gray);
+    border-color: var(--light-gray);
     color: var(--dark-color);
 }
 
@@ -1755,7 +1782,8 @@ button, input, textarea, select {
 .dark-theme .dux-lab-action,
 .dark-theme .dux-project-action,
 .dark-theme .dux-mentor-action {
-    background-color: #495057;
+    background-color: var(--light-gray);
+    color: var(--dark-color);
 }
 
 .dark-theme .dux-nav-item a,
@@ -1770,21 +1798,48 @@ button, input, textarea, select {
     color: var(--gray-color);
 }
 
+/* Melhorias na janela de código */
 .dark-theme .dux-code-window {
-    background-color: #343a40;
-    border-color: #495057;
+    background-color: var(--lighter-gray);
+    border-color: var(--light-gray);
 }
 
 .dark-theme .dux-code-header {
-    background-color: #495057;
-    border-color: #6c757d;
-}
-
-.dark-theme .dux-code-title {
-    color: var(--gray-color);
+    background-color: var(--light-gray);
+    border-color: var(--medium-gray);
 }
 
 .dark-theme .dux-code-content {
-    background-color: #212529;
-    color: var(--gray-color);
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+}
+
+/* Menu de perfil refinado */
+.dark-theme .dux-profile-menu {
+    background-color: var(--lighter-gray);
+    border-color: var(--light-gray);
+}
+
+.dark-theme .dux-profile-menu-item a:hover {
+    background-color: var(--light-gray);
+    color: var(--accent-color);
+}
+
+/* Botões e interações */
+.dark-theme .dux-primary-btn {
+    background-color: var(--primary-dark);
+    box-shadow: 0 2px 8px rgba(58, 86, 212, 0.3);
+}
+
+.dark-theme .dux-primary-btn:hover {
+    background-color: #435ed0;
+}
+
+.dark-theme .dux-secondary-btn {
+    border-color: var(--light-gray);
+    color: var(--dark-color);
+}
+
+.dark-theme .dux-secondary-btn:hover {
+    background-color: var(--light-gray);
 }
