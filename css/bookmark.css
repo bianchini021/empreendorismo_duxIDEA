@@ -1,0 +1,326 @@
+/* Base Styles & Variables - Same as gallery.css */
+:root {
+    /* Color Palette */
+    --dux-primary: #1c3e4c;
+    --dux-primary-light: #335a6d;
+    --dux-primary-dark: #0e2631;
+    
+    --dux-accent: #348ba6;
+    --dux-accent-light: #5ca1ba;
+    --dux-accent-dark: #1a6a82;
+    
+    --dux-gold: #ffcc00;
+    --dux-gold-light: #ffd633;
+    --dux-gold-dark: #e6b800;
+    
+    --dux-white: #fefffe;
+    --dux-ice: #f5f7f6;
+    
+    --dux-text: #e2e8f0;
+    --dux-text-secondary: #a0aec0;
+    --dux-text-dark: #2a2a2a;
+    
+    --dux-bg: #121a21;
+    --dux-card-bg: #1e293b;
+    --dux-border: #2d3748;
+    
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    
+    /* Typography */
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-md: 1.25rem;
+    --font-size-lg: 1.5rem;
+    --font-size-xl: 2rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.15), 0 5px 10px rgba(0,0,0,0.05);
+    
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.45s ease;
+}
+
+/* Include all base styles from gallery.css */
+/* ... */
+
+/* Custom styles for bookmark page */
+.content-header .header-title h1 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-xs);
+}
+
+.content-header .header-title .subtitle {
+    color: var(--dux-text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.content-header .header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.organize-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    background-color: var(--dux-accent);
+    color: var(--dux-white);
+    border: none;
+    border-radius: 8px;
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.organize-btn:hover {
+    background-color: var(--dux-accent-dark);
+}
+
+.saved-items-container {
+    margin-top: var(--space-xl);
+}
+
+.saved-items-container h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-lg);
+    color: var(--dux-white);
+}
+
+.folders-grid, .saved-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.folder-card {
+    background-color: var(--dux-card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.folder-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.folder-icon {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.folder-icon .material-icons-round {
+    font-size: 3rem;
+    color: var(--dux-white);
+    opacity: 0.8;
+}
+
+.folder-info {
+    padding: var(--space-md);
+    flex: 1;
+}
+
+.folder-info h4 {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-xs);
+    color: var(--dux-white);
+}
+
+.folder-info p {
+    font-size: var(--font-size-sm);
+    color: var(--dux-text-secondary);
+}
+
+.add-folder {
+    background-color: transparent;
+    border: 2px dashed var(--dux-border);
+}
+
+.add-folder .folder-icon {
+    background-color: transparent !important;
+}
+
+.add-folder .material-icons-round {
+    color: var(--dux-text-secondary);
+}
+
+.add-folder h4 {
+    color: var(--dux-text-secondary) !important;
+}
+
+.saved-item-card {
+    background-color: var(--dux-card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.saved-item-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.item-banner {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-banner .material-icons-round {
+    font-size: 3rem;
+    color: var(--dux-white);
+    opacity: 0.8;
+}
+
+.item-info {
+    padding: var(--space-md);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-sm);
+}
+
+.item-header h4 {
+    font-size: var(--font-size-base);
+    color: var(--dux-white);
+    flex: 1;
+}
+
+.bookmark-btn {
+    background: none;
+    border: none;
+    color: var(--dux-text-secondary);
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all var(--transition-fast);
+}
+
+.bookmark-btn.active {
+    color: var(--dux-gold);
+}
+
+.bookmark-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.item-description {
+    font-size: var(--font-size-sm);
+    color: var(--dux-text-secondary);
+    margin-bottom: var(--space-md);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-size-sm);
+}
+
+.item-type {
+    background-color: var(--dux-primary);
+    color: var(--dux-text);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.item-date {
+    color: var(--dux-text-secondary);
+}
+
+/* List View */
+.saved-items-grid.list-view {
+    grid-template-columns: 1fr;
+}
+
+.saved-items-grid.list-view .saved-item-card {
+    display: flex;
+    flex-direction: row;
+    height: 120px;
+}
+
+.saved-items-grid.list-view .item-banner {
+    height: auto;
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.saved-items-grid.list-view .item-banner .material-icons-round {
+    font-size: 2rem;
+}
+
+.saved-items-grid.list-view .item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .folders-grid, .saved-items-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .content-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-md);
+    }
+    
+    .content-header .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .folders-grid, .saved-items-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .saved-items-grid.list-view .saved-item-card {
+        height: auto;
+        flex-direction: column;
+    }
+    
+    .saved-items-grid.list-view .item-banner {
+        width: 100%;
+        height: 120px;
+    }
+}

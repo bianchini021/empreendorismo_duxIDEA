@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUX | Editar Perfil</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="./css/edit_profile.css">
+</head>
+<body>
+    <div class="profile-app-container">
+        <!-- Sidebar (mesma estrutura) -->
+        <aside class="profile-sidebar">
+            <div class="brand-container">
+                <img src="./image/duxLogo-removebg-preview.png" alt="Logo DUX" class="logo">
+            </div>
+            
+            <div class="user-profile-card">
+                <div class="avatar-container">
+                    <div class="avatar">JD</div>
+                    <button class="avatar-edit-btn">
+                        <span class="material-icons-round">edit</span>
+                    </button>
+                </div>
+                
+                <h2 class="user-name">John Doe</h2>
+                <p class="user-email">john.doe@example.com</p>
+            </div>
+            
+            <nav class="profile-nav">
+                <a href="./profile.html" class="nav-item">
+                    <span class="material-icons-round">arrow_back</span>
+                    <span>Voltar ao Perfil</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo Principal de Edição -->
+        <main class="profile-edit-content">
+            <div class="edit-header">
+                <h1><span class="material-icons-round">edit</span> Editar Perfil</h1>
+            </div>
+            
+            <form class="edit-form">
+                <!-- Seção de Foto de Perfil -->
+                <section class="edit-section">
+                    <h2 class="section-title">Foto de Perfil</h2>
+                    <div class="avatar-upload">
+                        <div class="avatar-preview">
+                            <div class="avatar-large">JD</div>
+                            <button type="button" class="upload-btn">
+                                <span class="material-icons-round">photo_camera</span>
+                                Alterar Foto
+                            </button>
+                        </div>
+                        <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+                    </div>
+                </section>
+                
+                <!-- Seção de Informações Pessoais -->
+                <section class="edit-section">
+                    <h2 class="section-title">Informações Pessoais</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" value="John Doe">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" value="john.doe@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="bio">Biografia</label>
+                            <textarea id="bio" rows="4">Desenvolvedor front-end com 5 anos de experiência em React e UX Design.</textarea>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Seção de Configurações de Conta -->
+                <section class="edit-section">
+                    <h2 class="section-title">Configurações da Conta</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="language">Idioma</label>
+                            <select id="language">
+                                <option value="pt" selected>Português</option>
+                                <option value="en">Inglês</option>
+                                <option value="es">Espanhol</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="notifications">Notificações</label>
+                            <div class="switch-container">
+                                <label class="switch">
+                                    <input type="checkbox" id="notifications" checked>
+                                    <span class="slider"></span>
+                                </label>
+                                <span>Receber notificações</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Seção de Segurança -->
+                <section class="edit-section">
+                    <h2 class="section-title">Segurança</h2>
+                    <div class="security-actions">
+                        <button type="button" class="security-btn">
+                            <span class="material-icons-round">vpn_key</span>
+                            Alterar Senha
+                        </button>
+                        <button type="button" class="security-btn">
+                            <span class="material-icons-round">devices</span>
+                            Dispositivos Conectados
+                        </button>
+                    </div>
+                </section>
+                
+                <!-- Botões de Ação -->
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="save-btn">
+                        <span class="material-icons-round">save</span>
+                        Salvar Alterações
+                    </button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script>
+        // Simular upload de foto
+        document.querySelector('.upload-btn').addEventListener('click', function() {
+            document.getElementById('avatar-upload').click();
+        });
+        
+        // Simular mudança de foto
+        document.getElementById('avatar-upload').addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const avatar = document.querySelector('.avatar-large');
+                    avatar.style.backgroundImage = `url(${event.target.result})`;
+                    avatar.textContent = '';
+                };
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,406 @@
+/* Variáveis de Design */
+:root {
+    --dux-primary: #1c3e4c;
+    --dux-primary-light: #335a6d;
+    --dux-primary-dark: #0e2631;
+    --dux-accent: #348ba6;
+    --dux-accent-light: #5ca1ba;
+    --dux-gold: #ffcc00;
+    --dux-gold-light: #ffd633;
+    --dux-white: #fefffe;
+    --dux-ice: #f5f7f6;
+    --dux-text: #e2e8f0;
+    --dux-text-secondary: #a0aec0;
+    --dux-card-bg: #1e293b;
+    --dux-border: #2d3748;
+    
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.15), 0 5px 10px rgba(0,0,0,0.05);
+    
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+}
+
+/* Reset e Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--dux-primary-dark);
+    color: var(--dux-text);
+    line-height: 1.5;
+}
+
+/* Layout Principal */
+.profile-app-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.profile-sidebar {
+    background-color: var(--dux-primary);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    border-right: 1px solid var(--dux-border);
+}
+
+.brand-container {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    height: 70px;
+    width: auto;
+}
+
+.user-profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-sm);
+}
+
+.avatar-container {
+    position: relative;
+    margin-bottom: var(--space-sm);
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: var(--dux-gold);
+    color: var(--dux-primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.avatar-edit-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--dux-accent);
+    color: var(--dux-white);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+}
+
+.avatar-edit-btn:hover {
+    transform: scale(1.1);
+}
+
+.user-name {
+    font-size: 1.5rem;
+    color: var(--dux-white);
+    font-weight: 600;
+}
+
+.user-email, .member-since {
+    color: var(--dux-text-secondary);
+    font-size: 0.875rem;
+}
+
+.profile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm);
+    border-radius: var(--radius-sm);
+    color: var(--dux-text);
+    text-decoration: none;
+    transition: background-color var(--transition-fast);
+}
+
+.nav-item:hover {
+    background-color: var(--dux-primary-light);
+}
+
+.nav-item .material-icons-round {
+    font-size: 1.5rem;
+}
+
+/* Main Content */
+.profile-main-content {
+    padding: var(--space-xl);
+    overflow-y: auto;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-xl);
+}
+
+.profile-header h1 {
+    font-size: 2rem;
+    color: var(--dux-white);
+}
+
+.edit-profile-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    background-color: var(--dux-accent);
+    color: var(--dux-white);
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: var(--space-sm) var(--space-md);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.edit-profile-btn:hover {
+    background-color: var(--dux-accent-light);
+}
+
+/* Stats Container */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.stat-card {
+    background-color: var(--dux-card-bg);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--dux-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dux-gold);
+}
+
+.stat-icon .material-icons-round {
+    font-size: 1.5rem;
+}
+
+.stat-info h3 {
+    font-size: 0.875rem;
+    color: var(--dux-text-secondary);
+    margin-bottom: var(--space-xs);
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dux-white);
+}
+
+/* Progress Section */
+.section-title {
+    font-size: 1.25rem;
+    color: var(--dux-white);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.progress-section {
+    margin-bottom: var(--space-xl);
+}
+
+.progress-card {
+    background-color: var(--dux-card-bg);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+    transition: transform var(--transition-normal);
+}
+
+.progress-card:hover {
+    transform: translateX(4px);
+}
+
+.course-info h3 {
+    font-size: 1rem;
+    color: var(--dux-white);
+    margin-bottom: var(--space-xs);
+}
+
+.course-info p {
+    font-size: 0.875rem;
+    color: var(--dux-text-secondary);
+    margin-bottom: var(--space-md);
+}
+
+.progress-bar-container {
+    width: 100%;
+}
+
+.progress-bar {
+    height: 8px;
+    background-color: var(--dux-primary);
+    border-radius: 4px;
+    margin-bottom: var(--space-xs);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--dux-accent);
+    border-radius: 4px;
+}
+
+/* Activity Section */
+.activity-card {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    transition: background-color var(--transition-fast);
+}
+
+.activity-card:hover {
+    background-color: var(--dux-card-bg);
+}
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--dux-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dux-gold);
+    flex-shrink: 0;
+}
+
+.activity-content h3 {
+    font-size: 1rem;
+    color: var(--dux-white);
+    margin-bottom: var(--space-xs);
+}
+
+.activity-date {
+    font-size: 0.875rem;
+    color: var(--dux-text-secondary);
+}
+
+/* Layout Principal - Versão Final Ajustada */
+.profile-app-container {
+    display: flex; /* Mudamos para flex para melhor controle */
+    min-height: 100vh;
+    overflow: hidden; /* Impede rolagem geral */
+}
+
+/* Sidebar - Fixa e sem rolagem */
+.profile-sidebar {
+    background-color: var(--dux-primary);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    border-right: 1px solid var(--dux-border);
+    position: fixed; /* Fixa a sidebar */
+    width: 280px; /* Largura definida */
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    top: 0;
+    left: 0;
+    overflow: hidden; /* Remove qualquer rolagem */
+    z-index: 10; /* Garante que fique acima do conteúdo */
+}
+
+/* Conteúdo Principal - Rolável e com espaçamento correto */
+.profile-main-content {
+    flex: 1; /* Ocupa todo o espaço restante */
+    padding: var(--space-xl);
+    margin-left: 280px; /* Compensa a largura da sidebar */
+    overflow-y: auto; /* Permite rolagem apenas aqui */
+    min-height: 100vh; /* Garante que ocupe a altura total */
+}
+
+/* Ajuste para evitar sobreposição em telas pequenas */
+@media (max-width: 1024px) {
+    .profile-app-container {
+        flex-direction: column;
+    }
+    
+    .profile-sidebar {
+        position: relative; /* Volta ao fluxo normal */
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--dux-border);
+    }
+    
+    .profile-main-content {
+        margin-left: 0;
+        min-height: auto;
+    }
+    
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+}   
+
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-md);
+    }
+    
+    .edit-profile-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

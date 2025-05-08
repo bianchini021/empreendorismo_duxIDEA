@@ -1,0 +1,353 @@
+/* Reset básico e variáveis */
+:root {
+    --primary-color: #ffcc00;
+    --secondary-color: #ffffff;
+    --text-color: #ffffff;
+    --dark-bg: #000000;
+    --section-bg: #111111;
+    --button-hover: rgba(255, 255, 255, 0.1);
+    --header-bg: rgba(0, 0, 0, 0.85);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--dark-bg);
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Cabeçalho */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    z-index: 100;
+    background-color: var(--header-bg);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo-nav-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .logo {
+    height: 85px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo:hover {
+    transform: scale(1.05);
+  }
+  
+  nav ul.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-button {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .nav-button:hover {
+    background-color: var(--button-hover);
+    color: var(--primary-color);
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .btn-login {
+    background: none;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+  }
+  
+  .btn-login:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+  }
+  
+  .btn-register {
+    background-color: var(--primary-color);
+    color: #000;
+    border: 2px solid var(--primary-color);
+  }
+  
+  .btn-register:hover {
+    background-color: #e6b800;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 204, 0, 0.3);
+  }
+  
+  /* Seção Hero */
+  .hero {
+    position: relative;
+    height: 80vh;
+    min-height: 500px;
+    max-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 80px;
+  }
+  
+  .hero-background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .hero-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    opacity: 0.9;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    max-width: 800px;
+    text-align: center;
+    padding: 0 20px;
+    z-index: 2;
+  }
+  
+  .hero-content h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero-content p {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    opacity: 0.9;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  /* Seções de Conteúdo */
+  .content-section {
+    padding: 80px 0;
+    background-color: var(--section-bg);
+  }
+  
+  .content-section h2 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--primary-color);
+  }
+  
+  .content-text {
+    max-width: 800px;
+  }
+  
+  .content-text p {
+    margin-bottom: 20px;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    line-height: 1.7;
+  }
+  
+  /* Seção Features */
+  .features {
+    padding: 80px 0;
+    background-color: var(--dark-bg);
+  }
+  
+  .features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .feature {
+    text-align: center;
+    padding: 30px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: var(--section-bg);
+  }
+  
+  .feature:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .feature-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  
+  .feature h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+  }
+  
+  .feature p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  
+  /* Menu Mobile */
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 1024px) {
+    .hero {
+      height: 70vh;
+      min-height: 450px;
+    }
+    
+    .logo-nav-container {
+      gap: 20px;
+    }
+    
+    nav ul.nav-links {
+      gap: 15px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header-content {
+      flex-wrap: wrap;
+    }
+    
+    .logo-nav-container {
+      width: 100%;
+      justify-content: space-between;
+    }
+    
+    nav ul.nav-links {
+      display: none;
+    }
+    
+    .mobile-menu-btn {
+      display: block;
+    }
+    
+    .auth-buttons {
+      margin-top: 15px;
+      width: 100%;
+      justify-content: flex-end;
+    }
+    
+    .hero {
+      height: 60vh;
+      min-height: 400px;
+      margin-top: 70px;
+    }
+    
+    .hero-content h1 {
+      margin-bottom: 15px;
+    }
+    
+    .features .container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+      height: 40px;
+    }
+    
+    .btn {
+      padding: 8px 15px;
+      font-size: 0.9rem;
+    }
+    
+    .hero {
+      height: 50vh;
+      min-height: 350px;
+    }
+    
+    .hero-content p {
+      max-width: 100%;
+    }
+    
+    .content-section, .features {
+      padding: 60px 0;
+    }
+  }

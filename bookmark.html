@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUX | Postagens Salvas</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="./css/bookmark.css">
+    <link rel="stylesheet" href="./css/gallery.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header/Navigation -->
+        <header class="app-header">
+            <div class="header-container">
+                <!-- Logo/Brand -->
+                <div class="brand">
+                    <img src="./image/duxLogo-removebg-preview.png" alt="Logo DUX" class="logo">
+                </div>  
+                <!-- Main Navigation -->
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="./gallery.html">
+                                <span class="material-icons-round">dashboard</span>
+                                <span class="nav-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./marketplace.html" class="menu-item">
+                                <span class="material-icons-round">store</span>
+                                Marketplace
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">
+                                <span class="material-icons-round">school</span>
+                                <span class="nav-text">Cursos</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">
+                                <span class="material-icons-round">menu_book</span>
+                                <span class="nav-text">E-books</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">
+                                <span class="material-icons-round">ondemand_video</span>
+                                <span class="nav-text">Videoaulas</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">
+                                <span class="material-icons-round">store</span>
+                                <span class="nav-text">Marketplace</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="./bookmark.html">
+                                <span class="material-icons-round">bookmark</span>
+                                <span class="nav-text">Salvos</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- User Section -->
+                <div class="user-section">
+                    <div class="search-container">
+                        <div class="search-input">
+                            <span class="material-icons-round">search</span>
+                            <input type="text" placeholder="Buscar itens salvos...">
+                            <button class="filter-btn">
+                                <span class="material-icons-round">tune</span>
+                            </button>
+                        </div>
+                        <div class="filter-dropdown">
+                            <div class="filter-group">
+                                <label>Tipo</label>
+                                <div class="filter-options">
+                                    <button class="filter-option active">Todos</button>
+                                    <button class="filter-option">Cursos</button>
+                                    <button class="filter-option">E-books</button>
+                                    <button class="filter-option">Videoaulas</button>
+                                    <button class="filter-option">Artigos</button>
+                                </div>
+                            </div>
+                            <div class="filter-group">
+                                <label>Ordenar por</label>
+                                <div class="filter-options">
+                                    <button class="filter-option active">Recentes</button>
+                                    <button class="filter-option">Antigos</button>
+                                    <button class="filter-option">A-Z</button>
+                                    <button class="filter-option">Z-A</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="user-controls">
+                        <button class="notification-btn">
+                            <span class="material-icons-round">notifications</span>
+                            <span class="notification-badge">3</span>
+                        </button>
+                        <div class="user-profile">
+                            <div class="avatar">JD</div>
+                            <span class="material-icons-round">expand_more</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="app-main">
+            <div class="content-header">
+                <div class="header-title">
+                    <h1><span class="material-icons-round">bookmark</span> Postagens Salvas</h1>
+                    <p class="subtitle">Seus cursos, artigos e materiais favoritos</p>
+                </div>
+                <div class="header-actions">
+                    <div class="view-controls">
+                        <button class="view-btn active">
+                            <span class="material-icons-round">grid_view</span>
+                        </button>
+                        <button class="view-btn">
+                            <span class="material-icons-round">view_list</span>
+                        </button>
+                    </div>
+                    <button class="organize-btn">
+                        <span class="material-icons-round">folder</span>
+                        Organizar
+                    </button>
+                </div>
+            </div>
+
+            <div class="saved-items-container">
+                <div class="folders-section">
+                    <h3>Pastas</h3>
+                    <div class="folders-grid">
+                        <div class="folder-card">
+                            <div class="folder-icon" style="background-color: #2962ff;">
+                                <span class="material-icons-round">folder</span>
+                            </div>
+                            <div class="folder-info">
+                                <h4>Front-end</h4>
+                                <p>12 itens</p>
+                            </div>
+                        </div>
+                        <div class="folder-card">
+                            <div class="folder-icon" style="background-color: #00bfa5;">
+                                <span class="material-icons-round">folder</span>
+                            </div>
+                            <div class="folder-info">
+                                <h4>Back-end</h4>
+                                <p>8 itens</p>
+                            </div>
+                        </div>
+                        <div class="folder-card">
+                            <div class="folder-icon" style="background-color: #ff6d00;">
+                                <span class="material-icons-round">folder</span>
+                            </div>
+                            <div class="folder-info">
+                                <h4>UI/UX</h4>
+                                <p>5 itens</p>
+                            </div>
+                        </div>
+                        <div class="folder-card">
+                            <div class="folder-icon" style="background-color: #9c27b0;">
+                                <span class="material-icons-round">folder</span>
+                            </div>
+                            <div class="folder-info">
+                                <h4>Mobile</h4>
+                                <p>3 itens</p>
+                            </div>
+                        </div>
+                        <div class="folder-card add-folder">
+                            <div class="folder-icon" style="background-color: var(--dux-border);">
+                                <span class="material-icons-round">add</span>
+                            </div>
+                            <div class="folder-info">
+                                <h4>Nova pasta</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="items-section">
+                    <h3>Todos os itens salvos</h3>
+                    <div class="saved-items-grid">
+                        <!-- Saved Course Card -->
+                        <div class="saved-item-card course">
+                            <div class="item-banner" style="background-color: #2962ff;">
+                                <span class="material-icons-round">code</span>
+                            </div>
+                            <div class="item-info">
+                                <div class="item-header">
+                                    <h4>JavaScript Moderno</h4>
+                                    <button class="bookmark-btn active">
+                                        <span class="material-icons-round">bookmark</span>
+                                    </button>
+                                </div>
+                                <p class="item-description">Aprenda JavaScript ES6+ com projetos práticos</p>
+                                <div class="item-meta">
+                                    <span class="item-type">Curso</span>
+                                    <span class="item-date">Salvo em: 12/05/2023</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Saved E-book Card -->
+                        <div class="saved-item-card ebook">
+                            <div class="item-banner" style="background-color: #00bfa5;">
+                                <span class="material-icons-round">menu_book</span>
+                            </div>
+                            <div class="item-info">
+                                <div class="item-header">
+                                    <h4>Clean Code</h4>
+                                    <button class="bookmark-btn active">
+                                        <span class="material-icons-round">bookmark</span>
+                                    </button>
+                                </div>
+                                <p class="item-description">Princípios para escrever código limpo e eficiente</p>
+                                <div class="item-meta">
+                                    <span class="item-type">E-book</span>
+                                    <span class="item-date">Salvo em: 28/04/2023</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Saved Video Card -->
+                        <div class="saved-item-card video">
+                            <div class="item-banner" style="background-color: #ff6d00;">
+                                <span class="material-icons-round">ondemand_video</span>
+                            </div>
+                            <div class="item-info">
+                                <div class="item-header">
+                                    <h4>React Hooks</h4>
+                                    <button class="bookmark-btn active">
+                                        <span class="material-icons-round">bookmark</span>
+                                    </button>
+                                </div>
+                                <p class="item-description">Dominando hooks no React 18 com precisão e dominio</p>
+                                <div class="item-meta">
+                                    <span class="item-type">Videoaula</span>
+                                    <span class="item-date">Salvo em: 15/06/2023</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Saved Article Card -->
+                        <div class="saved-item-card article">
+                            <div class="item-banner" style="background-color: #9c27b0;">
+                                <span class="material-icons-round">article</span>
+                            </div>
+                            <div class="item-info">
+                                <div class="item-header">
+                                    <h4>Microservices</h4>
+                                    <button class="bookmark-btn active">
+                                        <span class="material-icons-round">bookmark</span>
+                                    </button>
+                                </div>
+                                <p class="item-description">Arquitetura de microserviços: vantagens e desafios</p>
+                                <div class="item-meta">
+                                    <span class="item-type">Artigo</span>
+                                    <span class="item-date">Salvo em: 02/07/2023</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- More items would be dynamically loaded here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- User Menu (Hidden by default) -->
+        <div class="user-menu">
+            <div class="menu-header">
+                <div class="avatar">JD</div>
+                <div class="user-info">
+                    <h4>John Doe</h4>
+                    <p>john.doe@example.com</p>
+                </div>
+            </div>
+            <nav class="menu-nav">
+                <a href="./main.html" class="menu-item">
+                    <span class="material-icons-round">home</span>
+                    Página Inicial
+                </a>
+                <a href="./profile.html" class="menu-item">
+                    <span class="material-icons-round">account_circle</span>
+                    Meu Perfil
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="material-icons-round">settings</span>
+                    Configurações
+                </a>
+                <a href="./bookmark.html" class="menu-item active">
+                    <span class="material-icons-round">bookmark</span>
+                    Salvos
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="material-icons-round">history</span>
+                    Histórico
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="material-icons-round">help</span>
+                    Ajuda
+                </a>
+                <a href="./index.html" class="menu-item">
+                    <span class="material-icons-round">logout</span>
+                    Sair
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const userProfile = document.querySelector('.user-profile');
+            const userMenu = document.querySelector('.user-menu');
+            const notificationBtn = document.querySelector('.notification-btn');
+            const filterBtn = document.querySelector('.filter-btn');
+            const filterDropdown = document.querySelector('.filter-dropdown');
+            const viewBtns = document.querySelectorAll('.view-btn');
+            const savedItemsGrid = document.querySelector('.saved-items-grid');
+            const filterOptions = document.querySelectorAll('.filter-option');
+            const bookmarkBtns = document.querySelectorAll('.bookmark-btn');
+            const addFolderBtn = document.querySelector('.add-folder');
+            
+            // Toggle User Menu
+            userProfile.addEventListener('click', function(e) {
+                e.stopPropagation();
+                userMenu.classList.toggle('active');
+            });
+            
+            // Close User Menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!userMenu.contains(e.target) && !userProfile.contains(e.target)) {
+                    userMenu.classList.remove('active');
+                }
+            });
+            
+            // Notification Button
+            notificationBtn.addEventListener('click', function() {
+                console.log('Notifications clicked');
+            });
+            
+            // Filter Button
+            filterBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                filterDropdown.classList.toggle('active');
+            });
+            
+            // Close Filter Dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!filterDropdown.contains(e.target) && !filterBtn.contains(e.target)) {
+                    filterDropdown.classList.remove('active');
+                }
+            });
+            
+            // View Controls
+            viewBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    viewBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Change view layout
+                    if (this.querySelector('.material-icons-round').textContent === 'view_list') {
+                        savedItemsGrid.classList.add('list-view');
+                    } else {
+                        savedItemsGrid.classList.remove('list-view');
+                    }
+                });
+            });
+            
+            // Filter Options
+            filterOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const parent = this.parentElement;
+                    parent.querySelectorAll('.filter-option').forEach(opt => {
+                        opt.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    console.log('Filter applied:', this.textContent.trim());
+                });
+            });
+            
+            // Bookmark Button
+            bookmarkBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                });
+            });
+            
+            // Saved Item Click
+            document.querySelectorAll('.saved-item-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    console.log('Item selected:', this.querySelector('h4').textContent);
+                });
+            });
+            
+            // Add Folder
+            addFolderBtn.addEventListener('click', function() {
+                const folderName = prompt("Digite o nome da nova pasta:");
+                if (folderName) {
+                    console.log('Nova pasta criada:', folderName);
+                    // In a real app, this would add a new folder to the UI
+                }
+            });
+            
+            // Simulate loading
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 500);
+        });
+    </script>
+</body>
+</html>

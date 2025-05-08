@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUX | Descontos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="./css/marketplace.css">
+</head>
+<body>
+    <div class="marketplace-container">
+        <!-- Top Navigation Bar -->
+        <header class="marketplace-header">
+            <div class="header-content">
+                <!-- Menu Toggle (mobile) -->
+                <button class="menu-toggle">
+                    <span class="material-icons-round">menu</span>
+                </button>
+                
+                <!-- Logo -->
+                <div class="logo-container">
+                    <img src="./image/duxLogo-removebg-preview.png" alt="DUX Marketplace" class="logo">
+                </div>
+
+                <!-- User Controls -->
+                <div class="user-controls">
+                    <div class="search-container">
+                        <div class="search-input">
+                            <input type="text" placeholder="Buscar descontos...">
+                            <button class="search-btn">
+                                <span class="material-icons-round">search</span>
+                            </button>
+                        </div>
+                        <button class="filter-btn">
+                            <span class="material-icons-round">tune</span>
+                        </button>
+                    </div>
+                    <button class="cart-btn">
+                        <span class="material-icons-round">shopping_cart</span>
+                        <span class="cart-count">0</span>
+                    </button>
+                    <div class="user-profile">
+                        <div class="avatar">JD</div>
+                        <span class="material-icons-round">expand_more</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Bar -->
+            <nav class="categories-bar">
+                <ul class="categories-list">
+                    <li class="category-item">
+                        <a href="./marketplace.html">
+                            <span class="material-icons-round">home</span>
+                            Início
+                        </a>
+                    </li>
+                    <li class="category-item">
+                        <a href="#">
+                            <span class="material-icons-round">laptop</span>
+                            Tecnologia
+                        </a>
+                    </li>
+                    <li class="category-item">
+                        <a href="./bookmark.html">
+                            <span class="material-icons-round">menu_book</span>
+                            Livros
+                        </a>
+                    </li>
+                    <li class="category-item">
+                        <a href="#">
+                            <span class="material-icons-round">school</span>
+                            Cursos
+                        </a>
+                    </li>
+                    <li class="category-item">
+                        <a href="#">
+                            <span class="material-icons-round">devices</span>
+                            Eletrônicos
+                        </a>
+                    </li>
+                    <li class="category-item">
+                        <a href="#">
+                            <span class="material-icons-round">style</span>
+                            Acessórios
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="marketplace-main">
+            <!-- Side Menu (Left) -->
+            <aside class="side-menu">
+                <div class="brand">
+                    <img src="./image/duxLogo-removebg-preview.png" alt="Logo DUX" class="logo">
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="./marketplace.html">
+                                <span class="material-icons-round">receipt</span>
+                                <span class="nav-text">Meus Pedidos</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./favorites.html">
+                                <span class="material-icons-round">favorite</span>
+                                <span class="nav-text">Favoritos</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="./discounts.html">
+                                <span class="material-icons-round">local_offer</span>
+                                <span class="nav-text">Descontos</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">
+                                <span class="material-icons-round">history</span>
+                                <span class="nav-text">Histórico</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">
+                                <span class="material-icons-round">payments</span>
+                                <span class="nav-text">Pagamentos</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">
+                                <span class="material-icons-round">settings</span>
+                                <span class="nav-text">Configurações</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Discounts Content -->
+            <div class="products-container">
+                <!-- Discounts Header -->
+                <section class="discounts-header">
+                    <div class="header-content">
+                        <h2 class="section-title">Ofertas com Desconto</h2>
+                        <div class="time-left">
+                            <span class="material-icons-round">access_time</span>
+                            <span class="time-text">Termina em: 2d 12h 30m</span>
+                        </div>
+                    </div>
+                    <div class="discount-categories">
+                        <button class="category-btn active">Todos</button>
+                        <button class="category-btn">50%+ OFF</button>
+                        <button class="category-btn">30%+ OFF</button>
+                        <button class="category-btn">10%+ OFF</button>
+                        <button class="category-btn">Black Friday</button>
+                    </div>
+                </section>
+
+                <!-- Discounts Grid -->
+                <section class="products-grid">
+                    <div class="products-row">
+                        <!-- Discount Item 1 -->
+                        <div class="product-card discount-card">
+                            <div class="discount-badge">-50%</div>
+                            <div class="product-image" style="background-color: #ff4081;">
+                                <span class="material-icons-round">laptop</span>
+                            </div>
+                            <div class="product-info">
+                                <h3>Notebook Gamer</h3>
+                                <div class="product-price">
+                                    <span class="current-price">R$ 3.499,90</span>
+                                    <span class="original-price">R$ 6.999,90</span>
+                                    <span class="discount-save">Economize R$ 3.500,00</span>
+                                </div>
+                                <div class="product-meta">
+                                    <span class="product-stock">Últimas unidades</span>
+                                    <span class="product-expires">Termina em: 1d 6h</span>
+                                </div>
+                                <button class="add-to-cart">
+                                    <span class="material-icons-round">add_shopping_cart</span>
+                                    Adicionar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Discount Item 2 -->
+                        <div class="product-card discount-card">
+                            <div class="discount-badge">-70%</div>
+                            <div class="product-image" style="background-color: #7c4dff;">
+                                <span class="material-icons-round">headphones</span>
+                            </div>
+                            <div class="product-info">
+                                <h3>Fones Premium</h3>
+                                <div class="product-price">
+                                    <span class="current-price">R$ 149,90</span>
+                                    <span class="original-price">R$ 499,90</span>
+                                    <span class="discount-save">Economize R$ 350,00</span>
+                                </div>
+                                <div class="product-meta">
+                                    <span class="product-stock">Em estoque</span>
+                                    <span class="product-expires">Termina em: 3h 45m</span>
+                                </div>
+                                <button class="add-to-cart">
+                                    <span class="material-icons-round">add_shopping_cart</span>
+                                    Adicionar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Discount Item 3 -->
+                        <div class="product-card discount-card">
+                            <div class="discount-badge">-30%</div>
+                            <div class="product-image" style="background-color: #00bcd4;">
+                                <span class="material-icons-round">smartphone</span>
+                            </div>
+                            <div class="product-info">
+                                <h3>Smartphone Flagship</h3>
+                                <div class="product-price">
+                                    <span class="current-price">R$ 2.799,90</span>
+                                    <span class="original-price">R$ 3.999,90</span>
+                                    <span class="discount-save">Economize R$ 1.200,00</span>
+                                </div>
+                                <div class="product-meta">
+                                    <span class="product-stock">Em estoque</span>
+                                    <span class="product-expires">Termina em: 1d 12h</span>
+                                </div>
+                                <button class="add-to-cart">
+                                    <span class="material-icons-round">add_shopping_cart</span>
+                                    Adicionar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Discount Item 4 -->
+                        <div class="product-card discount-card">
+                            <div class="discount-badge">BLACK FRIDAY</div>
+                            <div class="product-image" style="background-color: #ff5722;">
+                                <span class="material-icons-round">tv</span>
+                            </div>
+                            <div class="product-info">
+                                <h3>TV 4K 55"</h3>
+                                <div class="product-price">
+                                    <span class="current-price">R$ 2.199,90</span>
+                                    <span class="original-price">R$ 3.299,90</span>
+                                    <span class="discount-save">Economize R$ 1.100,00</span>
+                                </div>
+                                <div class="product-meta">
+                                    <span class="product-stock">Em estoque</span>
+                                    <span class="product-expires">Oferta especial</span>
+                                </div>
+                                <button class="add-to-cart">
+                                    <span class="material-icons-round">add_shopping_cart</span>
+                                    Adicionar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Empty State (hidden when there are discounts) -->
+                        <div class="empty-discounts" style="display: none;">
+                            <div class="empty-content">
+                                <span class="material-icons-round">local_offer</span>
+                                <h3>Nenhuma oferta disponível</h3>
+                                <p>No momento não há produtos com desconto. Volte mais tarde!</p>
+                                <button class="browse-btn">
+                                    <span class="material-icons-round">store</span>
+                                    Navegar na loja
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- User Menu (Hidden by default) -->
+        <div class="user-menu">
+            <div class="menu-header">
+                <div class="avatar">JD</div>
+                <div class="user-info">
+                    <h4>John Doe</h4>
+                    <p>john.doe@example.com</p>
+                </div>
+            </div>
+            <nav class="menu-nav">
+                <a href="./main.html" class="menu-item">
+                    <span class="material-icons-round">home</span>
+                    Página Inicial
+                </a>
+                <a href="./marketplace.html" class="menu-item">
+                    <span class="material-icons-round">store</span>
+                    Marketplace
+                </a>
+                <a href="./profile.html" class="menu-item">
+                    <span class="material-icons-round">account_circle</span>
+                    Meu Perfil
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="material-icons-round">settings</span>
+                    Configurações
+                </a>
+                <a href="./favorites.html" class="menu-item">
+                    <span class="material-icons-round">favorite</span>
+                    Favoritos
+                </a>
+                <a href="./discounts.html" class="menu-item active">
+                    <span class="material-icons-round">local_offer</span>
+                    Descontos
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="material-icons-round">help</span>
+                    Ajuda
+                </a>
+                <a href="./index.html" class="menu-item">
+                    <span class="material-icons-round">logout</span>
+                    Sair
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const userProfile = document.querySelector('.user-profile');
+            const userMenu = document.querySelector('.user-menu');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sideMenu = document.querySelector('.side-menu');
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            
+            // Toggle User Menu
+            userProfile.addEventListener('click', function(e) {
+                e.stopPropagation();
+                userMenu.classList.toggle('active');
+            });
+            
+            // Toggle Side Menu (mobile)
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                sideMenu.classList.toggle('active');
+            });
+            
+            // Close Menus when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!userMenu.contains(e.target) && !userProfile.contains(e.target)) {
+                    userMenu.classList.remove('active');
+                }
+                if (!sideMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                    sideMenu.classList.remove('active');
+                }
+            });
+
+            // Category filter buttons
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    // In a real app, this would filter the discounts
+                });
+            });
+
+            // Simulate loading
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 500);
+        });
+    </script>
+</body>
+</html>

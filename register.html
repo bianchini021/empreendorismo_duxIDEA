@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dux - Crie sua conta</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./css/register.css">
+</head>
+<body class="register-body">
+  <div class="register-wrapper">
+    <!-- Seção da Imagem -->
+    <div class="register-image-section">
+      <div class="register-image-overlay"></div>
+      <img src="./image/fundoCadLog.png" alt="Computador com código" class="register-background-image">
+      <div class="register-image-content">
+        <img src="./image/duxLogo-removebg-preview.png" alt="Logo Dux" class="register-logo">
+        <h2 class="register-image-title">Junte-se à nossa comunidade</h2>
+        <p class="register-image-subtitle">Comece sua jornada de aprendizado hoje mesmo</p>
+      </div>
+    </div>
+
+    <!-- Seção do Formulário Compacto -->
+    <div class="register-form-section">
+      <form class="register-form">
+        <h1 class="register-title">Crie sua conta</h1>
+        <p class="register-subtitle">Preencha seus dados para começar</p>
+
+        <!-- Informações Básicas -->
+        <div class="register-input-group">
+          <label for="fullName" class="register-label">Nome Completo</label>
+          <div class="register-input-container">
+            <span class="register-icon material-icons">person</span>
+            <input type="text" id="fullName" class="register-input" placeholder="Seu nome completo" required>
+          </div>
+        </div>
+
+        <div class="register-input-group">
+          <label for="email" class="register-label">E-mail</label>
+          <div class="register-input-container">
+            <span class="register-icon material-icons">alternate_email</span>
+            <input type="email" id="email" class="register-input" placeholder="seu@email.com" required>
+          </div>
+        </div>
+
+        <!-- Senhas empilhadas -->
+        <div class="register-input-group">
+          <label for="password" class="register-label">Senha</label>
+          <div class="register-input-container">
+            <span class="register-icon material-icons">lock</span>
+            <input type="password" id="password" class="register-input" placeholder="Crie uma senha" required>
+            <button type="button" class="register-password-toggle" id="togglePassword">
+              <span class="material-icons" id="toggleIcon">visibility_off</span>
+            </button>
+          </div>
+          <div class="register-password-strength">
+            <div class="strength-bar"></div>
+            <div class="strength-bar"></div>
+            <div class="strength-bar"></div>
+          </div>
+        </div>
+
+        <div class="register-input-group">
+          <label for="confirmPassword" class="register-label">Confirme a Senha</label>
+          <div class="register-input-container">
+            <span class="register-icon material-icons">lock</span>
+            <input type="password" id="confirmPassword" class="register-input" placeholder="Repita sua senha" required>
+          </div>
+        </div>
+
+        <!-- Termos e Condições -->
+        <div class="register-terms">
+          <input type="checkbox" id="terms" class="register-checkbox" required>
+          <label for="terms">Aceito os <a href="#" class="register-terms-link">Termos</a> e <a href="#" class="register-terms-link">Política</a></label>
+        </div>
+
+        <button type="submit" class="register-submit-btn">Criar Conta</button>
+
+        <div class="register-login">
+          <p>Já tem uma conta? <a href="login.html" class="register-login-link">Faça login</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Script para alternar visibilidade da senha
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+    const toggleIcon = document.getElementById('toggleIcon');
+    
+    togglePassword.addEventListener('click', function() {
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+      toggleIcon.textContent = type === 'password' ? 'visibility_off' : 'visibility';
+    });
+
+    // Script para validar força da senha
+    document.getElementById('password').addEventListener('input', function() {
+      const strengthBars = document.querySelectorAll('.strength-bar');
+      const password = this.value;
+      let strength = 0;
+      
+      // Reset
+      strengthBars.forEach(bar => bar.style.backgroundColor = '#4a5568');
+      
+      // Verifica critérios
+      if (password.length >= 8) strength++;
+      if (/[A-Z]/.test(password)) strength++;
+      if (/[0-9]/.test(password)) strength++;
+      if (/[^A-Za-z0-9]/.test(password)) strength++;
+      
+      // Atualiza visualização
+      for (let i = 0; i < strength && i < 3; i++) {
+        strengthBars[i].style.backgroundColor = 
+          strength < 2 ? '#e53e3e' : 
+          strength < 3 ? '#dd6b20' : '#38a169';
+      }
+    });
+  </script>
+</body>
+</html>

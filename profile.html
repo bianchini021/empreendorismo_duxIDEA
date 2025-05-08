@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUX | Meu Perfil</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="./css/profile.css">
+</head>
+<body>
+    <div class="profile-app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="profile-sidebar">
+            <div class="brand-container">
+                <img src="./image/duxLogo-removebg-preview.png" alt="Logo DUX" class="logo">
+            </div>
+            
+            <div class="user-profile-card">
+                <div class="avatar-container">
+                    <div class="avatar">JD</div>
+                    <button class="avatar-edit-btn">
+                        <span class="material-icons-round">edit</span>
+                    </button>
+                </div>
+                
+                <h2 class="user-name">John Doe</h2>
+                <p class="user-email">john.doe@example.com</p>
+                <p class="member-since">Membro desde Jan 2023</p>
+            </div>
+            
+            <nav class="profile-nav">
+                <a href="./main.html" class="nav-item">
+                    <span class="material-icons-round">home</span>
+                    Página Inicial
+                </a>
+                <a href="./gallery.html" class="nav-item">
+                    <span class="material-icons-round">collections</span>
+                    <span>Galeria</span>
+                </a>
+                <a href="./marketplace.html" class="nav-item">
+                    <span class="material-icons-round">store</span>
+                    <span>Marketplace</span>
+                </a>
+                    <a href="./bookmark.html" class="nav-item">
+                        <span class="material-icons-round">bookmark</span>
+                        Salvos
+                    </a>
+                    <a href="#" class="nav-item">
+                        <span class="material-icons-round">history</span>
+                        Histórico
+                    </a>
+              
+                <a href="#" class="nav-item">
+                    <span class="material-icons-round">settings</span>
+                    <span>Configurações</span>
+                </a>
+                <a href="./index.html" class="nav-item">
+                    <span class="material-icons-round">logout</span>
+                    Sair
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="profile-main-content">
+            <div class="profile-header">
+                <h1>Meu Perfil</h1>
+                <a href="./edit_profile.html" class="edit-profile-btn">
+                    <span class="material-icons-round">edit</span>
+                    Editar Perfil
+                </a>
+            </div>
+            
+            <!-- Stats Cards -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <span class="material-icons-round">library_books</span>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Conteúdos Adquiridos</h3>
+                        <p class="stat-value">24</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <span class="material-icons-round">schedule</span>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Horas de Aprendizado</h3>
+                        <p class="stat-value">156</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <span class="material-icons-round">star</span>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Conquistas</h3>
+                        <p class="stat-value">8</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Progress Section -->
+            <section class="progress-section">
+                <h2 class="section-title">Meu Progresso</h2>
+                
+                <div class="progress-card">
+                    <div class="course-info">
+                        <h3>JavaScript Moderno</h3>
+                        <p>Instrutor: João Silva</p>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%;"></div>
+                        </div>
+                        <span>65% completo</span>
+                    </div>
+                </div>
+                
+                <div class="progress-card">
+                    <div class="course-info">
+                        <h3>UI/UX Design</h3>
+                        <p>Instrutor: Maria Oliveira</p>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%;"></div>
+                        </div>
+                        <span>85% completo</span>
+                    </div>
+                </div>
+                
+                <div class="progress-card">
+                    <div class="course-info">
+                        <h3>Banco de Dados SQL</h3>
+                        <p>Instrutor: Carlos Mendes</p>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 30%;"></div>
+                        </div>
+                        <span>30% completo</span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Recent Activity -->
+            <section class="activity-section">
+                <h2 class="section-title">Atividade Recente</h2>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <span class="material-icons-round">assignment_turned_in</span>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Curso concluído: Fundamentos de HTML</h3>
+                        <p class="activity-date">2 dias atrás</p>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <span class="material-icons-round">forum</span>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Novo comentário em "JavaScript Moderno"</h3>
+                        <p class="activity-date">5 dias atrás</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+        // Verifique se a sidebar está realmente fixa
+console.log('Posição da sidebar:', 
+    window.getComputedStyle(document.querySelector('.profile-sidebar')).position);
+
+// Verifique se o conteúdo tem margem correta
+console.log('Margem do conteúdo:', 
+    window.getComputedStyle(document.querySelector('.profile-main-content')).marginLeft);
+    </script>
+</body>
+</html>

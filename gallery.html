@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUX | Plataforma de Aprendizado</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="./css/gallery.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header/Navigation -->
+        <header class="app-header">
+            <div class="header-container">
+                <!-- Logo/Brand -->
+            <div class="brand">
+                <img src="./image/duxLogo-removebg-preview.png" alt="Logo DUX" class="logo">
+            </div>  
+                <!-- Main Navigation -->
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item active">
+                            <a href="#">
+                                <span class="material-icons-round">dashboard</span>
+                                <span class="nav-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">
+                                <span class="material-icons-round">school</span>
+                                <span class="nav-text">Cursos</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">
+                                <span class="material-icons-round">menu_book</span>
+                                <span class="nav-text">E-books</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">
+                                <span class="material-icons-round">ondemand_video</span>
+                                <span class="nav-text">Videoaulas</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">
+                                <span class="material-icons-round">store</span>
+                                <span class="nav-text">Marketplace</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- User Section -->
+                <div class="user-section">
+                    <div class="search-container">
+                        <div class="search-input">
+                            <span class="material-icons-round">search</span>
+                            <input type="text" placeholder="Buscar cursos, materiais...">
+                            <button class="filter-btn">
+                                <span class="material-icons-round">tune</span>
+                            </button>
+                        </div>
+                        <div class="filter-dropdown">
+                            <div class="filter-group">
+                                <label>Dificuldade</label>
+                                <div class="filter-options">
+                                    <button class="filter-option active">Todas</button>
+                                    <button class="filter-option">Iniciante</button>
+                                    <button class="filter-option">Intermediário</button>
+                                    <button class="filter-option">Avançado</button>
+                                </div>
+                            </div>
+                            <div class="filter-group">
+                                <label>Tipo</label>
+                                <div class="filter-options">
+                                    <button class="filter-option active">Todos</button>
+                                    <button class="filter-option">Cursos</button>
+                                    <button class="filter-option">E-books</button>
+                                    <button class="filter-option">Videoaulas</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="user-controls">
+                        <button class="notification-btn">
+                            <span class="material-icons-round">notifications</span>
+                            <span class="notification-badge">3</span>
+                        </button>
+                        <div class="user-profile">
+                            <div class="avatar">JD</div>
+                            <span class="material-icons-round">expand_more</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="app-main">
+            <div class="content-header">
+                <h2>Galeria de Itens</h2>
+                <div class="view-controls">
+                    <button class="view-btn active">
+                        <span class="material-icons-round">grid_view</span>
+                    </button>
+                    <button class="view-btn">
+                        <span class="material-icons-round">view_list</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="course-grid">
+                <!-- Course Cards would be dynamically generated here -->
+                <div class="course-card">
+                    <div class="course-banner" style="background-color: #2962ff;">
+                        <span class="material-icons-round">code</span>
+                    </div>
+                    <div class="course-info">
+                        <h3>JavaScript Moderno</h3>
+                        <p class="instructor">Por João Silva</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 65%;"></div>
+                            <span>65% completo</span>
+                        </div>
+                        <div class="course-meta">
+                            <span class="difficulty beginner">Iniciante</span>
+                            <span class="duration">12h</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-banner" style="background-color: #00bfa5;">
+                        <span class="material-icons-round">storage</span>
+                    </div>
+                    <div class="course-info">
+                        <h3>Banco de Dados SQL</h3>
+                        <p class="instructor">Por Maria Oliveira</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 30%;"></div>
+                            <span>30% completo</span>
+                        </div>
+                        <div class="course-meta">
+                            <span class="difficulty intermediate">Intermediário</span>
+                            <span class="duration">8h</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-banner" style="background-color: #ff6d00;">
+                        <span class="material-icons-round">palette</span>
+                    </div>
+                    <div class="course-info">
+                        <h3>UI/UX Design</h3>
+                        <p class="instructor">Por Carlos Mendes</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 85%;"></div>
+                            <span>85% completo</span>
+                        </div>
+                        <div class="course-meta">
+                            <span class="difficulty advanced">Avançado</span>
+                            <span class="duration">15h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- User Menu (Hidden by default) -->
+        <div class="user-menu">
+            <div class="menu-header">
+                <div class="avatar">JD</div>
+                <div class="user-info">
+                    <h4>John Doe</h4>
+                    <p>john.doe@example.com</p>
+                </div>
+            </div>
+            <nav class="menu-nav">
+                <a href="./main.html" class="menu-item">
+                    <span class="material-icons-round">home</span>
+                    Página Inicial
+                </a>
+                <a href="./marketplace.html" class="menu-item">
+                    <span class="material-icons-round">store</span>
+                    Marketplace
+                </a>
+                <a href="./profile.html" class="menu-item">
+                    <span class="material-icons-round">account_circle</span>
+                    Meu Perfil
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="material-icons-round">settings</span>
+                    Configurações
+                </a>
+                <a href="./bookmark.html" class="menu-item">
+                    <span class="material-icons-round">bookmark</span>
+                    Salvos
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="material-icons-round">history</span>
+                    Histórico
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="material-icons-round">help</span>
+                    Ajuda
+                </a>
+                <a href="./index.html" class="menu-item">
+                    <span class="material-icons-round">logout</span>
+                    Sair
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // DOM Elements
+    const userProfile = document.querySelector('.user-profile');
+    const userMenu = document.querySelector('.user-menu');
+    const notificationBtn = document.querySelector('.notification-btn');
+    const filterBtn = document.querySelector('.filter-btn');
+    const filterDropdown = document.querySelector('.filter-dropdown');
+    const viewBtns = document.querySelectorAll('.view-btn');
+    const courseGrid = document.querySelector('.course-grid');
+    const filterOptions = document.querySelectorAll('.filter-option');
+    
+    // Toggle User Menu
+    userProfile.addEventListener('click', function(e) {
+        e.stopPropagation();
+        userMenu.classList.toggle('active');
+    });
+    
+    // Close User Menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!userMenu.contains(e.target) && !userProfile.contains(e.target)) {
+            userMenu.classList.remove('active');
+        }
+    });
+    
+    // Notification Button
+    notificationBtn.addEventListener('click', function() {
+        // In a real app, this would show notifications
+        console.log('Notifications clicked');
+    });
+    
+    // Filter Button
+    filterBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        filterDropdown.classList.toggle('active');
+    });
+    
+    // Close Filter Dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!filterDropdown.contains(e.target) && !filterBtn.contains(e.target)) {
+            filterDropdown.classList.remove('active');
+        }
+    });
+    
+    // View Controls
+    viewBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            viewBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Change view layout
+            if (this.querySelector('.material-icons-round').textContent === 'view_list') {
+                courseGrid.classList.add('list-view');
+            } else {
+                courseGrid.classList.remove('list-view');
+            }
+        });
+    });
+    
+    // Filter Options
+    filterOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const parent = this.parentElement;
+            parent.querySelectorAll('.filter-option').forEach(opt => {
+                opt.classList.remove('active');
+            });
+            this.classList.add('active');
+            
+            // In a real app, this would filter the courses
+            console.log('Filter applied:', this.textContent.trim());
+        });
+    });
+    
+    // Course Card Click
+    document.querySelectorAll('.course-card').forEach(card => {
+        card.addEventListener('click', function() {
+            // In a real app, this would navigate to the course
+            console.log('Course selected:', this.querySelector('h3').textContent);
+        });
+    });
+    
+    // Simulate loading
+    setTimeout(() => {
+        document.body.classList.add('loaded');
+    }, 500);
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dux - Acesse sua conta</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+<body class="login-body">
+  <div class="login-wrapper">
+    <!-- Seção da Imagem -->
+    <div class="login-image-section">
+      <div class="login-image-overlay"></div>
+      <img src="./image/fundoCadLog.png" 
+           alt="Computador com código" 
+           class="login-background-image">
+      <div class="login-image-content">
+        <img src="./image/duxLogo-removebg-preview.png" alt="Logo Dux" class="login-logo">
+        <h2 class="login-image-title">Domine a Tecnologia</h2>
+        <p class="login-image-subtitle">Aprenda no seu ritmo com nossos cursos especializados</p>
+      </div>
+    </div>
+
+    <!-- Seção do Formulário -->
+    <div class="login-form-section">
+      <form class="login-form">
+        <h1 class="login-title">Acesse sua conta</h1>
+        <p class="login-subtitle">Entre para continuar seu aprendizado</p>
+
+        <div class="login-input-group">
+          <label for="email" class="login-label">E-mail</label>
+          <div class="login-input-container">
+            <span class="login-icon material-icons">mail</span>
+            <input type="email" id="email" class="login-input" placeholder="seu@email.com" required>
+          </div>
+        </div>
+
+        <div class="login-input-group">
+          <label for="password" class="login-label">Senha</label>
+          <div class="login-input-container">
+            <span class="login-icon material-icons">lock</span>
+            <input type="password" id="password" class="login-input" placeholder="Sua senha" required>
+            <button type="button" class="login-password-toggle" id="togglePassword">
+              <span class="material-icons" id="toggleIcon">visibility_off</span>
+            </button>
+          </div>
+          <a href="#" class="login-forgot-password">Esqueceu sua senha?</a>
+        </div>
+
+        <div class="login-remember">
+          <input type="checkbox" id="remember" class="login-checkbox">
+          <label for="remember">Manter conectado</label>
+        </div>
+
+        <button type="submit" class="login-submit-btn">Entrar</button>
+       <a href="./main.html">"""Entrar"""</a>
+        <div class="login-separator">
+          <span>ou</span>
+        </div>
+
+        <div class="login-social-btns">
+          <button type="button" class="login-social-btn login-google">
+            <img src="https://www.gstatic.com/marketing-cms/assets/images/d5/dc/cfe9ce8b4425b410b49b7f2dd3f3/g.webp=s48-fcrop64=1,00000000ffffffff-rw" alt="Google" class="login-social-icon">
+            Continuar com Google
+          </button>
+          <button type="button" class="login-social-btn login-github">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="login-social-icon">
+            Continuar com GitHub
+          </button>
+        </div>
+
+        <div class="login-signup">
+          <p>Não tem uma conta? <a href="./register.html" class="login-signup-link">Cadastre-se</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Script corrigido para alternar visibilidade da senha
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+    const toggleIcon = document.getElementById('toggleIcon');
+    
+    togglePassword.addEventListener('click', function() {
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+      toggleIcon.textContent = type === 'password' ? 'visibility_off' : 'visibility';
+    });
+  </script>
+</body>
+</html>

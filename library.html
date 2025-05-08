@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUX | Conhecimento Livre</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="./css/library.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="dux-container">
+        <!-- Top Navigation Bar -->
+        <header class="dux-header">
+            <div class="dux-header-content">
+                <button class="dux-menu-toggle">
+                    <span class="material-icons-round">menu</span>
+                </button>
+                
+                <div class="dux-brand">
+                    <img src="./image/duxLogo-removebg-preview.png" alt="Logo DUX" class="dux-logo-icon">
+                    <span class="dux-brand-text">DUX</span>
+                </div>
+
+                <div class="dux-user-controls">
+                    <div class="dux-search-container">
+                        <button class="dux-search-btn">
+                            <span class="material-icons-round">search</span>
+                        </button>
+                        <input type="text" class="dux-search-input" placeholder="Buscar conteúdo...">
+                    </div>
+                    <div class="dux-user-profile">
+                        <div class="dux-avatar">JD</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- User Menu (Hidden by default) -->
+<div class="dux-user-menu">
+    <div class="dux-menu-header">
+        <div class="dux-avatar">JD</div>
+        <div class="dux-user-info">
+            <h4>John Doe</h4>
+            <p>john.doe@example.com</p>
+        </div>
+        <button class="dux-close-menu">
+            <span class="material-icons-round">close</span>
+        </button>
+    </div>
+    <nav class="dux-menu-nav">
+        <a href="./index.html" class="dux-menu-item">
+            <span class="material-icons-round">home</span>
+            Página Inicial
+        </a>
+        <a href="./marketplace.html" class="dux-menu-item">
+            <span class="material-icons-round">store</span>
+            Marketplace
+        </a>
+        <a href="./profile.html" class="dux-menu-item">
+            <span class="material-icons-round">account_circle</span>
+            Meu Perfil
+        </a>
+        <a href="./gallery.html" class="dux-menu-item">
+            <span class="material-icons-round">photo_library</span>
+            Galeria
+        </a>
+        <a href="./bookmark.html" class="dux-menu-item">
+            <span class="material-icons-round">bookmark</span>
+            Salvos
+        </a>
+        <a href="#" class="dux-menu-item">
+            <span class="material-icons-round">history</span>
+            Histórico
+        </a>
+        <a href="#" class="dux-menu-item">
+            <span class="material-icons-round">settings</span>
+            Configurações
+        </a>
+        <a href="./index.html" class="dux-menu-item">
+            <span class="material-icons-round">logout</span>
+            Sair
+        </a>
+    </nav>
+</div>
+
+        <!-- Main Content Area -->
+        <main class="dux-main-content">
+            <!-- Hero Banner -->
+            <section class="dux-hero-banner animate__animated animate__fadeIn">
+                <div class="dux-hero-content">
+                    <h1 class="dux-hero-title">Conhecimento <span class="dux-highlight">Livre</span></h1>
+                    <p class="dux-hero-subtitle">Acesse nossos melhores conteúdos gratuitamente</p>
+                    <div class="dux-hero-badge">100% FREE</div>
+                    <div class="dux-hero-cta">
+                        <button class="dux-primary-btn">Explorar Conteúdos</button>
+                        <button class="dux-secondary-btn">Como Funciona?</button>
+                    </div>
+                </div>
+                <div class="dux-hero-pattern"></div>
+            </section>
+
+            <!-- Featured Free Content -->
+            <section class="dux-section">
+                <div class="dux-section-header">
+                    <h2>Conteúdos em Destaque</h2>
+                    <div class="dux-view-options">
+                        <button class="dux-view-toggle active" data-view="grid">
+                            <span class="material-icons-round">grid_view</span>
+                        </button>
+                        <button class="dux-view-toggle" data-view="list">
+                            <span class="material-icons-round">view_list</span>
+                        </button>
+                        <a href="#" class="dux-view-all">Ver todos</a>
+                    </div>
+                </div>
+                
+                <div class="dux-featured-grid" id="featuredContent">
+                    <!-- Content loaded via JavaScript -->
+                </div>
+            </section>
+
+            <!-- Free Resources by Category -->
+            <section class="dux-section">
+                <div class="dux-section-header">
+                    <h2>Recursos Gratuitos</h2>
+                    <div class="dux-section-controls">
+                        <button class="dux-control-btn active" data-filter="all">Todos</button>
+                        <button class="dux-control-btn" data-filter="tutorials">Tutoriais</button>
+                        <button class="dux-control-btn" data-filter="ebooks">E-books</button>
+                        <button class="dux-control-btn" data-filter="tools">Ferramentas</button>
+                    </div>
+                </div>
+                
+                <div class="dux-resources-grid" id="resourcesContent">
+                    <!-- Content loaded via JavaScript -->
+                </div>
+            </section>
+
+            <!-- Free Video Lessons -->
+            <section class="dux-section">
+                <div class="dux-section-header">
+                    <h2>Videoaulas Gratuitas</h2>
+                    <div class="dux-video-filters">
+                        <div class="dux-filter-dropdown">
+                            <button class="dux-filter-btn">
+                                <span>Categoria</span>
+                                <span class="material-icons-round">expand_more</span>
+                            </button>
+                            <div class="dux-filter-menu">
+                                <a href="#" data-category="all">Todas</a>
+                                <a href="#" data-category="programming">Programação</a>
+                                <a href="#" data-category="design">Design</a>
+                                <a href="#" data-category="data">Ciência de Dados</a>
+                            </div>
+                        </div>
+                        <a href="#" class="dux-view-all">Ver todas</a>
+                    </div>
+                </div>
+                
+                <div class="dux-videos-grid" id="videosContent">
+                    <!-- Content loaded via JavaScript -->
+                </div>
+            </section>
+
+            <!-- Newsletter Section -->
+            <section class="dux-newsletter">
+                <div class="dux-newsletter-content">
+                    <div class="dux-newsletter-text">
+                        <h3>Receba conteúdos exclusivos</h3>
+                        <p>Inscreva-se para receber os melhores materiais gratuitos diretamente no seu email</p>
+                    </div>
+                    <form class="dux-newsletter-form">
+                        <input type="email" placeholder="Seu melhor email" required>
+                        <button type="submit" class="dux-accent-btn">
+                            <span class="material-icons-round">send</span>
+                            Assinar
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- User Menu (Hidden by default) -->
+        <div class="dux-user-menu">
+            <div class="dux-menu-header">
+                <div class="dux-avatar">JD</div>
+                <div class="dux-user-info">
+                    <h4>John Doe</h4>
+                    <p>john.doe@example.com</p>
+                </div>
+                <button class="dux-close-menu">
+                    <span class="material-icons-round">close</span>
+                </button>
+            </div>
+            <nav class="dux-menu-nav">
+                <a href="#" class="dux-menu-item">
+                    <span class="material-icons-round">home</span>
+                    Página Inicial
+                </a>
+                <a href="#" class="dux-menu-item">
+                    <span class="material-icons-round">store</span>
+                    Marketplace
+                </a>
+                <a href="#" class="dux-menu-item">
+                    <span class="material-icons-round">account_circle</span>
+                    Meu Perfil
+                </a>
+                <a href="#" class="dux-menu-item">
+                    <span class="material-icons-round">settings</span>
+                    Configurações
+                </a>
+                <a href="#" class="dux-menu-item">
+                    <span class="material-icons-round">bookmark</span>
+                    Salvos
+                </a>
+                <a href="#" class="dux-menu-item">
+                    <span class="material-icons-round">history</span>
+                    Histórico
+                </a>
+                <a href="#" class="dux-menu-item">
+                    <span class="material-icons-round">help</span>
+                    Ajuda
+                </a>
+                <a href="#" class="dux-menu-item">
+                    <span class="material-icons-round">logout</span>
+                    Sair
+                </a>
+            </nav>
+        </div>
+
+        <!-- Search Modal -->
+        <div class="dux-search-modal">
+            <div class="dux-search-modal-content">
+                <div class="dux-search-header">
+                    <span class="material-icons-round">search</span>
+                    <input type="text" placeholder="Buscar tutoriais, cursos, e-books...">
+                    <button class="dux-close-search">
+                        <span class="material-icons-round">close</span>
+                    </button>
+                </div>
+                <div class="dux-search-results">
+                    <div class="dux-search-suggestions">
+                        <h4>Sugestões de busca</h4>
+                        <div class="dux-suggestion-tags">
+                            <a href="#">JavaScript</a>
+                            <a href="#">React</a>
+                            <a href="#">UI Design</a>
+                            <a href="#">Python</a>
+                            <a href="#">CSS Avançado</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Elementos DOM
+            const userProfile = document.querySelector('.dux-user-profile');
+            const userMenu = document.querySelector('.dux-user-menu');
+            const closeMenuBtn = document.querySelector('.dux-close-menu');
+            const searchBtn = document.querySelector('.dux-search-btn');
+            const searchModal = document.querySelector('.dux-search-modal');
+            const closeSearchBtn = document.querySelector('.dux-close-search');
+            const categoryItems = document.querySelectorAll('.dux-category-item');
+            const controlBtns = document.querySelectorAll('.dux-control-btn');
+            const viewToggles = document.querySelectorAll('.dux-view-toggle');
+            const featuredGrid = document.querySelector('.dux-featured-grid');
+        
+            // Dados de exemplo (em um projeto real, viriam de uma API)
+            const featuredContent = [
+                {
+                    id: 1,
+                    title: "Guia Completo de JavaScript Moderno",
+                    description: "Domine as técnicas mais recentes de desenvolvimento web com este guia completo.",
+                    category: "courses",
+                    type: "Vídeo",
+                    duration: "2h de conteúdo",
+                    difficulty: "intermediate",
+                    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    badge: "NOVO",
+                    badgeType: "new"
+                },
+                {
+                    id: 2,
+                    title: "Design UI/UX para Iniciantes",
+                    description: "Fundamentos essenciais para criar interfaces incríveis.",
+                    category: "tutorials",
+                    type: "Artigo",
+                    duration: "1h 30min",
+                    difficulty: "beginner",
+                    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    badge: "POPULAR",
+                    badgeType: "popular"
+                },
+                {
+                    id: 3,
+                    title: "Python para Análise de Dados",
+                    description: "Aprenda a manipular dados com Pandas e NumPy como um profissional.",
+                    category: "ebooks",
+                    type: "E-book",
+                    duration: "42 páginas",
+                    difficulty: "intermediate",
+                    image: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    badge: "RECOMENDADO",
+                    badgeType: "recommended"
+                }
+            ];
+        
+            const resourcesContent = [
+                {
+                    id: 1,
+                    title: "HTML5 e CSS3 Essencial",
+                    description: "Aprenda os fundamentos do desenvolvimento web front-end.",
+                    category: "tutorials",
+                    type: "Tutorial",
+                    difficulty: "beginner",
+                    pages: "15 páginas",
+                    image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                },
+                {
+                    id: 2,
+                    title: "Coleção de Snippets React",
+                    description: "Códigos prontos para acelerar seu desenvolvimento com React.",
+                    category: "snippets",
+                    type: "Ferramenta",
+                    difficulty: "advanced",
+                    files: "28 snippets",
+                    image: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                },
+                {
+                    id: 3,
+                    title: "Guia de SEO para Devs",
+                    description: "Técnicas de otimização para motores de busca para desenvolvedores.",
+                    category: "tutorials",
+                    type: "Tutorial",
+                    difficulty: "intermediate",
+                    pages: "22 páginas",
+                    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                },
+                {
+                    id: 4,
+                    title: "Padrões de Design em JavaScript",
+                    description: "Aprenda os principais padrões de projeto aplicados em JS.",
+                    category: "ebooks",
+                    type: "E-book",
+                    difficulty: "advanced",
+                    pages: "36 páginas",
+                    image: "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                }
+            ];
+        
+            const videosContent = [
+                {
+                    id: 1,
+                    title: "Introdução ao JavaScript Moderno",
+                    instructor: "João Silva",
+                    category: "programming",
+                    duration: "12:45",
+                    views: "15.2k visualizações",
+                    date: "2 dias atrás",
+                    thumbnail: "https://i.ytimg.com/vi/PkZNo7MFNFg/hqdefault.jpg",
+                },
+                {
+                    id: 2,
+                    title: "Dominando CSS Grid Layout",
+                    instructor: "Maria Oliveira",
+                    category: "design",
+                    duration: "18:30",
+                    views: "8.7k visualizações",
+                    date: "1 semana atrás",
+                    thumbnail: "https://i.ytimg.com/vi/1Rs2ND1ryYc/hqdefault.jpg"
+                },
+                {
+                    id: 3,
+                    title: "Funções em Python - Do Básico ao Avançado",
+                    instructor: "Carlos Mendes",
+                    category: "programming",
+                    duration: "22:15",
+                    views: "12.1k visualizações",
+                    date: "3 dias atrás",
+                    thumbnail: "https://i.ytimg.com/vi/7ghhRHRP6t4/hqdefault.jpg"
+                },
+                {
+                    id: 4,
+                    title: "Análise de Dados com Pandas",
+                    instructor: "Ana Santos",
+                    category: "data",
+                    duration: "15:40",
+                    views: "5.3k visualizações",
+                    date: "5 dias atrás",
+                    thumbnail: "https://i.ytimg.com/vi/daefaLgNkw0/hqdefault.jpg"
+                }
+            ];
+        
+            // Funções de renderização
+            function renderFeaturedContent() {
+                featuredGrid.innerHTML = '';
+                featuredContent.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = `dux-featured-card ${item.id === 1 ? 'large' : ''}`;
+                    card.dataset.category = item.category;
+                    let badgeClass = '';
+                    if (item.badgeType === 'popular') badgeClass = 'bestseller';
+                    else if (item.badgeType === 'recommended') badgeClass = 'recommended';
+                    card.innerHTML = `
+                        ${item.badge ? `<div class="dux-card-badge ${badgeClass}">${item.badge}</div>` : ''}
+                        <div class="dux-card-image" style="background-image: url('${item.image}')"></div>
+                        <div class="dux-card-content">
+                            <h3>${item.title}</h3>
+                            <p class="dux-card-description">${item.description}</p>
+                            <div class="dux-card-meta">
+                                <span class="dux-card-tag">${item.type}</span>
+                                <span class="dux-card-duration">
+                                    <span class="material-icons-round">schedule</span>
+                                    ${item.duration}
+                                </span>
+                            </div>
+                            <button class="dux-card-btn">
+                                <span class="material-icons-round">${item.category === 'courses' ? 'play_circle' : 'download'}</span>
+                                ${item.category === 'courses' ? 'Assistir' : 'Baixar'}
+                            </button>
+                        </div>
+                    `;
+                    featuredGrid.appendChild(card);
+                });
+            }
+        
+            function renderResourcesContent(filter = 'all') {
+                const resourcesGrid = document.getElementById('resourcesContent');
+                resourcesGrid.innerHTML = '';
+                const filteredContent = filter === 'all'
+                    ? resourcesContent
+                    : resourcesContent.filter(item => item.category === filter);
+        
+                filteredContent.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'dux-resource-card';
+                    card.dataset.category = item.category;
+                    card.innerHTML = `
+                        <div class="dux-resource-image" style="background-image: url('${item.image}')"></div>
+                        <div class="dux-resource-info">
+                            <h3>${item.title}</h3>
+                            <p class="dux-resource-type">${item.type}</p>
+                            <div class="dux-resource-meta">
+                                <span class="dux-resource-difficulty ${item.difficulty}">
+                                    ${item.difficulty === 'beginner' ? 'Iniciante' :
+                                      item.difficulty === 'intermediate' ? 'Intermediário' : 'Avançado'}
+                                </span>
+                                <span class="dux-resource-${item.pages ? 'pages' : 'files'}">
+                                    ${item.pages || item.files}
+                                </span>
+                            </div>
+                            <button class="dux-resource-btn">
+                                <span class="material-icons-round">
+                                    ${item.type === 'E-book' ? 'menu_book' :
+                                      item.type === 'Ferramenta' ? 'code' : 'file_download'}
+                                </span>
+                                ${item.type === 'E-book' ? 'Ler Online' :
+                                  item.type === 'Ferramenta' ? 'Copiar' : 'Baixar'}
+                            </button>
+                        </div>
+                    `;
+                    resourcesGrid.appendChild(card);
+                });
+            }
+        
+            function renderVideosContent(filter = 'all') {
+                const videosGrid = document.getElementById('videosContent');
+                videosGrid.innerHTML = '';
+                const filteredContent = filter === 'all'
+                    ? videosContent
+                    : videosContent.filter(item => item.category === filter);
+        
+                filteredContent.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'dux-video-card';
+                    card.dataset.category = item.category;
+                    card.innerHTML = `
+                        <div class="dux-video-thumbnail">
+                            <img src="${item.thumbnail}" alt="${item.title}">
+                            <div class="dux-play-button">
+                                <span class="material-icons-round">play_circle</span>
+                            </div>
+                            <span class="dux-duration">${item.duration}</span>
+                        </div>
+                        <div class="dux-video-info">
+                            <h3>${item.title}</h3>
+                            <p class="dux-video-instructor">${item.instructor}</p>
+                            <div class="dux-video-meta">
+                                <span class="dux-views">${item.views}</span>
+                                <span class="dux-date">${item.date}</span>
+                            </div>
+                        </div>
+                    `;
+                    videosGrid.appendChild(card);
+                });
+            }
+        
+            // Filtros de categoria
+            controlBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    controlBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const filter = btn.dataset.filter;
+                    renderResourcesContent(filter);
+                });
+            });
+        
+            // Alternância de visualização
+            viewToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    viewToggles.forEach(t => t.classList.remove('active'));
+                    toggle.classList.add('active');
+                    const view = toggle.dataset.view;
+                    const grid = document.querySelector('.dux-featured-grid');
+                    grid.classList.toggle('list-view', view === 'list');
+                });
+            });
+        
+            // Menu de usuário
+            userProfile.addEventListener('click', () => {
+                userMenu.classList.add('active');
+            });
+        
+            closeMenuBtn.addEventListener('click', () => {
+                userMenu.classList.remove('active');
+            });
+        
+            // Modal de busca
+            searchBtn.addEventListener('click', () => {
+                searchModal.classList.add('active');
+            });
+        
+            closeSearchBtn.addEventListener('click', () => {
+                searchModal.classList.remove('active');
+            });
+        
+            // Renderização inicial
+            renderFeaturedContent();
+            renderResourcesContent();
+            renderVideosContent();
+        });
+    </script>
+</body>
+</html>
