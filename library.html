@@ -3,545 +3,800 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DUX | Conhecimento Livre</title>
+    <meta name="description" content="DUX - Biblioteca de inovação tecnológica com conteúdos sobre IA, Web3, Cloud e mais">
+    <title>DUX | Biblioteca Tech</title>
+    
+    <!-- Preload de recursos -->
+    <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" as="style">
+    
+    <!-- Fontes e ícones -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/library.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/dux-favicon.svg" type="image/svg+xml">
 </head>
 <body>
-    <div class="dux-container">
-        <!-- Top Navigation Bar -->
+    <div class="dux-app">
+        <!-- Top Navigation -->
         <header class="dux-header">
-            <div class="dux-header-content">
-                <button class="dux-menu-toggle">
+            <div class="dux-header-container">
+                <button class="dux-menu-toggle" aria-label="Menu principal">
                     <span class="material-icons-round">menu</span>
                 </button>
                 
-                <div class="dux-brand">
-                    <img src="./image/duxLogo-removebg-preview.png" alt="Logo DUX" class="dux-logo-icon">
+                <a href="#" class="dux-brand">
+                    <svg class="dux-logo-icon" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 0L0 16L16 32L32 16L16 0Z" fill="#4361EE"/>
+                        <path d="M16 8L8 16L16 24L24 16L16 8Z" fill="#FFFFFF"/>
+                    </svg>
                     <span class="dux-brand-text">DUX</span>
-                </div>
+                </a>
+
+                <nav class="dux-main-nav" aria-label="Navegação principal">
+                    <div class="dux-nav-scroller">
+                        <ul class="dux-nav-list">
+                            <li class="dux-nav-item">
+                                <a href="./main.html">
+                                    <span class="material-icons-round">home</span>
+                                    Início
+                                </a>
+                            </li>
+                            <li class="dux-nav-item">
+                                <a href="#labs">
+                                    <span class="material-icons-round">science</span>
+                                    Labs
+                                </a>
+                            </li>
+                            <li class="dux-nav-item">
+                                <a href="#projetos">
+                                    <span class="material-icons-round">rocket_launch</span>
+                                    Projetos
+                                </a>
+                            </li>
+                            <li class="dux-nav-item">
+                                <a href="#trilhas">
+                                    <span class="material-icons-round">route</span>
+                                    Trilhas
+                                </a>
+                            </li>
+                            <li class="dux-nav-item">
+                                <a href="#comunidade">
+                                    <span class="material-icons-round">groups</span>
+                                    Comunidade
+                                </a>
+                            </li>
+                            <li class="dux-nav-item active">
+                                <a href="./library.html" aria-current="page">
+                                    <span class="material-icons-round">local_library</span>
+                                    Biblioteca
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
 
                 <div class="dux-user-controls">
-                    <div class="dux-search-container">
-                        <button class="dux-search-btn">
-                            <span class="material-icons-round">search</span>
-                        </button>
-                        <input type="text" class="dux-search-input" placeholder="Buscar conteúdo...">
-                    </div>
-                    <div class="dux-user-profile">
+                    <button class="dux-search-btn" aria-label="Buscar">
+                        <span class="material-icons-round">search</span>
+                    </button>
+                    <button class="dux-theme-toggle" aria-label="Alternar tema">
+                        <span class="material-icons-round">dark_mode</span>
+                    </button>
+                    <button class="dux-user-profile" aria-label="Perfil do usuário">
                         <div class="dux-avatar">JD</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menu de Perfil -->
+            <div class="dux-profile-menu">
+                <div class="dux-profile-menu-header">
+                    <div class="dux-avatar">JD</div>
+                    <div class="dux-profile-user">
+                        <div class="dux-profile-name">John Doe</div>
+                        <div class="dux-profile-email">john.doe@example.com</div>
                     </div>
+                </div>
+                <ul class="dux-profile-menu-list">
+                    <li class="dux-profile-menu-item">
+                        <a href="./library.html" class="menu-item">
+                            <span class="material-icons-round">local_library</span>
+                            Biblioteca
+                        </a>
+                    </li>
+                    <li class="dux-profile-menu-item">
+                        <a href="./comunity.html" class="menu-item">
+                            <span class="material-icons-round">connect_without_contact</span>
+                            Comunidade
+                        </a>
+                    </li>
+                    <li class="dux-profile-menu-item">
+                        <a href="./gallery.html" class="menu-item">
+                            <span class="material-icons-round">photo_library</span>
+                            Galeria
+                        </a>
+                    </li>
+                    <li class="dux-profile-menu-item">
+                        <a href="./marketplace.html" class="menu-item">
+                            <span class="material-icons-round">store</span>
+                            Marketplace
+                        </a>
+                    </li>
+                    <li class="dux-profile-menu-item">
+                        <a href="./profile.html" class="menu-item">
+                            <span class="material-icons-round">account_circle</span>
+                            Meu Perfil
+                        </a>
+                    </li>
+                    <li class="dux-profile-menu-item">
+                        <a href="#" class="menu-item">
+                            <span class="material-icons-round">settings</span>
+                            Configurações
+                        </a>
+                    </li>
+                    <li class="dux-profile-menu-item">
+                        <a href="./bookmark.html" class="menu-item">
+                            <span class="material-icons-round">bookmark</span>
+                            Salvos
+                        </a>
+                    </li>
+                    <li class="dux-profile-menu-item">
+                        <a href="#" class="menu-item">
+                            <span class="material-icons-round">history</span>
+                            Histórico
+                        </a>
+                    </li>
+                    <li class="dux-profile-menu-item">
+                        <a href="#" class="menu-item">
+                            <span class="material-icons-round">help</span>
+                            Ajuda
+                        </a>
+                    </li>
+                </ul>
+                <div class="dux-profile-menu-footer">
+                    <a href="./index.html" class="dux-secondary-btn" style="width: 100%; text-align: center; display: block;">
+                        <span class="material-icons-round">logout</span>
+                        Sair
+                    </a>
                 </div>
             </div>
         </header>
 
-        <!-- User Menu (Hidden by default) -->
-<div class="dux-user-menu">
-    <div class="dux-menu-header">
-        <div class="dux-avatar">JD</div>
-        <div class="dux-user-info">
-            <h4>John Doe</h4>
-            <p>john.doe@example.com</p>
-        </div>
-        <button class="dux-close-menu">
-            <span class="material-icons-round">close</span>
-        </button>
-    </div>
-    <nav class="dux-menu-nav">
-        <a href="./main.html" class="dux-menu-item">
-            <span class="material-icons-round">home</span>
-            Página Inicial
-        </a>
-        <a href="./marketplace.html" class="dux-menu-item">
-            <span class="material-icons-round">store</span>
-            Marketplace
-        </a>
-        <a href="./profile.html" class="dux-menu-item">
-            <span class="material-icons-round">account_circle</span>
-            Meu Perfil
-        </a>
-        <a href="./gallery.html" class="dux-menu-item">
-            <span class="material-icons-round">photo_library</span>
-            Galeria
-        </a>
-        <a href="./bookmark.html" class="dux-menu-item">
-            <span class="material-icons-round">bookmark</span>
-            Salvos
-        </a>
-        <a href="#" class="dux-menu-item">
-            <span class="material-icons-round">history</span>
-            Histórico
-        </a>
-        <a href="#" class="dux-menu-item">
-            <span class="material-icons-round">settings</span>
-            Configurações
-        </a>
-        <a href="./index.html" class="dux-menu-item">
-            <span class="material-icons-round">logout</span>
-            Sair
-        </a>
-    </nav>
-</div>
-
-        <!-- Main Content Area -->
-        <main class="dux-main-content">
-            <!-- Hero Banner -->
-            <section class="dux-hero-banner animate__animated animate__fadeIn">
+        <!-- Main Content -->
+        <main class="dux-main">
+            <!-- Hero Section -->
+            <section class="dux-hero dux-hero-library">
                 <div class="dux-hero-content">
-                    <h1 class="dux-hero-title">Conhecimento <span class="dux-highlight">Livre</span></h1>
-                    <p class="dux-hero-subtitle">Acesse nossos melhores conteúdos gratuitamente</p>
-                    <div class="dux-hero-badge">100% FREE</div>
-                    <div class="dux-hero-cta">
-                        <button class="dux-primary-btn">Explorar Conteúdos</button>
-                        <button class="dux-secondary-btn">Como Funciona?</button>
+                    <h1 class="dux-hero-title">Biblioteca de <span class="dux-highlight">Inovação Tech</span></h1>
+                    <p class="dux-hero-subtitle">Explore o futuro da tecnologia com nossos conteúdos exclusivos sobre IA, Web3, Cloud Computing e muito mais</p>
+                    
+                    <div class="dux-hero-actions">
+                        <button class="dux-primary-btn">
+                            <span class="material-icons-round">explore</span>
+                            Explorar Tendências
+                        </button>
+                        <button class="dux-secondary-btn">
+                            <span class="material-icons-round">auto_awesome</span>
+                            Novidades Tech
+                        </button>
                     </div>
-                </div>
-                <div class="dux-hero-pattern"></div>
-            </section>
-
-            <!-- Featured Free Content -->
-            <section class="dux-section">
-                <div class="dux-section-header">
-                    <h2>Conteúdos em Destaque</h2>
-                    <div class="dux-view-options">
-                        <button class="dux-view-toggle active" data-view="grid">
-                            <span class="material-icons-round">grid_view</span>
-                        </button>
-                        <button class="dux-view-toggle" data-view="list">
-                            <span class="material-icons-round">view_list</span>
-                        </button>
-                        <a href="#" class="dux-view-all">Ver todos</a>
+                    
+                    <div class="dux-hero-stats">
+                        <div class="dux-stat-item">
+                            <span class="dux-stat-number">1.2k+</span>
+                            <span class="dux-stat-label">Artigos Tech</span>
+                        </div>
+                        <div class="dux-stat-item">
+                            <span class="dux-stat-number">350+</span>
+                            <span class="dux-stat-label">Cursos de IA</span>
+                        </div>
+                        <div class="dux-stat-item">
+                            <span class="dux-stat-number">180+</span>
+                            <span class="dux-stat-label">Projetos Web3</span>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="dux-featured-grid" id="featuredContent">
-                    <!-- Content loaded via JavaScript -->
+                <div class="dux-hero-illustration">
+                    <div class="dux-tech-window">
+                        <div class="dux-tech-icons">
+                            <span class="material-icons-round">memory</span>
+                            <span class="material-icons-round">data_object</span>
+                            <span class="material-icons-round">cloud</span>
+                            <span class="material-icons-round">developer_mode</span>
+                            <span class="material-icons-round">bolt</span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <!-- Free Resources by Category -->
-            <section class="dux-section">
+            <!-- Inteligência Artificial -->
+            <section class="dux-section" id="ia">
                 <div class="dux-section-header">
-                    <h2>Recursos Gratuitos</h2>
-                    <div class="dux-section-controls">
-                        <button class="dux-control-btn active" data-filter="all">Todos</button>
-                        <button class="dux-control-btn" data-filter="tutorials">Tutoriais</button>
-                        <button class="dux-control-btn" data-filter="ebooks">E-books</button>
-                        <button class="dux-control-btn" data-filter="tools">Ferramentas</button>
+                    <h2>Inteligência Artificial</h2>
+                    <p>Domine as tecnologias que estão moldando o futuro</p>
+                    <div class="dux-section-actions">
+                        <div class="dux-filter-tabs">
+                            <button class="dux-filter-tab active">Todos</button>
+                            <button class="dux-filter-tab">Machine Learning</button>
+                            <button class="dux-filter-tab">LLMs</button>
+                            <button class="dux-filter-tab">Computer Vision</button>
+                        </div>
+                        <button class="dux-view-all">
+                            Ver tudo
+                            <span class="material-icons-round">arrow_forward</span>
+                        </button>
                     </div>
                 </div>
                 
-                <div class="dux-resources-grid" id="resourcesContent">
-                    <!-- Content loaded via JavaScript -->
+                <div class="dux-ia-grid">
+                    <article class="dux-ia-card">
+                        <div class="dux-ia-badge">
+                            <span class="material-icons-round">smart_toy</span>
+                            LLMs
+                        </div>
+                        <div class="dux-ia-image" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                        <div class="dux-ia-content">
+                            <h3>Fine-tuning de Modelos LLM</h3>
+                            <p class="dux-ia-description">Aprenda a adaptar modelos de linguagem para domínios específicos</p>
+                            <div class="dux-ia-meta">
+                                <span class="dux-ia-level">Avançado</span>
+                                <span class="dux-ia-duration">
+                                    <span class="material-icons-round">schedule</span>
+                                    4h 20min
+                                </span>
+                            </div>
+                        </div>
+                        <button class="dux-ia-action">
+                            <span class="material-icons-round">play_circle</span>
+                            Acessar Curso
+                        </button>
+                    </article>
+                    
+                    <article class="dux-ia-card">
+                        <div class="dux-ia-badge">
+                            <span class="material-icons-round">visibility</span>
+                            Computer Vision
+                        </div>
+                        <div class="dux-ia-image" style="background-image: url('https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                        <div class="dux-ia-content">
+                            <h3>YOLOv8 na Prática</h3>
+                            <p class="dux-ia-description">Detecção de objetos em tempo real com o framework mais recente</p>
+                            <div class="dux-ia-meta">
+                                <span class="dux-ia-level">Intermediário</span>
+                                <span class="dux-ia-duration">
+                                    <span class="material-icons-round">schedule</span>
+                                    3h 15min
+                                </span>
+                            </div>
+                        </div>
+                        <button class="dux-ia-action">
+                            <span class="material-icons-round">play_circle</span>
+                            Acessar Curso
+                        </button>
+                    </article>
+                    
+                    <article class="dux-ia-card">
+                        <div class="dux-ia-badge">
+                            <span class="material-icons-round">trending_up</span>
+                            Machine Learning
+                        </div>
+                        <div class="dux-ia-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                        <div class="dux-ia-content">
+                            <h3>AutoML com PyCaret</h3>
+                            <p class="dux-ia-description">Automatize seu fluxo de Machine Learning sem escrever código complexo</p>
+                            <div class="dux-ia-meta">
+                                <span class="dux-ia-level">Iniciante</span>
+                                <span class="dux-ia-duration">
+                                    <span class="material-icons-round">schedule</span>
+                                    2h 45min
+                                </span>
+                            </div>
+                        </div>
+                        <button class="dux-ia-action">
+                            <span class="material-icons-round">play_circle</span>
+                            Acessar Curso
+                        </button>
+                    </article>
                 </div>
             </section>
 
-            <!-- Free Video Lessons -->
-            <section class="dux-section">
+            <!-- Web3 & Blockchain -->
+            <section class="dux-section dux-section-dark" id="web3">
                 <div class="dux-section-header">
-                    <h2>Videoaulas Gratuitas</h2>
-                    <div class="dux-video-filters">
+                    <h2>Web3 & Blockchain</h2>
+                    <p>Explore a próxima geração da internet descentralizada</p>
+                    <div class="dux-section-actions">
+                        <div class="dux-filter-tabs">
+                            <button class="dux-filter-tab active">Todos</button>
+                            <button class="dux-filter-tab">Smart Contracts</button>
+                            <button class="dux-filter-tab">DeFi</button>
+                            <button class="dux-filter-tab">NFTs</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dux-web3-grid">
+                    <article class="dux-web3-card">
+                        <div class="dux-web3-badge">
+                            <span class="material-icons-round">code</span>
+                            Solidity
+                        </div>
+                        <div class="dux-web3-content">
+                            <h3>Desenvolvimento de Smart Contracts</h3>
+                            <p class="dux-web3-description">Crie contratos inteligentes seguros e eficientes na Ethereum</p>
+                            <div class="dux-web3-meta">
+                                <span class="dux-web3-level">Intermediário</span>
+                                <span class="dux-web3-lessons">
+                                    <span class="material-icons-round">menu_book</span>
+                                    12 aulas
+                                </span>
+                            </div>
+                        </div>
+                        <div class="dux-web3-footer">
+                            <button class="dux-web3-action">
+                                <span class="material-icons-round">school</span>
+                                Certificado
+                            </button>
+                            <button class="dux-web3-action primary">
+                                <span class="material-icons-round">play_circle</span>
+                                Começar
+                            </button>
+                        </div>
+                    </article>
+                    
+                    <article class="dux-web3-card">
+                        <div class="dux-web3-badge">
+                            <span class="material-icons-round">currency_exchange</span>
+                            DeFi
+                        </div>
+                        <div class="dux-web3-content">
+                            <h3>Protocolos DeFi Avançados</h3>
+                            <p class="dux-web3-description">Entenda os mecanismos por trás dos principais protocolos financeiros</p>
+                            <div class="dux-web3-meta">
+                                <span class="dux-web3-level">Avançado</span>
+                                <span class="dux-web3-lessons">
+                                    <span class="material-icons-round">menu_book</span>
+                                    8 aulas
+                                </span>
+                            </div>
+                        </div>
+                        <div class="dux-web3-footer">
+                            <button class="dux-web3-action">
+                                <span class="material-icons-round">school</span>
+                                Certificado
+                            </button>
+                            <button class="dux-web3-action primary">
+                                <span class="material-icons-round">play_circle</span>
+                                Começar
+                            </button>
+                        </div>
+                    </article>
+                    
+                    <article class="dux-web3-card">
+                        <div class="dux-web3-badge">
+                            <span class="material-icons-round">image</span>
+                            NFTs
+                        </div>
+                        <div class="dux-web3-content">
+                            <h3>NFTs na Prática</h3>
+                            <p class="dux-web3-description">Da criação à comercialização de tokens não-fungíveis</p>
+                            <div class="dux-web3-meta">
+                                <span class="dux-web3-level">Iniciante</span>
+                                <span class="dux-web3-lessons">
+                                    <span class="material-icons-round">menu_book</span>
+                                    6 aulas
+                                </span>
+                            </div>
+                        </div>
+                        <div class="dux-web3-footer">
+                            <button class="dux-web3-action">
+                                <span class="material-icons-round">school</span>
+                                Certificado
+                            </button>
+                            <button class="dux-web3-action primary">
+                                <span class="material-icons-round">play_circle</span>
+                                Começar
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Cloud & DevOps -->
+            <section class="dux-section" id="cloud">
+                <div class="dux-section-header">
+                    <h2>Cloud & DevOps</h2>
+                    <p>Domine as tecnologias de infraestrutura moderna</p>
+                    <div class="dux-section-actions">
                         <div class="dux-filter-dropdown">
                             <button class="dux-filter-btn">
-                                <span>Categoria</span>
+                                <span>Todas Plataformas</span>
                                 <span class="material-icons-round">expand_more</span>
                             </button>
                             <div class="dux-filter-menu">
                                 <a href="#" data-category="all">Todas</a>
-                                <a href="#" data-category="programming">Programação</a>
-                                <a href="#" data-category="design">Design</a>
-                                <a href="#" data-category="data">Ciência de Dados</a>
+                                <a href="#" data-category="aws">AWS</a>
+                                <a href="#" data-category="azure">Azure</a>
+                                <a href="#" data-category="gcp">GCP</a>
                             </div>
                         </div>
-                        <a href="#" class="dux-view-all">Ver todas</a>
+                        <button class="dux-view-all">
+                            Ver tudo
+                            <span class="material-icons-round">arrow_forward</span>
+                        </button>
                     </div>
                 </div>
                 
-                <div class="dux-videos-grid" id="videosContent">
-                    <!-- Content loaded via JavaScript -->
+                <div class="dux-cloud-grid">
+                    <article class="dux-cloud-card">
+                        <div class="dux-cloud-provider aws">
+                            <span class="dux-cloud-icon">AWS</span>
+                        </div>
+                        <div class="dux-cloud-content">
+                            <h3>Arquitetura Serverless</h3>
+                            <p class="dux-cloud-description">Construa aplicações escaláveis com Lambda, API Gateway e DynamoDB</p>
+                            <div class="dux-cloud-meta">
+                                <span class="dux-cloud-level">Intermediário</span>
+                                <span class="dux-cloud-duration">
+                                    <span class="material-icons-round">schedule</span>
+                                    5h 10min
+                                </span>
+                            </div>
+                        </div>
+                        <button class="dux-cloud-action">
+                            <span class="material-icons-round">play_circle</span>
+                            Assistir
+                        </button>
+                    </article>
+                    
+                    <article class="dux-cloud-card">
+                        <div class="dux-cloud-provider gcp">
+                            <span class="dux-cloud-icon">GCP</span>
+                        </div>
+                        <div class="dux-cloud-content">
+                            <h3>Kubernetes Avançado</h3>
+                            <p class="dux-cloud-description">Orquestração de containers em produção com GKE</p>
+                            <div class="dux-cloud-meta">
+                                <span class="dux-cloud-level">Avançado</span>
+                                <span class="dux-cloud-duration">
+                                    <span class="material-icons-round">schedule</span>
+                                    6h 30min
+                                </span>
+                            </div>
+                        </div>
+                        <button class="dux-cloud-action">
+                            <span class="material-icons-round">play_circle</span>
+                            Assistir
+                        </button>
+                    </article>
+                    
+                    <article class="dux-cloud-card">
+                        <div class="dux-cloud-provider azure">
+                            <span class="dux-cloud-icon">Azure</span>
+                        </div>
+                        <div class="dux-cloud-content">
+                            <h3>DevOps com Azure Pipelines</h3>
+                            <p class="dux-cloud-description">CI/CD automatizado para suas aplicações</p>
+                            <div class="dux-cloud-meta">
+                                <span class="dux-cloud-level">Intermediário</span>
+                                <span class="dux-cloud-duration">
+                                    <span class="material-icons-round">schedule</span>
+                                    4h 15min
+                                </span>
+                            </div>
+                        </div>
+                        <button class="dux-cloud-action">
+                            <span class="material-icons-round">play_circle</span>
+                            Assistir
+                        </button>
+                    </article>
                 </div>
             </section>
 
-            <!-- Newsletter Section -->
-            <section class="dux-newsletter">
-                <div class="dux-newsletter-content">
-                    <div class="dux-newsletter-text">
-                        <h3>Receba conteúdos exclusivos</h3>
-                        <p>Inscreva-se para receber os melhores materiais gratuitos diretamente no seu email</p>
-                    </div>
-                    <form class="dux-newsletter-form">
-                        <input type="email" placeholder="Seu melhor email" required>
-                        <button type="submit" class="dux-accent-btn">
-                            <span class="material-icons-round">send</span>
-                            Assinar
+            <!-- Tech Radar -->
+            <section class="dux-section dux-section-radar">
+                <div class="dux-radar-container">
+                    <div class="dux-radar-content">
+                        <h2>Tech Radar 2024</h2>
+                        <p>As tecnologias que você precisa conhecer este ano, categorizadas por estágio de adoção</p>
+                        
+                        <div class="dux-radar-rings">
+                            <div class="dux-radar-ring">
+                                <h4>Adotar</h4>
+                                <ul>
+                                    <li>Rust</li>
+                                    <li>Wasm</li>
+                                    <li>GPT-4</li>
+                                </ul>
+                            </div>
+                            <div class="dux-radar-ring">
+                                <h4>Avaliar</h4>
+                                <ul>
+                                    <li>Blockchain DBs</li>
+                                    <li>Quantum ML</li>
+                                    <li>AI Agents</li>
+                                </ul>
+                            </div>
+                            <div class="dux-radar-ring">
+                                <h4>Observar</h4>
+                                <ul>
+                                    <li>Neuromorphic Chips</li>
+                                    <li>WebAssembly OS</li>
+                                    <li>6G Networks</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <button class="dux-primary-btn">
+                            <span class="material-icons-round">insights</span>
+                            Ver Relatório Completo
                         </button>
-                    </form>
+                    </div>
+                    
+                    <div class="dux-radar-visual">
+                        <div class="dux-radar-chart">
+                            <!-- Aqui viria uma representação visual do radar -->
+                            <div class="dux-radar-axis"></div>
+                            <div class="dux-radar-axis"></div>
+                            <div class="dux-radar-axis"></div>
+                            <div class="dux-radar-ring-circle adopt"></div>
+                            <div class="dux-radar-ring-circle trial"></div>
+                            <div class="dux-radar-ring-circle observe"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Artigos Técnicos -->
+            <section class="dux-section" id="artigos">
+                <div class="dux-section-header">
+                    <h2>Artigos Técnicos</h2>
+                    <p>Análises profundas das tendências e tecnologias emergentes</p>
+                    <div class="dux-section-actions">
+                        <button class="dux-view-all">
+                            Ver todos artigos
+                            <span class="material-icons-round">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="dux-articles-grid">
+                    <article class="dux-article-card">
+                        <div class="dux-article-image" style="background-image: url('https://images.unsplash.com/photo-1677442135136-760c813a743d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                        <div class="dux-article-content">
+                            <div class="dux-article-meta">
+                                <span class="dux-article-category">Edge Computing</span>
+                                <span class="dux-article-date">15/06/2023</span>
+                            </div>
+                            <h3>O Futuro da Computação na Borda</h3>
+                            <p class="dux-article-excerpt">Como a descentralização da computação está revolucionando aplicações de baixa latência...</p>
+                            <div class="dux-article-footer">
+                                <span class="dux-article-author">
+                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Juliana Oliveira" width="24" height="24">
+                                    Juliana Oliveira
+                                </span>
+                                <button class="dux-article-read">
+                                    <span class="material-icons-round">arrow_forward</span>
+                                    Ler Artigo
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="dux-article-card">
+                        <div class="dux-article-image" style="background-image: url('https://images.unsplash.com/photo-1635070041407-47464c873952?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                        <div class="dux-article-content">
+                            <div class="dux-article-meta">
+                                <span class="dux-article-category">Quantum Computing</span>
+                                <span class="dux-article-date">10/06/2023</span>
+                            </div>
+                            <h3>Algoritmos Quânticos para Devs</h3>
+                            <p class="dux-article-excerpt">Introdução prática aos conceitos quânticos que todo desenvolvedor deveria conhecer...</p>
+                            <div class="dux-article-footer">
+                                <span class="dux-article-author">
+                                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Pedro Alves" width="24" height="24">
+                                    Pedro Alves
+                                </span>
+                                <button class="dux-article-read">
+                                    <span class="material-icons-round">arrow_forward</span>
+                                    Ler Artigo
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="dux-article-card">
+                        <div class="dux-article-image" style="background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                        <div class="dux-article-content">
+                            <div class="dux-article-meta">
+                                <span class="dux-article-category">Sustainable Tech</span>
+                                <span class="dux-article-date">05/06/2023</span>
+                            </div>
+                            <h3>Tecnologia Verde: Otimizando Código para Redução de CO2</h3>
+                            <p class="dux-article-excerpt">Como práticas de desenvolvimento podem impactar positivamente o meio ambiente...</p>
+                            <div class="dux-article-footer">
+                                <span class="dux-article-author">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Amanda Silva" width="24" height="24">
+                                    Amanda Silva
+                                </span>
+                                <button class="dux-article-read">
+                                    <span class="material-icons-round">arrow_forward</span>
+                                    Ler Artigo
+                                </button>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </section>
         </main>
-
-        <!-- User Menu (Hidden by default) -->
-        <div class="dux-user-menu">
-            <div class="dux-menu-header">
-                <div class="dux-avatar">JD</div>
-                <div class="dux-user-info">
-                    <h4>John Doe</h4>
-                    <p>john.doe@example.com</p>
-                </div>
-                <button class="dux-close-menu">
-                    <span class="material-icons-round">close</span>
-                </button>
-            </div>
-            <nav class="dux-menu-nav">
-                <a href="#" class="dux-menu-item">
-                    <span class="material-icons-round">home</span>
-                    Página Inicial
-                </a>
-                <a href="#" class="dux-menu-item">
-                    <span class="material-icons-round">store</span>
-                    Marketplace
-                </a>
-                <a href="#" class="dux-menu-item">
-                    <span class="material-icons-round">account_circle</span>
-                    Meu Perfil
-                </a>
-                <a href="#" class="dux-menu-item">
-                    <span class="material-icons-round">settings</span>
-                    Configurações
-                </a>
-                <a href="#" class="dux-menu-item">
-                    <span class="material-icons-round">bookmark</span>
-                    Salvos
-                </a>
-                <a href="#" class="dux-menu-item">
-                    <span class="material-icons-round">history</span>
-                    Histórico
-                </a>
-                <a href="#" class="dux-menu-item">
-                    <span class="material-icons-round">help</span>
-                    Ajuda
-                </a>
-                <a href="#" class="dux-menu-item">
-                    <span class="material-icons-round">logout</span>
-                    Sair
-                </a>
-            </nav>
-        </div>
-
-        <!-- Search Modal -->
-        <div class="dux-search-modal">
-            <div class="dux-search-modal-content">
-                <div class="dux-search-header">
-                    <span class="material-icons-round">search</span>
-                    <input type="text" placeholder="Buscar tutoriais, cursos, e-books...">
-                    <button class="dux-close-search">
-                        <span class="material-icons-round">close</span>
-                    </button>
-                </div>
-                <div class="dux-search-results">
-                    <div class="dux-search-suggestions">
-                        <h4>Sugestões de busca</h4>
-                        <div class="dux-suggestion-tags">
-                            <a href="#">JavaScript</a>
-                            <a href="#">React</a>
-                            <a href="#">UI Design</a>
-                            <a href="#">Python</a>
-                            <a href="#">CSS Avançado</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Elementos DOM
-            const userProfile = document.querySelector('.dux-user-profile');
-            const userMenu = document.querySelector('.dux-user-menu');
-            const closeMenuBtn = document.querySelector('.dux-close-menu');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elementos globais (mantidos do main.html)
+            const body = document.body;
+            const menuToggle = document.querySelector('.dux-menu-toggle');
+            const navMenu = document.querySelector('.dux-main-nav');
+            const themeToggle = document.querySelector('.dux-theme-toggle');
+            const profileButton = document.querySelector('.dux-user-profile');
+            const profileMenu = document.querySelector('.dux-profile-menu');
             const searchBtn = document.querySelector('.dux-search-btn');
-            const searchModal = document.querySelector('.dux-search-modal');
-            const closeSearchBtn = document.querySelector('.dux-close-search');
-            const categoryItems = document.querySelectorAll('.dux-category-item');
-            const controlBtns = document.querySelectorAll('.dux-control-btn');
-            const viewToggles = document.querySelectorAll('.dux-view-toggle');
-            const featuredGrid = document.querySelector('.dux-featured-grid');
-        
-            // Dados de exemplo (em um projeto real, viriam de uma API)
-            const featuredContent = [
-                {
-                    id: 1,
-                    title: "Guia Completo de JavaScript Moderno",
-                    description: "Domine as técnicas mais recentes de desenvolvimento web com este guia completo.",
-                    category: "courses",
-                    type: "Vídeo",
-                    duration: "2h de conteúdo",
-                    difficulty: "intermediate",
-                    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-                    badge: "NOVO",
-                    badgeType: "new"
-                },
-                {
-                    id: 2,
-                    title: "Design UI/UX para Iniciantes",
-                    description: "Fundamentos essenciais para criar interfaces incríveis.",
-                    category: "tutorials",
-                    type: "Artigo",
-                    duration: "1h 30min",
-                    difficulty: "beginner",
-                    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-                    badge: "POPULAR",
-                    badgeType: "popular"
-                },
-                {
-                    id: 3,
-                    title: "Python para Análise de Dados",
-                    description: "Aprenda a manipular dados com Pandas e NumPy como um profissional.",
-                    category: "ebooks",
-                    type: "E-book",
-                    duration: "42 páginas",
-                    difficulty: "intermediate",
-                    image: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-                    badge: "RECOMENDADO",
-                    badgeType: "recommended"
-                }
-            ];
-        
-            const resourcesContent = [
-                {
-                    id: 1,
-                    title: "HTML5 e CSS3 Essencial",
-                    description: "Aprenda os fundamentos do desenvolvimento web front-end.",
-                    category: "tutorials",
-                    type: "Tutorial",
-                    difficulty: "beginner",
-                    pages: "15 páginas",
-                    image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                },
-                {
-                    id: 2,
-                    title: "Coleção de Snippets React",
-                    description: "Códigos prontos para acelerar seu desenvolvimento com React.",
-                    category: "snippets",
-                    type: "Ferramenta",
-                    difficulty: "advanced",
-                    files: "28 snippets",
-                    image: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                },
-                {
-                    id: 3,
-                    title: "Guia de SEO para Devs",
-                    description: "Técnicas de otimização para motores de busca para desenvolvedores.",
-                    category: "tutorials",
-                    type: "Tutorial",
-                    difficulty: "intermediate",
-                    pages: "22 páginas",
-                    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                },
-                {
-                    id: 4,
-                    title: "Padrões de Design em JavaScript",
-                    description: "Aprenda os principais padrões de projeto aplicados em JS.",
-                    category: "ebooks",
-                    type: "E-book",
-                    difficulty: "advanced",
-                    pages: "36 páginas",
-                    image: "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                }
-            ];
-        
-            const videosContent = [
-                {
-                    id: 1,
-                    title: "Introdução ao JavaScript Moderno",
-                    instructor: "João Silva",
-                    category: "programming",
-                    duration: "12:45",
-                    views: "15.2k visualizações",
-                    date: "2 dias atrás",
-                    thumbnail: "https://i.ytimg.com/vi/PkZNo7MFNFg/hqdefault.jpg",
-                },
-                {
-                    id: 2,
-                    title: "Dominando CSS Grid Layout",
-                    instructor: "Maria Oliveira",
-                    category: "design",
-                    duration: "18:30",
-                    views: "8.7k visualizações",
-                    date: "1 semana atrás",
-                    thumbnail: "https://i.ytimg.com/vi/1Rs2ND1ryYc/hqdefault.jpg"
-                },
-                {
-                    id: 3,
-                    title: "Funções em Python - Do Básico ao Avançado",
-                    instructor: "Carlos Mendes",
-                    category: "programming",
-                    duration: "22:15",
-                    views: "12.1k visualizações",
-                    date: "3 dias atrás",
-                    thumbnail: "https://i.ytimg.com/vi/7ghhRHRP6t4/hqdefault.jpg"
-                },
-                {
-                    id: 4,
-                    title: "Análise de Dados com Pandas",
-                    instructor: "Ana Santos",
-                    category: "data",
-                    duration: "15:40",
-                    views: "5.3k visualizações",
-                    date: "5 dias atrás",
-                    thumbnail: "https://i.ytimg.com/vi/daefaLgNkw0/hqdefault.jpg"
-                }
-            ];
-        
-            // Funções de renderização
-            function renderFeaturedContent() {
-                featuredGrid.innerHTML = '';
-                featuredContent.forEach(item => {
-                    const card = document.createElement('div');
-                    card.className = `dux-featured-card ${item.id === 1 ? 'large' : ''}`;
-                    card.dataset.category = item.category;
-                    let badgeClass = '';
-                    if (item.badgeType === 'popular') badgeClass = 'bestseller';
-                    else if (item.badgeType === 'recommended') badgeClass = 'recommended';
-                    card.innerHTML = `
-                        ${item.badge ? `<div class="dux-card-badge ${badgeClass}">${item.badge}</div>` : ''}
-                        <div class="dux-card-image" style="background-image: url('${item.image}')"></div>
-                        <div class="dux-card-content">
-                            <h3>${item.title}</h3>
-                            <p class="dux-card-description">${item.description}</p>
-                            <div class="dux-card-meta">
-                                <span class="dux-card-tag">${item.type}</span>
-                                <span class="dux-card-duration">
-                                    <span class="material-icons-round">schedule</span>
-                                    ${item.duration}
-                                </span>
-                            </div>
-                            <button class="dux-card-btn">
-                                <span class="material-icons-round">${item.category === 'courses' ? 'play_circle' : 'download'}</span>
-                                ${item.category === 'courses' ? 'Assistir' : 'Baixar'}
-                            </button>
-                        </div>
-                    `;
-                    featuredGrid.appendChild(card);
-                });
+            const navLinks = document.querySelectorAll('.dux-nav-item a');
+            
+            // Estado do tema
+            let isDarkTheme = localStorage.getItem('darkTheme') === 'true';
+            
+            // Aplicar tema salvo
+            if (isDarkTheme) {
+                body.classList.add('dark-theme');
+                updateThemeToggle(true);
             }
-        
-            function renderResourcesContent(filter = 'all') {
-                const resourcesGrid = document.getElementById('resourcesContent');
-                resourcesGrid.innerHTML = '';
-                const filteredContent = filter === 'all'
-                    ? resourcesContent
-                    : resourcesContent.filter(item => item.category === filter);
-        
-                filteredContent.forEach(item => {
-                    const card = document.createElement('div');
-                    card.className = 'dux-resource-card';
-                    card.dataset.category = item.category;
-                    card.innerHTML = `
-                        <div class="dux-resource-image" style="background-image: url('${item.image}')"></div>
-                        <div class="dux-resource-info">
-                            <h3>${item.title}</h3>
-                            <p class="dux-resource-type">${item.type}</p>
-                            <div class="dux-resource-meta">
-                                <span class="dux-resource-difficulty ${item.difficulty}">
-                                    ${item.difficulty === 'beginner' ? 'Iniciante' :
-                                      item.difficulty === 'intermediate' ? 'Intermediário' : 'Avançado'}
-                                </span>
-                                <span class="dux-resource-${item.pages ? 'pages' : 'files'}">
-                                    ${item.pages || item.files}
-                                </span>
-                            </div>
-                            <button class="dux-resource-btn">
-                                <span class="material-icons-round">
-                                    ${item.type === 'E-book' ? 'menu_book' :
-                                      item.type === 'Ferramenta' ? 'code' : 'file_download'}
-                                </span>
-                                ${item.type === 'E-book' ? 'Ler Online' :
-                                  item.type === 'Ferramenta' ? 'Copiar' : 'Baixar'}
-                            </button>
-                        </div>
-                    `;
-                    resourcesGrid.appendChild(card);
-                });
+            
+            // Menu mobile
+            menuToggle.addEventListener('click', () => {
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+                navMenu.classList.toggle('active');
+                
+                // Fechar menu de perfil se aberto
+                if (profileMenu.classList.contains('active')) {
+                    profileMenu.classList.remove('active');
+                    profileButton.setAttribute('aria-expanded', 'false');
+                }
+            });
+            
+            // Alternância de tema
+            themeToggle.addEventListener('click', () => {
+                isDarkTheme = !isDarkTheme;
+                body.classList.toggle('dark-theme');
+                localStorage.setItem('darkTheme', isDarkTheme);
+                updateThemeToggle(isDarkTheme);
+            });
+            
+            function updateThemeToggle(isDark) {
+                themeToggle.setAttribute('aria-label', isDark ? 'Alternar para tema claro' : 'Alternar para tema escuro');
+                themeToggle.innerHTML = isDark ? '<span class="material-icons-round">light_mode</span>' : '<span class="material-icons-round">dark_mode</span>';
             }
-        
-            function renderVideosContent(filter = 'all') {
-                const videosGrid = document.getElementById('videosContent');
-                videosGrid.innerHTML = '';
-                const filteredContent = filter === 'all'
-                    ? videosContent
-                    : videosContent.filter(item => item.category === filter);
-        
-                filteredContent.forEach(item => {
-                    const card = document.createElement('div');
-                    card.className = 'dux-video-card';
-                    card.dataset.category = item.category;
-                    card.innerHTML = `
-                        <div class="dux-video-thumbnail">
-                            <img src="${item.thumbnail}" alt="${item.title}">
-                            <div class="dux-play-button">
-                                <span class="material-icons-round">play_circle</span>
-                            </div>
-                            <span class="dux-duration">${item.duration}</span>
-                        </div>
-                        <div class="dux-video-info">
-                            <h3>${item.title}</h3>
-                            <p class="dux-video-instructor">${item.instructor}</p>
-                            <div class="dux-video-meta">
-                                <span class="dux-views">${item.views}</span>
-                                <span class="dux-date">${item.date}</span>
-                            </div>
-                        </div>
-                    `;
-                    videosGrid.appendChild(card);
+            
+            // Menu de perfil
+            profileButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isExpanded = profileButton.getAttribute('aria-expanded') === 'true';
+                profileButton.setAttribute('aria-expanded', !isExpanded);
+                profileMenu.classList.toggle('active');
+                
+                // Fechar menu de navegação se aberto
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+            
+            // Fechar menus ao clicar fora
+            document.addEventListener('click', (e) => {
+                // Fechar menu de perfil
+                if (!profileMenu.contains(e.target) && e.target !== profileButton) {
+                    profileMenu.classList.remove('active');
+                    profileButton.setAttribute('aria-expanded', 'false');
+                }
+                
+                // Fechar menu de navegação
+                if (!navMenu.contains(e.target) && e.target !== menuToggle) {
+                    navMenu.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+            
+            // Fechar menus ao pressionar Esc
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    profileMenu.classList.remove('active');
+                    profileButton.setAttribute('aria-expanded', 'false');
+                    navMenu.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Filtro dropdown
+            const filterBtn = document.querySelector('.dux-filter-btn');
+            const filterMenu = document.querySelector('.dux-filter-menu');
+            
+            filterBtn.addEventListener('click', () => {
+                filterMenu.classList.toggle('active');
+            });
+            
+            document.addEventListener('click', (e) => {
+                if (!filterBtn.contains(e.target) && !filterMenu.contains(e.target)) {
+                    filterMenu.classList.remove('active');
+                }
+            });
+            
+            filterMenu.querySelectorAll('a').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const category = item.dataset.category;
+                    filterBtn.querySelector('span').textContent = item.textContent;
+                    filterMenu.classList.remove('active');
+                    // Aqui você implementaria a filtragem dos conteúdos
+                    console.log(`Filtrar por: ${category}`);
                 });
-            }
-        
-            // Filtros de categoria
-            controlBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    controlBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    const filter = btn.dataset.filter;
-                    renderResourcesContent(filter);
+            });
+
+            // Filtros de IA
+            const iaFilterTabs = document.querySelectorAll('#ia .dux-filter-tab');
+            iaFilterTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    iaFilterTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    // Filtragem de conteúdos de IA
+                    console.log(`Filtrar IA por: ${tab.textContent}`);
                 });
             });
-        
-            // Alternância de visualização
-            viewToggles.forEach(toggle => {
-                toggle.addEventListener('click', () => {
-                    viewToggles.forEach(t => t.classList.remove('active'));
-                    toggle.classList.add('active');
-                    const view = toggle.dataset.view;
-                    const grid = document.querySelector('.dux-featured-grid');
-                    grid.classList.toggle('list-view', view === 'list');
+
+            // Filtros de Web3
+            const web3FilterTabs = document.querySelectorAll('#web3 .dux-filter-tab');
+            web3FilterTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    web3FilterTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    // Filtragem de conteúdos de Web3
+                    console.log(`Filtrar Web3 por: ${tab.textContent}`);
                 });
             });
-        
-            // Menu de usuário
-            userProfile.addEventListener('click', () => {
-                userMenu.classList.add('active');
+            
+            // Scroll suave para seções
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const targetId = link.getAttribute('href');
+                    if (targetId.startsWith('#')) {
+                        e.preventDefault();
+                        
+                        // Fechar menu mobile se aberto
+                        if (navMenu.classList.contains('active')) {
+                            navMenu.classList.remove('active');
+                            menuToggle.setAttribute('aria-expanded', 'false');
+                        }
+                        
+                        const targetSection = document.querySelector(targetId);
+                        if (targetSection) {
+                            targetSection.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                            
+                            // Atualizar item ativo na navegação
+                            navLinks.forEach(lnk => lnk.parentElement.classList.remove('active'));
+                            link.parentElement.classList.add('active');
+                        }
+                    }
+                });
             });
-        
-            closeMenuBtn.addEventListener('click', () => {
-                userMenu.classList.remove('active');
-            });
-        
-            // Modal de busca
-            searchBtn.addEventListener('click', () => {
-                searchModal.classList.add('active');
-            });
-        
-            closeSearchBtn.addEventListener('click', () => {
-                searchModal.classList.remove('active');
-            });
-        
-            // Renderização inicial
-            renderFeaturedContent();
-            renderResourcesContent();
-            renderVideosContent();
         });
     </script>
 </body>
