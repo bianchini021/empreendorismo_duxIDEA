@@ -3,372 +3,847 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DUX Marketplace - Encontre os melhores produtos e cursos para desenvolvedores">
     <title>DUX | Marketplace</title>
+    
+    <!-- Preload de recursos -->
+    <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" as="style">
+    
+    <!-- Fontes e ícones -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="./css/marketplace.css">
+     <link rel="stylesheet" href="./css/main.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/dux-favicon.svg" type="image/svg+xml">
 </head>
 <body>
-    <div class="marketplace-container">
-        <!-- Top Navigation Bar -->
-        <header class="marketplace-header">
-            <div class="header-content">
-                <!-- Menu Toggle (mobile) -->
-                <button class="menu-toggle">
+    <div class="dux-app">
+        <!-- Top Navigation -->
+        <header class="dux-header">
+            <div class="dux-header-container">
+                <button class="dux-menu-toggle" aria-label="Menu principal">
                     <span class="material-icons-round">menu</span>
                 </button>
                 
-                <!-- Logo -->
-                <div class="logo-container">
-                    <img src="./image/duxLogo-removebg-preview.png" alt="DUX Marketplace" class="logo">
-                </div>
+                <a href="#" class="dux-brand">
+                    <svg class="dux-logo-icon" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 0L0 16L16 32L32 16L16 0Z" fill="#4361EE"/>
+                        <path d="M16 8L8 16L16 24L24 16L16 8Z" fill="#FFFFFF"/>
+                    </svg>
+                    <span class="dux-brand-text">DUX</span>
+                </a>
 
-                <!-- User Controls -->
-                <div class="user-controls">
-                    <div class="search-container">
-                        <div class="search-input">
-                            <input type="text" placeholder="Buscar produtos...">
-                            <button class="search-btn">
-                                <span class="material-icons-round">search</span>
-                            </button>
-                        </div>
-                        <button class="filter-btn">
-                            <span class="material-icons-round">tune</span>
-                        </button>
+                <nav class="dux-main-nav" aria-label="Navegação principal">
+                    <div class="dux-nav-scroller">
+                        <ul class="dux-nav-list">
+                            <li class="dux-nav-item">
+                                <a href="./main.html">
+                                    <span class="material-icons-round">home</span>
+                                    Início
+                                </a>
+                            </li>
+                            <li class="dux-nav-item">
+                                <a href="#labs">
+                                    <span class="material-icons-round">science</span>
+                                    Labs
+                                </a>
+                            </li>
+                            <li class="dux-nav-item">
+                                <a href="#projetos">
+                                    <span class="material-icons-round">rocket_launch</span>
+                                    Projetos
+                                </a>
+                            </li>
+                            <li class="dux-nav-item">
+                                <a href="#trilhas">
+                                    <span class="material-icons-round">route</span>
+                                    Trilhas
+                                </a>
+                            </li>
+                            <li class="dux-nav-item">
+                                <a href="#comunidade">
+                                    <span class="material-icons-round">groups</span>
+                                    Comunidade
+                                </a>
+                            </li>
+                            <li class="dux-nav-item active">
+                                <a href="./marketplace.html" aria-current="page">
+                                    <span class="material-icons-round">store</span>
+                                    Marketplace
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                    <button class="cart-btn">
-                        <span class="material-icons-round">shopping_cart</span>
-                        <span class="cart-count">0</span>
+                </nav>
+
+                <div class="dux-user-controls">
+                    <button class="dux-search-btn" aria-label="Buscar">
+                        <span class="material-icons-round">search</span>
                     </button>
-                    <div class="user-profile">
-                        <div class="avatar">JD</div>
-                        <span class="material-icons-round">expand_more</span>
-                    </div>
+                    <button class="dux-theme-toggle" aria-label="Alternar tema">
+                        <span class="material-icons-round">dark_mode</span>
+                    </button>
+                    <button class="dux-user-profile" aria-label="Perfil do usuário">
+                        <div class="dux-avatar">JD</div>
+                    </button>
                 </div>
             </div>
 
-            <!-- Categories Bar -->
-            <nav class="categories-bar">
-                <ul class="categories-list">
-                    <li class="category-item active">
-                        <a href="#">
-                            <span class="material-icons-round">home</span>
-                            Início
+            <!-- Menu de Perfil -->
+            <div class="dux-profile-menu">
+                <div class="dux-profile-menu-header">
+                    <div class="dux-avatar">JD</div>
+                    <div class="dux-profile-user">
+                        <div class="dux-profile-name">John Doe</div>
+                        <div class="dux-profile-email">john.doe@example.com</div>
+                    </div>
+                </div>
+                <ul class="dux-profile-menu-list">
+                    <li class="dux-profile-menu-item">
+                        <a href="./library.html" class="menu-item">
+                            <span class="material-icons-round">local_library</span>
+                            Biblioteca
                         </a>
                     </li>
-                    <li class="category-item">
-                        <a href="#">
-                            <span class="material-icons-round">laptop</span>
-                            Tecnologia
+                    <li class="dux-profile-menu-item">
+                        <a href="./comunity.html" class="menu-item">
+                            <span class="material-icons-round">connect_without_contact</span>
+                            Comunidade
                         </a>
                     </li>
-                    <li class="category-item">
-                        <a href="">
-                            <span class="material-icons-round">menu_book</span>
-                            Livros
+                    <li class="dux-profile-menu-item">
+                        <a href="./gallery.html" class="menu-item">
+                            <span class="material-icons-round">photo_library</span>
+                            Galeria
                         </a>
                     </li>
-                    <li class="category-item">
-                        <a href="#">
-                            <span class="material-icons-round">school</span>
-                            Cursos
+                    <li class="dux-profile-menu-item active">
+                        <a href="./marketplace.html" class="menu-item" aria-current="page">
+                            <span class="material-icons-round">store</span>
+                            Marketplace
                         </a>
                     </li>
-                    <li class="category-item">
-                        <a href="#">
-                            <span class="material-icons-round">devices</span>
-                            Eletrônicos
+                    <li class="dux-profile-menu-item">
+                        <a href="./profile.html" class="menu-item">
+                            <span class="material-icons-round">account_circle</span>
+                            Meu Perfil
                         </a>
                     </li>
-                    <li class="category-item">
-                        <a href="#">
-                            <span class="material-icons-round">style</span>
-                            Acessórios
+                    <li class="dux-profile-menu-item">
+                        <a href="#" class="menu-item">
+                            <span class="material-icons-round">settings</span>
+                            Configurações
                         </a>
                     </li>
                 </ul>
-            </nav>
+                <div class="dux-profile-menu-footer">
+                    <a href="./index.html" class="dux-secondary-btn" style="width: 100%; text-align: center; display: block;">
+                        <span class="material-icons-round">logout</span>
+                        Sair
+                    </a>
+                </div>
+            </div>
         </header>
 
         <!-- Main Content -->
-        <main class="marketplace-main">
-            <!-- Side Menu (Left) - Updated to match gallery style -->
-            <aside class="side-menu">
-                <div class="brand">
-                    <img src="./image/duxLogo-removebg-preview.png" alt="Logo DUX" class="logo">
-                </div>
-                <nav class="main-nav">
-                    <ul class="nav-list">
-                        <li class="nav-item active">
-                            <a href="#">
-                                <span class="material-icons-round">receipt</span>
-                                <span class="nav-text">Meus Pedidos</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./favorites.html">
-                                <span class="material-icons-round">favorite</span>
-                                <span class="nav-text">Favoritos</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./discounts.html">
-                                <span class="material-icons-round">local_offer</span>
-                                <span class="nav-text">Descontos</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#">
-                                <span class="material-icons-round">history</span>
-                                <span class="nav-text">Histórico</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#">
-                                <span class="material-icons-round">payments</span>
-                                <span class="nav-text">Pagamentos</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#">
-                                <span class="material-icons-round">settings</span>
-                                <span class="nav-text">Configurações</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </aside>
-
-            <!-- Products Grid -->
-            <div class="products-container">
-                <!-- Featured Banner -->
-                <section class="featured-banner">
-                    <div class="banner-content">
-                        <h2>Ofertas Especiais</h2>
-                        <p>Até 50% de desconto em cursos selecionados</p>
-                        <button class="banner-btn">Ver Ofertas</button>
-                    </div>
-                </section>
-
-                <!-- Products Grid -->
-                <section class="products-grid">
-                    <h2 class="section-title">Produtos em Destaque</h2>
+        <main class="dux-main">
+            <!-- Hero Section do Marketplace -->
+            <section class="dux-hero dux-hero-marketplace">
+                <div class="dux-hero-content">
+                    <h1 class="dux-hero-title">DUX <span class="dux-highlight">Marketplace</span></h1>
+                    <p class="dux-hero-subtitle">Encontre os melhores recursos, cursos e ferramentas para impulsionar seu aprendizado e desenvolvimento</p>
                     
-                    <div class="products-row">
-                        <!-- Product Card 1 -->
-                        <div class="product-card">
-                            <div class="product-badge">-20%</div>
-                            <div class="product-image" style="background-color: #2962ff;">
+                    <div class="dux-hero-search">
+                        <div class="dux-search-input">
+                            <span class="material-icons-round">search</span>
+                            <input type="text" placeholder="Buscar produtos, cursos, livros...">
+                            <button class="dux-primary-btn">
+                                Buscar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="dux-hero-stats">
+                        <div class="dux-stat-item">
+                            <span class="dux-stat-number">1.5k+</span>
+                            <span class="dux-stat-label">Produtos</span>
+                        </div>
+                        <div class="dux-stat-item">
+                            <span class="dux-stat-number">300+</span>
+                            <span class="dux-stat-label">Cursos</span>
+                        </div>
+                        <div class="dux-stat-item">
+                            <span class="dux-stat-number">4.8</span>
+                            <span class="dux-stat-label">Avaliação média</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dux-hero-illustration">
+                    <div class="dux-marketplace-illustration">
+                        <div class="dux-product-card-sample">
+                            <div class="dux-product-badge">-30%</div>
+                            <div class="dux-product-image" style="background-color: #4361ee;">
                                 <span class="material-icons-round">laptop</span>
                             </div>
-                            <div class="product-info">
-                                <h3>Notebook Avançado</h3>
-                                <div class="product-price">
-                                    <span class="current-price">R$ 3.599,90</span>
-                                    <span class="original-price">R$ 4.499,90</span>
+                            <div class="dux-product-info">
+                                <h4>Novo Notebook Pro</h4>
+                                <div class="dux-product-price">
+                                    <span class="current">R$ 3.599</span>
+                                    <span class="original">R$ 4.999</span>
                                 </div>
-                                <div class="product-rating">
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star_half</span>
-                                    <span>(128)</span>
-                                </div>
-                                <button class="add-to-cart">
-                                    <span class="material-icons-round">add_shopping_cart</span>
-                                    Adicionar
-                                </button>
                             </div>
                         </div>
-        
-                        <!-- Product Card 2 -->
-                        <div class="product-card">
-                            <div class="product-image" style="background-color: #00bfa5;">
+                        <div class="dux-product-card-sample">
+                            <div class="dux-product-image" style="background-color: #3a0ca3;">
                                 <span class="material-icons-round">menu_book</span>
                             </div>
-                            <div class="product-info">
-                                <h3>Livro: Design Patterns</h3>
-                                <div class="product-price">
-                                    <span class="current-price">R$ 89,90</span>
+                            <div class="dux-product-info">
+                                <h4>Livro: Clean Code</h4>
+                                <div class="dux-product-price">
+                                    <span class="current">R$ 89,90</span>
                                 </div>
-                                <div class="product-rating">
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span>(64)</span>
-                                </div>
-                                <button class="add-to-cart">
-                                    <span class="material-icons-round">add_shopping_cart</span>
-                                    Adicionar
-                                </button>
                             </div>
                         </div>
-                        
-                        <!-- Product Card 3 - Novo -->
-                        <div class="product-card">
-                            <div class="product-badge">-15%</div>
-                            <div class="product-image" style="background-color: #ff6d00;">
-                                <span class="material-icons-round">smartphone</span>
-                            </div>
-                            <div class="product-info">
-                                <h3>Smartphone Premium</h3>
-                                <div class="product-price">
-                                    <span class="current-price">R$ 2.799,90</span>
-                                    <span class="original-price">R$ 3.299,90</span>
-                                </div>
-                                <div class="product-rating">
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star_half</span>
-                                    <span>(215)</span>
-                                </div>
-                                <button class="add-to-cart">
-                                    <span class="material-icons-round">add_shopping_cart</span>
-                                    Adicionar
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <!-- Product Card 4 - Novo -->
-                        <div class="product-card">
-                            <div class="product-image" style="background-color: #9c27b0;">
+                        <div class="dux-product-card-sample">
+                            <div class="dux-product-badge">LANÇAMENTO</div>
+                            <div class="dux-product-image" style="background-color: #7209b7;">
                                 <span class="material-icons-round">headphones</span>
                             </div>
-                            <div class="product-info">
-                                <h3>Fones Bluetooth</h3>
-                                <div class="product-price">
-                                    <span class="current-price">R$ 249,90</span>
+                            <div class="dux-product-info">
+                                <h4>Fones Premium</h4>
+                                <div class="dux-product-price">
+                                    <span class="current">R$ 499</span>
                                 </div>
-                                <div class="product-rating">
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span>(178)</span>
-                                </div>
-                                <button class="add-to-cart">
-                                    <span class="material-icons-round">add_shopping_cart</span>
-                                    Adicionar
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <!-- Product Card 5 - Novo -->
-                        <div class="product-card">
-                            <div class="product-badge">-30%</div>
-                            <div class="product-image" style="background-color: #4caf50;">
-                                <span class="material-icons-round">watch</span>
-                            </div>
-                            <div class="product-info">
-                                <h3>Smartwatch</h3>
-                                <div class="product-price">
-                                    <span class="current-price">R$ 699,90</span>
-                                    <span class="original-price">R$ 999,90</span>
-                                </div>
-                                <div class="product-rating">
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star_half</span>
-                                    <span>(92)</span>
-                                </div>
-                                <button class="add-to-cart">
-                                    <span class="material-icons-round">add_shopping_cart</span>
-                                    Adicionar
-                                </button>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
+
+            <!-- Categorias -->
+            <section class="dux-section">
+                <div class="dux-section-header">
+                    <h2>Explorar Categorias</h2>
+                    <p>Navegue por nossas principais categorias de produtos</p>
+                </div>
+                
+                <div class="dux-categories-grid">
+                    <a href="#" class="dux-category-card">
+                        <div class="dux-category-icon" style="background-color: #4361ee;">
+                            <span class="material-icons-round">laptop</span>
+                        </div>
+                        <h3>Tecnologia</h3>
+                        <p>Hardware, dispositivos e acessórios</p>
+                    </a>
+                    
+                    <a href="#" class="dux-category-card">
+                        <div class="dux-category-icon" style="background-color: #3f37c9;">
+                            <span class="material-icons-round">menu_book</span>
+                        </div>
+                        <h3>Livros</h3>
+                        <p>Técnicos, guias e referências</p>
+                    </a>
+                    
+                    <a href="#" class="dux-category-card">
+                        <div class="dux-category-icon" style="background-color: #4895ef;">
+                            <span class="material-icons-round">school</span>
+                        </div>
+                        <h3>Cursos</h3>
+                        <p>Online, gravados e mentorias</p>
+                    </a>
+                    
+                    <a href="#" class="dux-category-card">
+                        <div class="dux-category-icon" style="background-color: #4cc9f0;">
+                            <span class="material-icons-round">devices</span>
+                        </div>
+                        <h3>Eletrônicos</h3>
+                        <p>Dispositivos e gadgets</p>
+                    </a>
+                    
+                    <a href="#" class="dux-category-card">
+                        <div class="dux-category-icon" style="background-color: #560bad;">
+                            <span class="material-icons-round">code</span>
+                        </div>
+                        <h3>Ferramentas</h3>
+                        <p>Software, plugins e licenças</p>
+                    </a>
+                    
+                    <a href="#" class="dux-category-card">
+                        <div class="dux-category-icon" style="background-color: #7209b7;">
+                            <span class="material-icons-round">style</span>
+                        </div>
+                        <h3>Acessórios</h3>
+                        <p>Para trabalho e estudo</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Produtos em Destaque -->
+            <section class="dux-section">
+                <div class="dux-section-header">
+                    <h2>Produtos em Destaque</h2>
+                    <p>Os itens mais populares entre nossa comunidade</p>
+                    <div class="dux-section-actions">
+                        <div class="dux-filter-tabs">
+                            <button class="dux-filter-tab active">Todos</button>
+                            <button class="dux-filter-tab">Ofertas</button>
+                            <button class="dux-filter-tab">Mais vendidos</button>
+                            <button class="dux-filter-tab">Novidades</button>
+                        </div>
+                        <button class="dux-view-all">
+                            Ver todos
+                            <span class="material-icons-round">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="dux-products-grid">
+                    <!-- Produto 1 -->
+                    <article class="dux-product-card">
+                        <div class="dux-product-badge">-20%</div>
+                        <button class="dux-favorite-btn">
+                            <span class="material-icons-round">favorite_border</span>
+                        </button>
+                        <div class="dux-product-image" style="background-color: #4361ee;">
+                            <span class="material-icons-round">laptop</span>
+                        </div>
+                        <div class="dux-product-content">
+                            <h3>Notebook Avançado</h3>
+                            <p class="dux-product-description">Notebook de última geração com processador i7 e 16GB de RAM</p>
+                            <div class="dux-product-price">
+                                <span class="dux-current-price">R$ 3.599,90</span>
+                                <span class="dux-original-price">R$ 4.499,90</span>
+                            </div>
+                            <div class="dux-product-rating">
+                                <span class="material-icons-round">star</span>
+                                <span class="material-icons-round">star</span>
+                                <span class="material-icons-round">star</span>
+                                <span class="material-icons-round">star</span>
+                                <span class="material-icons-round">star_half</span>
+                                <span>(128)</span>
+                            </div>
+                            <button class="dux-product-action">
+                                <span class="material-icons-round">add_shopping_cart</span>
+                                Adicionar
+                            </button>
+                        </div>
+                    </article>
+                    
+                    <!-- Produto 2 -->
+                    <article class="dux-product-card">
+                        <button class="dux-favorite-btn">
+                            <span class="material-icons-round">favorite_border</span>
+                        </button>
+                        <div class="dux-product-image" style="background-color: #4cc9f0;">
+                            <span class="material-icons-round">menu_book</span>
+                        </div>
+                        <div class="dux-product-content">
+                            <h3>Livro: Design Patterns</h3>
+                            <p class="dux-product-description">O clássico livro sobre padrões de projeto em desenvolvimento de software</p>
+                            <div class="dux-product-price">
+                                <span class="dux-current-price">R$ 89,90</span>
+                            </div>
+                            <div class="dux-product-rating">
+                                <span class="material-icons-round">star</span>
+                                <span class="material-icons-round">star</span>
+                                <span class="material-icons-round">star</span>
+                                <span class="material-icons-round">star</span>
+                                <span class="material-icons-round">star</span>
+                                <span>(64)</span>
+                            </div>
+                            <button class="dux-product-action">
+                                <span class="material-icons-round">add_shopping_cart</span>
+                                Adicionar
+                            </button>
+                        </div>
+                    </article>
+                    
+                    <!-- Produto 3 -->
+                    <article class="dux-product-card">
+                        <div class="dux-product-badge">-15%</div>
+                        <button class="dux-favorite-btn">
+                            <span class="material-icons-round">favorite_border</span>
+                        </button>
+                        <div class="dux-product-image" style="background-color: #f72585;">
+                            <span class="material-icons-round">smartphone</span>
+                        </div>
+                        <div class="dux-product-content">
+                            <h3>Smartphone Premium</h3>
+                            <p class="dux-product-description">Smartphone flagship com câmera de 108MP e tela AMOLED</p>
+                            <div class="dux-product-price">
+                                <span class="dux-current-price">R$ 2.799,90</span>
+                                <span class="dux-original-price">R$ 3.299,90</span>
+                            </div>
+                            <div class="dux-product-rating">
+                                <span class="material-icons-round">star</span>
+                                <span class="material-icons-round">star</span>
+                                <span class="material-icons-round">star</span>
+                                <span class="material-icons-round">star</span>
+                                <span class="material-icons-round">star_half</span>
+                                <span>(215)</span>
+                            </div>
+                            <button class="dux-product-action">
+                                <span class="material-icons-round">add_shopping_cart</span>
+                                Adicionar
+                            </button>
+                        </div>
+                    </article>
+                    
+                    <!-- Produto 4 -->
+                    <article class="dux-product-card">
+                        <button class="dux-favorite-btn">
+                            <span class="material-icons-round">favorite_border</span>
+                        </button>
+                        <div class="dux-product-image" style="background-color: #7209b7;">
+                            <span class="material-icons-round">headphones</span>
+                        </div>
+                        <div class="dux-product-content">
+                            <h3>Fones Bluetooth</h3>
+                            <p class="dux-product-description">Fones sem fio com cancelamento de ruído ativo</p>
+                            <div class="dux-product-price">
+                                <span class="dux-current-price">R$ 249,90</span>
+                            </div>
+                            <div class="dux-product-rating">
+                                <span class="material-icons-round">star</span>
+                                <span class="material-icons-round">star</span>
+                                <span class="material-icons-round">star</span>
+                                <span class="material-icons-round">star</span>
+                                <span class="material-icons-round">star</span>
+                                <span>(178)</span>
+                            </div>
+                            <button class="dux-product-action">
+                                <span class="material-icons-round">add_shopping_cart</span>
+                                Adicionar
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Cursos em Destaque -->
+            <section class="dux-section dux-section-dark">
+                <div class="dux-section-header">
+                    <h2>Cursos em Destaque</h2>
+                    <p>Aprenda com os melhores instrutores da comunidade</p>
+                    <div class="dux-section-actions">
+                        <button class="dux-view-all inverted">
+                            Ver todos cursos
+                            <span class="material-icons-round">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="dux-courses-grid">
+                    <!-- Curso 1 -->
+                    <article class="dux-course-card">
+                        <div class="dux-course-image" style="background-image: linear-gradient(135deg, #4361ee, #3a0ca3);">
+                            <span class="material-icons-round">code</span>
+                        </div>
+                        <div class="dux-course-content">
+                            <div class="dux-course-badge">
+                                <span class="material-icons-round">star</span>
+                                Mais popular
+                            </div>
+                            <h3>React Avançado 2023</h3>
+                            <p class="dux-course-description">Domine hooks avançados, performance e padrões de projeto</p>
+                            <div class="dux-course-meta">
+                                <span class="dux-course-instructor">
+                                    <span class="material-icons-round">person</span>
+                                    Amanda Silva
+                                </span>
+                                <span class="dux-course-duration">
+                                    <span class="material-icons-round">schedule</span>
+                                    12h
+                                </span>
+                            </div>
+                            <div class="dux-course-price">
+                                <span class="dux-current-price">R$ 149,90</span>
+                                <span class="dux-original-price">R$ 299,90</span>
+                            </div>
+                            <div class="dux-course-actions">
+                                <button class="dux-course-action">
+                                    <span class="material-icons-round">info</span>
+                                    Detalhes
+                                </button>
+                                <button class="dux-course-action primary">
+                                    <span class="material-icons-round">add_shopping_cart</span>
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Curso 2 -->
+                    <article class="dux-course-card">
+                        <div class="dux-course-image" style="background-image: linear-gradient(135deg, #f72585, #b5179e);">
+                            <span class="material-icons-round">data_object</span>
+                        </div>
+                        <div class="dux-course-content">
+                            <h3>Python para Data Science</h3>
+                            <p class="dux-course-description">Análise de dados com Pandas, NumPy e visualização</p>
+                            <div class="dux-course-meta">
+                                <span class="dux-course-instructor">
+                                    <span class="material-icons-round">person</span>
+                                    Carlos Mendes
+                                </span>
+                                <span class="dux-course-duration">
+                                    <span class="material-icons-round">schedule</span>
+                                    18h
+                                </span>
+                            </div>
+                            <div class="dux-course-price">
+                                <span class="dux-current-price">R$ 199,90</span>
+                            </div>
+                            <div class="dux-course-actions">
+                                <button class="dux-course-action">
+                                    <span class="material-icons-round">info</span>
+                                    Detalhes
+                                </button>
+                                <button class="dux-course-action primary">
+                                    <span class="material-icons-round">add_shopping_cart</span>
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Curso 3 -->
+                    <article class="dux-course-card">
+                        <div class="dux-course-image" style="background-image: linear-gradient(135deg, #4cc9f0, #4895ef);">
+                            <span class="material-icons-round">security</span>
+                        </div>
+                        <div class="dux-course-content">
+                            <div class="dux-course-badge">
+                                <span class="material-icons-round">new_releases</span>
+                                Lançamento
+                            </div>
+                            <h3>Segurança Web Moderna</h3>
+                            <p class="dux-course-description">Proteja suas aplicações contra vulnerabilidades comuns</p>
+                            <div class="dux-course-meta">
+                                <span class="dux-course-instructor">
+                                    <span class="material-icons-round">person</span>
+                                    Juliana Oliveira
+                                </span>
+                                <span class="dux-course-duration">
+                                    <span class="material-icons-round">schedule</span>
+                                    8h
+                                </span>
+                            </div>
+                            <div class="dux-course-price">
+                                <span class="dux-current-price">R$ 129,90</span>
+                                <span class="dux-original-price">R$ 179,90</span>
+                            </div>
+                            <div class="dux-course-actions">
+                                <button class="dux-course-action">
+                                    <span class="material-icons-round">info</span>
+                                    Detalhes
+                                </button>
+                                <button class="dux-course-action primary">
+                                    <span class="material-icons-round">add_shopping_cart</span>
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Carrinho Flutuante -->
+            <div class="dux-cart-floating">
+                <button class="dux-cart-btn" aria-label="Carrinho de compras">
+                    <span class="material-icons-round">shopping_cart</span>
+                    <span class="dux-cart-count">0</span>
+                </button>
+                
+                <div class="dux-cart-panel">
+                    <div class="dux-cart-header">
+                        <h3>Seu Carrinho</h3>
+                        <button class="dux-cart-close">
+                            <span class="material-icons-round">close</span>
+                        </button>
+                    </div>
+                    
+                    <div class="dux-cart-items">
+                        <!-- Carrinho vazio -->
+                        <div class="dux-cart-empty">
+                            <span class="material-icons-round">remove_shopping_cart</span>
+                            <p>Seu carrinho está vazio</p>
+                            <button class="dux-primary-btn">
+                                Continuar comprando
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="dux-cart-footer">
+                        <div class="dux-cart-total">
+                            <span>Total:</span>
+                            <span class="dux-cart-total-value">R$ 0,00</span>
+                        </div>
+                        <button class="dux-primary-btn" disabled>
+                            Finalizar Compra
+                        </button>
+                    </div>
+                </div>
             </div>
         </main>
 
-        <!-- User Menu (Hidden by default) -->
-        <div class="user-menu">
-            <div class="menu-header">
-                <div class="avatar">JD</div>
-                <div class="user-info">
-                    <h4>John Doe</h4>
-                    <p>john.doe@example.com</p>
+        <!-- Footer -->
+        <footer class="dux-footer">
+            <div class="dux-footer-container">
+                <div class="dux-footer-brand">
+                    <a href="#" class="dux-brand">
+                        <svg class="dux-logo-icon" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                            <path d="M16 0L0 16L16 32L32 16L16 0Z" fill="#4361EE"/>
+                            <path d="M16 8L8 16L16 24L24 16L16 8Z" fill="#FFFFFF"/>
+                        </svg>
+                        <span class="dux-brand-text">DUX</span>
+                    </a>
+                    <p class="dux-footer-slogan">Conhecimento livre e colaborativo</p>
+                </div>
+                
+                <div class="dux-footer-links">
+                    <div class="dux-footer-column">
+                        <h4>Marketplace</h4>
+                        <ul>
+                            <li><a href="#">Todos os produtos</a></li>
+                            <li><a href="#">Cursos</a></li>
+                            <li><a href="#">Ofertas</a></li>
+                            <li><a href="#">Lançamentos</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="dux-footer-column">
+                        <h4>Ajuda</h4>
+                        <ul>
+                            <li><a href="#">Central de ajuda</a></li>
+                            <li><a href="#">Política de devolução</a></li>
+                            <li><a href="#">Termos de serviço</a></li>
+                            <li><a href="#">Formas de pagamento</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="dux-footer-column">
+                        <h4>Sobre</h4>
+                        <ul>
+                            <li><a href="#">Nossa missão</a></li>
+                            <li><a href="#">Torne-se um vendedor</a></li>
+                            <li><a href="#">Torne-se um instrutor</a></li>
+                            <li><a href="#">Contato</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="dux-footer-social">
+                    <h4>Conecte-se</h4>
+                    <div class="dux-social-links">
+                        <a href="#" aria-label="Twitter">
+                            <span class="material-icons-round">twitter</span>
+                        </a>
+                        <a href="#" aria-label="GitHub">
+                            <span class="material-icons-round">code</span>
+                        </a>
+                        <a href="#" aria-label="Discord">
+                            <span class="material-icons-round">forum</span>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <span class="material-icons-round">play_circle</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <nav class="menu-nav">
-                <a href="./main.html" class="menu-item">
-                    <span class="material-icons-round">home</span>
-                    Página Inicial
-                </a>
-                <a href="./gallery.html" class="menu-item">
-                    <span class="material-icons-round">photo_library</span>
-                    Galeria
-                </a>
-                <a href="./profile.html" class="menu-item">
-                    <span class="material-icons-round">account_circle</span>
-                    Meu Perfil
-                </a>
-                <a href="#" class="menu-item">
-                    <span class="material-icons-round">settings</span>
-                    Configurações
-                </a>
-                <a href="./bookmark.html" class="menu-item">
-                    <span class="material-icons-round">bookmark</span>
-                    Salvos
-                </a>
-                <a href="#" class="menu-item">
-                    <span class="material-icons-round">history</span>
-                    Histórico
-                </a>
-                <a href="#" class="menu-item">
-                    <span class="material-icons-round">help</span>
-                    Ajuda
-                </a>
-                <a href="./index.html" class="menu-item">
-                    <span class="material-icons-round">logout</span>
-                    Sair
-                </a>
-            </nav>
-        </div>
+            
+            <div class="dux-footer-bottom">
+                <p>© 2023 DUX Marketplace. Todos os direitos reservados.</p>
+                <div class="dux-footer-legal">
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Código de Conduta</a>
+                </div>
+            </div>
+        </footer>
     </div>
-
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // DOM Elements
-            const userProfile = document.querySelector('.user-profile');
-            const userMenu = document.querySelector('.user-menu');
-            const menuToggle = document.querySelector('.menu-toggle');
-            const sideMenu = document.querySelector('.side-menu');
+            // Elementos globais
+            const body = document.body;
+            const menuToggle = document.querySelector('.dux-menu-toggle');
+            const navMenu = document.querySelector('.dux-main-nav');
+            const themeToggle = document.querySelector('.dux-theme-toggle');
+            const profileButton = document.querySelector('.dux-user-profile');
+            const profileMenu = document.querySelector('.dux-profile-menu');
+            const filterTabs = document.querySelectorAll('.dux-filter-tab');
+            const favoriteBtns = document.querySelectorAll('.dux-favorite-btn');
+            const cartBtn = document.querySelector('.dux-cart-btn');
+            const cartPanel = document.querySelector('.dux-cart-panel');
+            const cartClose = document.querySelector('.dux-cart-close');
             
-            // Toggle User Menu
-            userProfile.addEventListener('click', function(e) {
-                e.stopPropagation();
-                userMenu.classList.toggle('active');
-            });
+            // Estado do tema
+            let isDarkTheme = localStorage.getItem('darkTheme') === 'true';
             
-            // Toggle Side Menu (mobile)
-            menuToggle.addEventListener('click', function(e) {
-                e.stopPropagation();
-                sideMenu.classList.toggle('active');
-            });
+            // Aplicar tema salvo
+            if (isDarkTheme) {
+                body.classList.add('dark-theme');
+                updateThemeToggle(true);
+            }
             
-            // Close Menus when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!userMenu.contains(e.target) && !userProfile.contains(e.target)) {
-                    userMenu.classList.remove('active');
+            // Menu mobile
+            menuToggle.addEventListener('click', () => {
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+                navMenu.classList.toggle('active');
+                
+                // Fechar menu de perfil se aberto
+                if (profileMenu.classList.contains('active')) {
+                    profileMenu.classList.remove('active');
+                    profileButton.setAttribute('aria-expanded', 'false');
                 }
-                if (!sideMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-                    sideMenu.classList.remove('active');
+            });
+            
+            // Alternância de tema
+            themeToggle.addEventListener('click', () => {
+                isDarkTheme = !isDarkTheme;
+                body.classList.toggle('dark-theme');
+                localStorage.setItem('darkTheme', isDarkTheme);
+                updateThemeToggle(isDarkTheme);
+            });
+            
+            function updateThemeToggle(isDark) {
+                themeToggle.setAttribute('aria-label', isDark ? 'Alternar para tema claro' : 'Alternar para tema escuro');
+                themeToggle.innerHTML = isDark ? '<span class="material-icons-round">light_mode</span>' : '<span class="material-icons-round">dark_mode</span>';
+            }
+            
+            // Menu de perfil
+            profileButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isExpanded = profileButton.getAttribute('aria-expanded') === 'true';
+                profileButton.setAttribute('aria-expanded', !isExpanded);
+                profileMenu.classList.toggle('active');
+                
+                // Fechar menu de navegação se aberto
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+                
+                // Fechar carrinho se aberto
+                if (cartPanel.classList.contains('active')) {
+                    cartPanel.classList.remove('active');
                 }
             });
-
-            // Simulate loading
-            setTimeout(() => {
-                document.body.classList.add('loaded');
-            }, 500);
+            
+            // Favoritar produtos
+            favoriteBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const icon = this.querySelector('.material-icons-round');
+                    if (icon.textContent === 'favorite_border') {
+                        icon.textContent = 'favorite';
+                        this.classList.add('active');
+                    } else {
+                        icon.textContent = 'favorite_border';
+                        this.classList.remove('active');
+                    }
+                });
+            });
+            
+            // Carrinho de compras
+            cartBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                cartPanel.classList.toggle('active');
+                
+                // Fechar outros menus se abertos
+                if (profileMenu.classList.contains('active')) {
+                    profileMenu.classList.remove('active');
+                    profileButton.setAttribute('aria-expanded', 'false');
+                }
+                
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+            
+            cartClose.addEventListener('click', function() {
+                cartPanel.classList.remove('active');
+            });
+            
+            // Fechar menus ao clicar fora
+            document.addEventListener('click', (e) => {
+                // Fechar menu de perfil
+                if (!profileMenu.contains(e.target) && e.target !== profileButton) {
+                    profileMenu.classList.remove('active');
+                    profileButton.setAttribute('aria-expanded', 'false');
+                }
+                
+                // Fechar menu de navegação
+                if (!navMenu.contains(e.target) && e.target !== menuToggle) {
+                    navMenu.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+                
+                // Fechar carrinho
+                if (!cartPanel.contains(e.target) && e.target !== cartBtn) {
+                    cartPanel.classList.remove('active');
+                }
+            });
+            
+            // Fechar menus ao pressionar Esc
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    profileMenu.classList.remove('active');
+                    profileButton.setAttribute('aria-expanded', 'false');
+                    navMenu.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    cartPanel.classList.remove('active');
+                }
+            });
+            
+            // Filtros de produtos
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    // Aqui iria a lógica para filtrar os produtos
+                    filterProducts(tab.textContent.trim());
+                });
+            });
+            
+            function filterProducts(filter) {
+                console.log(`Filtrando por: ${filter}`);
+                // Implementação real de filtragem iria aqui
+            }
+            
+            // Adicionar ao carrinho
+            const addToCartBtns = document.querySelectorAll('.dux-product-action.primary, .dux-course-action.primary');
+            addToCartBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const cartCount = document.querySelector('.dux-cart-count');
+                    let count = parseInt(cartCount.textContent);
+                    cartCount.textContent = count + 1;
+                    
+                    // Atualizar UI do carrinho
+                    updateCartUI();
+                });
+            });
+            
+            function updateCartUI() {
+                const cartCount = document.querySelector('.dux-cart-count');
+                const count = parseInt(cartCount.textContent);
+                
+                if (count > 0) {
+                    cartCount.style.display = 'flex';
+                    // Aqui iria a lógica para atualizar os itens no carrinho
+                } else {
+                    cartCount.style.display = 'none';
+                }
+            }
         });
     </script>
 </body>
