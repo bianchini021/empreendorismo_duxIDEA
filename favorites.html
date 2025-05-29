@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DUX | Marketplace</title>
+    <title>DUX | Favoritos</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <link rel="stylesheet" href="./css/marketplace.css">
 </head>
@@ -26,7 +26,7 @@
                 <div class="user-controls">
                     <div class="search-container">
                         <div class="search-input">
-                            <input type="text" placeholder="Buscar produtos...">
+                            <input type="text" placeholder="Buscar favoritos...">
                             <button class="search-btn">
                                 <span class="material-icons-round">search</span>
                             </button>
@@ -49,8 +49,8 @@
             <!-- Categories Bar -->
             <nav class="categories-bar">
                 <ul class="categories-list">
-                    <li class="category-item active">
-                        <a href="#">
+                    <li class="category-item">
+                        <a href="./marketplace.html">
                             <span class="material-icons-round">home</span>
                             Início
                         </a>
@@ -62,7 +62,7 @@
                         </a>
                     </li>
                     <li class="category-item">
-                        <a href="">
+                        <a href="./bookmark.html">
                             <span class="material-icons-round">menu_book</span>
                             Livros
                         </a>
@@ -91,20 +91,20 @@
 
         <!-- Main Content -->
         <main class="marketplace-main">
-            <!-- Side Menu (Left) - Updated to match gallery style -->
+            <!-- Side Menu (Left) -->
             <aside class="side-menu">
                 <div class="brand">
                     <img src="./image/duxLogo-removebg-preview.png" alt="Logo DUX" class="logo">
                 </div>
                 <nav class="main-nav">
                     <ul class="nav-list">
-                        <li class="nav-item active">
-                            <a href="#">
+                        <li class="nav-item">
+                            <a href="./marketplace.html">
                                 <span class="material-icons-round">receipt</span>
                                 <span class="nav-text">Meus Pedidos</span>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a href="./favorites.html">
                                 <span class="material-icons-round">favorite</span>
                                 <span class="nav-text">Favoritos</span>
@@ -138,24 +138,31 @@
                 </nav>
             </aside>
 
-            <!-- Products Grid -->
+            <!-- Favorites Content -->
             <div class="products-container">
-                <!-- Featured Banner -->
-                <section class="featured-banner">
-                    <div class="banner-content">
-                        <h2>Ofertas Especiais</h2>
-                        <p>Até 50% de desconto em cursos selecionados</p>
-                        <button class="banner-btn">Ver Ofertas</button>
+                <!-- Favorites Header -->
+                <section class="favorites-header">
+                    <h2 class="section-title">Meus Favoritos</h2>
+                    <div class="favorites-actions">
+                        <button class="action-btn">
+                            <span class="material-icons-round">delete</span>
+                            Limpar tudo
+                        </button>
+                        <button class="action-btn">
+                            <span class="material-icons-round">share</span>
+                            Compartilhar
+                        </button>
                     </div>
                 </section>
 
-                <!-- Products Grid -->
+                <!-- Favorites Grid -->
                 <section class="products-grid">
-                    <h2 class="section-title">Produtos em Destaque</h2>
-                    
                     <div class="products-row">
-                        <!-- Product Card 1 -->
+                        <!-- Favorite Item 1 -->
                         <div class="product-card">
+                            <button class="favorite-btn active">
+                                <span class="material-icons-round">favorite</span>
+                            </button>
                             <div class="product-badge">-20%</div>
                             <div class="product-image" style="background-color: #2962ff;">
                                 <span class="material-icons-round">laptop</span>
@@ -166,23 +173,27 @@
                                     <span class="current-price">R$ 3.599,90</span>
                                     <span class="original-price">R$ 4.499,90</span>
                                 </div>
-                                <div class="product-rating">
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star_half</span>
-                                    <span>(128)</span>
+                                <div class="product-meta">
+                                    <span class="product-stock">Em estoque</span>
+                                    <span class="product-date">Adicionado: 15/06/2023</span>
                                 </div>
-                                <button class="add-to-cart">
-                                    <span class="material-icons-round">add_shopping_cart</span>
-                                    Adicionar
-                                </button>
+                                <div class="product-actions">
+                                    <button class="add-to-cart">
+                                        <span class="material-icons-round">add_shopping_cart</span>
+                                        Adicionar
+                                    </button>
+                                    <button class="remove-btn">
+                                        <span class="material-icons-round">delete</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-        
-                        <!-- Product Card 2 -->
+                        
+                        <!-- Favorite Item 2 -->
                         <div class="product-card">
+                            <button class="favorite-btn active">
+                                <span class="material-icons-round">favorite</span>
+                            </button>
                             <div class="product-image" style="background-color: #00bfa5;">
                                 <span class="material-icons-round">menu_book</span>
                             </div>
@@ -191,96 +202,62 @@
                                 <div class="product-price">
                                     <span class="current-price">R$ 89,90</span>
                                 </div>
-                                <div class="product-rating">
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span>(64)</span>
+                                <div class="product-meta">
+                                    <span class="product-stock">Últimas unidades</span>
+                                    <span class="product-date">Adicionado: 10/06/2023</span>
                                 </div>
-                                <button class="add-to-cart">
-                                    <span class="material-icons-round">add_shopping_cart</span>
-                                    Adicionar
-                                </button>
+                                <div class="product-actions">
+                                    <button class="add-to-cart">
+                                        <span class="material-icons-round">add_shopping_cart</span>
+                                        Adicionar
+                                    </button>
+                                    <button class="remove-btn">
+                                        <span class="material-icons-round">delete</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- Product Card 3 - Novo -->
+                        <!-- Favorite Item 3 -->
                         <div class="product-card">
-                            <div class="product-badge">-15%</div>
-                            <div class="product-image" style="background-color: #ff6d00;">
-                                <span class="material-icons-round">smartphone</span>
-                            </div>
-                            <div class="product-info">
-                                <h3>Smartphone Premium</h3>
-                                <div class="product-price">
-                                    <span class="current-price">R$ 2.799,90</span>
-                                    <span class="original-price">R$ 3.299,90</span>
-                                </div>
-                                <div class="product-rating">
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star_half</span>
-                                    <span>(215)</span>
-                                </div>
-                                <button class="add-to-cart">
-                                    <span class="material-icons-round">add_shopping_cart</span>
-                                    Adicionar
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <!-- Product Card 4 - Novo -->
-                        <div class="product-card">
-                            <div class="product-image" style="background-color: #9c27b0;">
-                                <span class="material-icons-round">headphones</span>
-                            </div>
-                            <div class="product-info">
-                                <h3>Fones Bluetooth</h3>
-                                <div class="product-price">
-                                    <span class="current-price">R$ 249,90</span>
-                                </div>
-                                <div class="product-rating">
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span>(178)</span>
-                                </div>
-                                <button class="add-to-cart">
-                                    <span class="material-icons-round">add_shopping_cart</span>
-                                    Adicionar
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <!-- Product Card 5 - Novo -->
-                        <div class="product-card">
+                            <button class="favorite-btn active">
+                                <span class="material-icons-round">favorite</span>
+                            </button>
                             <div class="product-badge">-30%</div>
                             <div class="product-image" style="background-color: #4caf50;">
                                 <span class="material-icons-round">watch</span>
                             </div>
                             <div class="product-info">
-                                <h3>Smartwatch</h3>
+                                <h3>Smartwatch Premium</h3>
                                 <div class="product-price">
                                     <span class="current-price">R$ 699,90</span>
                                     <span class="original-price">R$ 999,90</span>
                                 </div>
-                                <div class="product-rating">
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star</span>
-                                    <span class="material-icons-round">star_half</span>
-                                    <span>(92)</span>
+                                <div class="product-meta">
+                                    <span class="product-stock">Em estoque</span>
+                                    <span class="product-date">Adicionado: 05/06/2023</span>
                                 </div>
-                                <button class="add-to-cart">
-                                    <span class="material-icons-round">add_shopping_cart</span>
-                                    Adicionar
+                                <div class="product-actions">
+                                    <button class="add-to-cart">
+                                        <span class="material-icons-round">add_shopping_cart</span>
+                                        Adicionar
+                                    </button>
+                                    <button class="remove-btn">
+                                        <span class="material-icons-round">delete</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Empty State (hidden when there are favorites) -->
+                        <div class="empty-favorites" style="display: none;">
+                            <div class="empty-content">
+                                <span class="material-icons-round">favorite_border</span>
+                                <h3>Nenhum item favoritado</h3>
+                                <p>Você ainda não adicionou nenhum item aos seus favoritos.</p>
+                                <button class="browse-btn">
+                                    <span class="material-icons-round">store</span>
+                                    Navegar na loja
                                 </button>
                             </div>
                         </div>
@@ -303,9 +280,9 @@
                     <span class="material-icons-round">home</span>
                     Página Inicial
                 </a>
-                <a href="./gallery.html" class="menu-item">
-                    <span class="material-icons-round">photo_library</span>
-                    Galeria
+                <a href="./marketplace.html" class="menu-item">
+                    <span class="material-icons-round">store</span>
+                    Marketplace
                 </a>
                 <a href="./profile.html" class="menu-item">
                     <span class="material-icons-round">account_circle</span>
@@ -315,9 +292,9 @@
                     <span class="material-icons-round">settings</span>
                     Configurações
                 </a>
-                <a href="./bookmark.html" class="menu-item">
-                    <span class="material-icons-round">bookmark</span>
-                    Salvos
+                <a href="./favorites.html" class="menu-item active">
+                    <span class="material-icons-round">favorite</span>
+                    Favoritos
                 </a>
                 <a href="#" class="menu-item">
                     <span class="material-icons-round">history</span>
@@ -342,6 +319,7 @@
             const userMenu = document.querySelector('.user-menu');
             const menuToggle = document.querySelector('.menu-toggle');
             const sideMenu = document.querySelector('.side-menu');
+            const favoriteBtns = document.querySelectorAll('.favorite-btn');
             
             // Toggle User Menu
             userProfile.addEventListener('click', function(e) {
@@ -363,6 +341,14 @@
                 if (!sideMenu.contains(e.target) && !menuToggle.contains(e.target)) {
                     sideMenu.classList.remove('active');
                 }
+            });
+
+            // Toggle favorite status
+            favoriteBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                });
             });
 
             // Simulate loading

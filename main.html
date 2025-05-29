@@ -3,709 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DUX - Plataforma colaborativa de conhecimento livre com cursos, laboratórios práticos, projetos reais e mentoria comunitária">
-    <title>DUX | Conhecimento Livre e Colaborativo</title>
-    
-    <!-- Preload de recursos -->
-    <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" as="style">
-    
-    <!-- Fontes e ícones -->
+    <title>DUX | Conteúdos</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    
-    <!-- CSS -->
     <link rel="stylesheet" href="./css/main.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="./assets/dux-favicon.svg" type="image/svg+xml">
 </head>
 <body>
-    <div class="dux-app">
-        <!-- Top Navigation -->
-        <header class="dux-header">
-            <div class="dux-header-container">
-                <button class="dux-menu-toggle" aria-label="Menu principal">
-                    <span class="material-icons-round">menu</span>
-                </button>
-                
-                <a href="#" class="dux-brand">
-                    <svg class="dux-logo-icon" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
-                        <path d="M16 0L0 16L16 32L32 16L16 0Z" fill="#4361EE"/>
-                        <path d="M16 8L8 16L16 24L24 16L16 8Z" fill="#FFFFFF"/>
-                    </svg>
-                    <span class="dux-brand-text">DUX</span>
-                </a>
+    <div class="main-container">
+        <!-- Top Navigation Bar -->
+        <header class="main-header">
+            <div class="header-content">
+                <!-- Logo/Brand -->
+            <div class="brand">
+                <img src="./image/duxLogo-removebg-preview.png" alt="Logo DUX" class="logo-icon">
+            </div> 
 
-                <nav class="dux-main-nav" aria-label="Navegação principal">
-                    <div class="dux-nav-scroller">
-                        <ul class="dux-nav-list">
-                            <li class="dux-nav-item active">
-                                <a href="#" aria-current="page">
-                                    <span class="material-icons-round">home</span>
-                                    Início
-                                </a>
-                            </li>
-                            <li class="dux-nav-item">
-                                <a href="#labs">
-                                    <span class="material-icons-round">science</span>
-                                    Labs
-                                </a>
-                            </li>
-                            <li class="dux-nav-item">
-                                <a href="#projetos">
-                                    <span class="material-icons-round">rocket_launch</span>
-                                    Projetos
-                                </a>
-                            </li>
-                            <li class="dux-nav-item">
-                                <a href="#trilhas">
-                                    <span class="material-icons-round">route</span>
-                                    Trilhas
-                                </a>
-                            </li>
-                            <li class="dux-nav-item">
-                                <a href="#comunidade">
-                                    <span class="material-icons-round">groups</span>
-                                    Comunidade
-                                </a>
-                            </li>
-                            <li class="dux-nav-item">
-                                <a href="#mentores">
-                                    <span class="material-icons-round">school</span>
-                                    Mentores
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <nav class="category-nav">
+                    <ul class="category-list">
+                        <li class="category-item active">
+                            <a href="#">Todos</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#">
+                                <span class="material-icons-round">code</span>
+                                Programação
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#">
+                                <span class="material-icons-round">design_services</span>
+                                Design
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#">
+                                <span class="material-icons-round">storage</span>
+                                Dados
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#">
+                                <span class="material-icons-round">security</span>
+                                Segurança
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#">
+                                <span class="material-icons-round">phone_android</span>
+                                Mobile
+                            </a>
+                        </li>
+                    </ul>
                 </nav>
 
-                <div class="dux-user-controls">
-                    <button class="dux-search-btn" aria-label="Buscar">
+                <div class="user-controls">
+                    <button class="search-btn">
                         <span class="material-icons-round">search</span>
                     </button>
-                    <button class="dux-theme-toggle" aria-label="Alternar tema">
-                        <span class="material-icons-round">dark_mode</span>
-                    </button>
-                    <button class="dux-user-profile" aria-label="Perfil do usuário">
-                        <div class="dux-avatar">JD</div>
-                    </button>
+                    <div class="user-profile">
+                        <div class="avatar">JD</div>
+                        <span class="material-icons-round">expand_more</span>
+                    </div>
                 </div>
             </div>
-
-            <!-- Menu de Perfil (Atualizado com referência) -->
-<div class="dux-profile-menu">
-    <div class="dux-profile-menu-header">
-        <div class="dux-avatar">JD</div>
-        <div class="dux-profile-user">
-            <div class="dux-profile-name">John Doe</div>
-            <div class="dux-profile-email">john.doe@example.com</div>
-        </div>
-    </div>
-    <ul class="dux-profile-menu-list">
-        <li class="dux-profile-menu-item">
-            <a href="./library.html" class="menu-item">
-                <span class="material-icons-round">local_library</span>
-                Biblioteca
-            </a>
-        </li>
-        <li class="dux-profile-menu-item">
-            <a href="./comunity.html" class="menu-item">
-                <span class="material-icons-round">connect_without_contact</span>
-                Comunidade
-            </a>
-        </li>
-        <li class="dux-profile-menu-item">
-            <a href="./gallery.html" class="menu-item">
-                <span class="material-icons-round">photo_library</span>
-                Galeria
-            </a>
-        </li>
-        <li class="dux-profile-menu-item">
-            <a href="./marketplace.html" class="menu-item">
-                <span class="material-icons-round">store</span>
-                Marketplace
-            </a>
-        </li>
-        <li class="dux-profile-menu-item">
-            <a href="./profile.html" class="menu-item">
-                <span class="material-icons-round">account_circle</span>
-                Meu Perfil
-            </a>
-        </li>
-        <li class="dux-profile-menu-item">
-            <a href="#" class="menu-item">
-                <span class="material-icons-round">settings</span>
-                Configurações
-            </a>
-        </li>
-        <li class="dux-profile-menu-item">
-            <a href="./bookmark.html" class="menu-item">
-                <span class="material-icons-round">bookmark</span>
-                Salvos
-            </a>
-        </li>
-        <li class="dux-profile-menu-item">
-            <a href="#" class="menu-item">
-                <span class="material-icons-round">history</span>
-                Histórico
-            </a>
-        </li>
-        <li class="dux-profile-menu-item">
-            <a href="#" class="menu-item">
-                <span class="material-icons-round">help</span>
-                Ajuda
-            </a>
-        </li>
-    </ul>
-    <div class="dux-profile-menu-footer">
-        <a href="./index.html" class="dux-secondary-btn" style="width: 100%; text-align: center; display: block;">
-            <span class="material-icons-round">logout</span>
-            Sair
-        </a>
-    </div>
-</div>
         </header>
 
-        <!-- Main Content -->
-        <main class="dux-main">
-            <!-- Hero Section -->
-            <section class="dux-hero">
-                <div class="dux-hero-content">
-                    <h1 class="dux-hero-title">Construa, <span class="dux-highlight">aprenda</span> e compartilhe</h1>
-                    <p class="dux-hero-subtitle">Na DUX, você não apenas consome conteúdo - você cria, colabora e transforma conhecimento em experiência real</p>
-                    
-                    <div class="dux-hero-actions">
-                        <button class="dux-primary-btn">
-                            <span class="material-icons-round">play_circle</span>
-                            Comece agora
-                        </button>
-                        <button class="dux-secondary-btn">
-                            <span class="material-icons-round">live_tv</span>
-                            Ver demonstração
-                        </button>
-                    </div>
-                    
-                    <div class="dux-hero-stats">
-                        <div class="dux-stat-item">
-                            <span class="dux-stat-number">1.2k+</span>
-                            <span class="dux-stat-label">Labs ativos</span>
-                        </div>
-                        <div class="dux-stat-item">
-                            <span class="dux-stat-number">4.7k+</span>
-                            <span class="dux-stat-label">Projetos</span>
-                        </div>
-                        <div class="dux-stat-item">
-                            <span class="dux-stat-number">23k+</span>
-                            <span class="dux-stat-label">Membros</span>
-                        </div>
-                    </div>
+        <!-- Main Content Sections -->
+        <main class="content-area">
+            <!-- Featured Section -->
+            <section class="featured-section">
+                <div class="section-header">
+                    <h2>Destaques</h2>
+                    <a href="#" class="view-all">Ver todos</a>
                 </div>
                 
-                <div class="dux-hero-illustration">
-                    <div class="dux-code-window">
-                        <div class="dux-code-header">
-                            <div class="dux-code-dots">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="dux-code-title">lab-dux.js</div>
+                <div class="featured-grid">
+                    <div class="featured-card large">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                            <div class="card-badge">Novo</div>
                         </div>
-                        <pre class="dux-code-content"></pre>
+                        <div class="card-content">
+                            <h3>JavaScript Avançado</h3>
+                            <p class="instructor">Com João Silva</p>
+                            <div class="card-meta">
+                                <span class="rating">
+                                    <span class="material-icons-round">star</span> 4.9
+                                </span>
+                                <span class="students">1.2k alunos</span>
+                            </div>
+                            <div class="card-footer">
+                                <span class="price">R$ 199,90</span>
+                                <button class="action-btn">Saiba mais</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="featured-card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                            <div class="card-badge bestseller">Mais vendido</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>UI/UX Design Moderno</h3>
+                            <p class="instructor">Com Maria Oliveira</p>
+                            <div class="card-meta">
+                                <span class="rating">
+                                    <span class="material-icons-round">star</span> 4.8
+                                </span>
+                                <span class="students">3.5k alunos</span>
+                            </div>
+                            <div class="card-footer">
+                                <span class="price">R$ 249,90</span>
+                                <button class="action-btn">Saiba mais</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Labs Section -->
-            <section class="dux-section" id="labs">
-                <div class="dux-section-header">
-                    <h2>Labs Práticos</h2>
-                    <p>Ambientes interativos para aprender fazendo</p>
-                    <div class="dux-section-actions">
-                        <button class="dux-view-all">
-                            Explorar todos
-                            <span class="material-icons-round">arrow_forward</span>
-                        </button>
+            <!-- Popular Courses -->
+            <section class="courses-section">
+                <div class="section-header">
+                    <h2>Cursos Populares</h2>
+                    <div class="section-controls">
+                        <button class="control-btn active">Todos</button>
+                        <button class="control-btn">Iniciante</button>
+                        <button class="control-btn">Intermediário</button>
+                        <button class="control-btn">Avançado</button>
                     </div>
                 </div>
                 
-                <div class="dux-labs-grid">
-                    <article class="dux-lab-card">
-                        <div class="dux-lab-badge">
-                            <span class="material-icons-round">terminal</span>
-                            JavaScript
-                        </div>
-                        <div class="dux-lab-content">
-                            <h3>Explorador de APIs</h3>
-                            <p class="dux-lab-description">Construa e teste chamadas API em tempo real com nosso sandbox interativo</p>
-                            <div class="dux-lab-meta">
-                                <span class="dux-lab-level">Intermediário</span>
-                                <span class="dux-lab-time">
-                                    <span class="material-icons-round">schedule</span>
-                                    45 min
-                                </span>
+                <div class="courses-grid">
+                    <!-- Course cards would be dynamically generated here -->
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="course-info">
+                            <h3>HTML5 e CSS3 Completo</h3>
+                            <p class="instructor">Com Carlos Mendes</p>
+                            <div class="course-meta">
+                                <span class="difficulty beginner">Iniciante</span>
+                                <span class="duration">8h</span>
+                            </div>
+                            <div class="course-footer">
+                                <span class="price">R$ 149,90</span>
+                                <button class="enroll-btn">Matricule-se</button>
                             </div>
                         </div>
-                        <button class="dux-lab-action">
-                            <span class="material-icons-round">launch</span>
-                            Acessar Lab
-                        </button>
-                    </article>
-                    
-                    <article class="dux-lab-card">
-                        <div class="dux-lab-badge">
-                            <span class="material-icons-round">data_object</span>
-                            Python
-                        </div>
-                        <div class="dux-lab-content">
-                            <h3>Análise de Dados</h3>
-                            <p class="dux-lab-description">Manipule datasets reais com Pandas em nosso notebook colaborativo</p>
-                            <div class="dux-lab-meta">
-                                <span class="dux-lab-level">Iniciante</span>
-                                <span class="dux-lab-time">
-                                    <span class="material-icons-round">schedule</span>
-                                    1h 20min
-                                </span>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="course-info">
+                            <h3>Python para Data Science</h3>
+                            <p class="instructor">Com Ana Santos</p>
+                            <div class="course-meta">
+                                <span class="difficulty intermediate">Intermediário</span>
+                                <span class="duration">12h</span>
+                            </div>
+                            <div class="course-footer">
+                                <span class="price">R$ 299,90</span>
+                                <button class="enroll-btn">Matricule-se</button>
                             </div>
                         </div>
-                        <button class="dux-lab-action">
-                            <span class="material-icons-round">launch</span>
-                            Acessar Lab
-                        </button>
-                    </article>
-                    
-                    <article class="dux-lab-card">
-                        <div class="dux-lab-badge">
-                            <span class="material-icons-round">css</span>
-                            CSS
-                        </div>
-                        <div class="dux-lab-content">
-                            <h3>Playground de Animções</h3>
-                            <p class="dux-lab-description">Crie animações complexas com nossa ferramenta visual de CSS</p>
-                            <div class="dux-lab-meta">
-                                <span class="dux-lab-level">Todos os níveis</span>
-                                <span class="dux-lab-time">
-                                    <span class="material-icons-round">schedule</span>
-                                    Livre
-                                </span>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="course-info">
+                            <h3>React Native Masterclass</h3>
+                            <p class="instructor">Com Pedro Alves</p>
+                            <div class="course-meta">
+                                <span class="difficulty advanced">Avançado</span>
+                                <span class="duration">15h</span>
+                            </div>
+                            <div class="course-footer">
+                                <span class="price">R$ 349,90</span>
+                                <button class="enroll-btn">Matricule-se</button>
                             </div>
                         </div>
-                        <button class="dux-lab-action">
-                            <span class="material-icons-round">launch</span>
-                            Acessar Lab
-                        </button>
-                    </article>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="course-info">
+                            <h3>WordPress para Desenvolvedores</h3>
+                            <p class="instructor">Com Luiza Fernandes</p>
+                            <div class="course-meta">
+                                <span class="difficulty intermediate">Intermediário</span>
+                                <span class="duration">10h</span>
+                            </div>
+                            <div class="course-footer">
+                                <span class="price">R$ 199,90</span>
+                                <button class="enroll-btn">Matricule-se</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <!-- Projetos Comunitários -->
-            <section class="dux-section" id="projetos">
-                <div class="dux-section-header">
-                    <h2>Projetos da Comunidade</h2>
-                    <p>Contribua com projetos reais e ganhe experiência prática</p>
-                    <div class="dux-section-actions">
-                        <div class="dux-filter-tabs">
-                            <button class="dux-filter-tab active">Todos</button>
-                            <button class="dux-filter-tab">Open Source</button>
-                            <button class="dux-filter-tab">Em andamento</button>
-                            <button class="dux-filter-tab">Procuram-se devs</button>
-                        </div>
-                    </div>
+            <!-- Video Lessons -->
+            <section class="videos-section">
+                <div class="section-header">
+                    <h2>Videoaulas Recentes</h2>
+                    <a href="#" class="view-all">Ver todas</a>
                 </div>
                 
-                <div class="dux-projects-grid">
-                    <article class="dux-project-card">
-                        <div class="dux-project-header">
-                            <div class="dux-project-badge">
-                                <span class="material-icons-round">code</span>
-                                TypeScript
-                            </div>
-                            <div class="dux-project-meta">
-                                <span class="dux-project-collaborators">
-                                    <span class="material-icons-round">people</span>
-                                    12
-                                </span>
-                                <span class="dux-project-status active">Ativo</span>
-                            </div>
-                        </div>
-                        <div class="dux-project-content">
-                            <h3>DX-UI: Biblioteca de Componentes</h3>
-                            <p class="dux-project-description">Construa interfaces acessíveis com nossa biblioteca de componentes React</p>
-                            <div class="dux-project-progress">
-                                <div class="dux-progress-bar" style="width: 65%"></div>
-                                <span>65% completo</span>
-                            </div>
-                        </div>
-                        <div class="dux-project-footer">
-                            <button class="dux-project-action">
-                                <span class="material-icons-round">visibility</span>
-                                Ver projeto
-                            </button>
-                            <button class="dux-project-action primary">
-                                <span class="material-icons-round">group_add</span>
-                                Participar
-                            </button>
-                        </div>
-                    </article>
-                    
-                    <article class="dux-project-card">
-                        <div class="dux-project-header">
-                            <div class="dux-project-badge">
-                                <span class="material-icons-round">data_object</span>
-                                Python
-                            </div>
-                            <div class="dux-project-meta">
-                                <span class="dux-project-collaborators">
-                                    <span class="material-icons-round">people</span>
-                                    8
-                                </span>
-                                <span class="dux-project-status warning">Precisa de ajuda</span>
-                            </div>
-                        </div>
-                        <div class="dux-project-content">
-                            <h3>PyLearn: Plataforma de Ensino</h3>
-                            <p class="dux-project-description">Sistema de ensino adaptativo para iniciantes em Python</p>
-                            <div class="dux-project-progress">
-                                <div class="dux-progress-bar" style="width: 30%"></div>
-                                <span>30% completo</span>
-                            </div>
-                        </div>
-                        <div class="dux-project-footer">
-                            <button class="dux-project-action">
-                                <span class="material-icons-round">visibility</span>
-                                Ver projeto
-                            </button>
-                            <button class="dux-project-action primary">
-                                <span class="material-icons-round">group_add</span>
-                                Participar
-                            </button>
-                        </div>
-                    </article>
-                    
-                    <article class="dux-project-card">
-                        <div class="dux-project-header">
-                            <div class="dux-project-badge">
-                                <span class="material-icons-round">javascript</span>
-                                JavaScript
-                            </div>
-                            <div class="dux-project-meta">
-                                <span class="dux-project-collaborators">
-                                    <span class="material-icons-round">people</span>
-                                    5
-                                </span>
-                                <span class="dux-project-status new">Novo</span>
-                            </div>
-                        </div>
-                        <div class="dux-project-content">
-                            <h3>CodeCollab: Editor Online</h3>
-                            <p class="dux-project-description">Editor de código colaborativo em tempo real com suporte a múltiplas linguagens</p>
-                            <div class="dux-project-progress">
-                                <div class="dux-progress-bar" style="width: 15%"></div>
-                                <span>15% completo</span>
-                            </div>
-                        </div>
-                        <div class="dux-project-footer">
-                            <button class="dux-project-action">
-                                <span class="material-icons-round">visibility</span>
-                                Ver projeto
-                            </button>
-                            <button class="dux-project-action primary">
-                                <span class="material-icons-round">group_add</span>
-                                Participar
-                            </button>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <!-- Trilhas de Aprendizado -->
-            <section class="dux-section dux-section-dark" id="trilhas">
-                <div class="dux-section-header">
-                    <h2>Trilhas de Aprendizado</h2>
-                    <p>Rotas estruturadas para dominar tecnologias específicas</p>
-                    <div class="dux-section-actions">
-                        <button class="dux-view-all inverted">
-                            Ver todas trilhas
-                            <span class="material-icons-round">arrow_forward</span>
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="dux-paths-container">
-                    <div class="dux-paths-nav">
-                        <button class="dux-path-nav-item active">Frontend</button>
-                        <button class="dux-path-nav-item">Backend</button>
-                        <button class="dux-path-nav-item">Data Science</button>
-                        <button class="dux-path-nav-item">DevOps</button>
-                        <button class="dux-path-nav-item">Mobile</button>
-                    </div>
-                    
-                    <div class="dux-path-content">
-                        <div class="dux-path-info">
-                            <h3>Trilha Frontend Moderno</h3>
-                            <p class="dux-path-description">Domine as tecnologias essenciais para desenvolvimento frontend em 2023, desde os fundamentos até técnicas avançadas.</p>
-                            <div class="dux-path-stats">
-                                <div class="dux-path-stat">
-                                    <span class="dux-path-stat-number">8</span>
-                                    <span class="dux-path-stat-label">Módulos</span>
-                                </div>
-                                <div class="dux-path-stat">
-                                    <span class="dux-path-stat-number">24</span>
-                                    <span class="dux-path-stat-label">Projetos</span>
-                                </div>
-                                <div class="dux-path-stat">
-                                    <span class="dux-path-stat-number">120h</span>
-                                    <span class="dux-path-stat-label">Estimadas</span>
-                                </div>
-                            </div>
-                            <button class="dux-path-start">
+                <div class="videos-grid">
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img src="https://i.ytimg.com/vi/PkZNo7MFNFg/hqdefault.jpg" alt="JavaScript Basics">
+                            <div class="play-button">
                                 <span class="material-icons-round">play_circle</span>
-                                Começar trilha
-                            </button>
+                            </div>
+                            <span class="duration">12:45</span>
                         </div>
-                        
-                        <div class="dux-path-steps">
-                            <div class="dux-path-step completed">
-                                <span class="dux-step-number">
-                                    <span class="material-icons-round">check</span>
-                                </span>
-                                <div class="dux-step-content">
-                                    <h4>Fundamentos Web</h4>
-                                    <p>HTML5, CSS3 e JavaScript ES6+</p>
-                                </div>
-                            </div>
-                            <div class="dux-path-step completed">
-                                <span class="dux-step-number">
-                                    <span class="material-icons-round">check</span>
-                                </span>
-                                <div class="dux-step-content">
-                                    <h4>Frameworks Modernos</h4>
-                                    <p>React, Vue e Angular</p>
-                                </div>
-                            </div>
-                            <div class="dux-path-step active">
-                                <span class="dux-step-number">3</span>
-                                <div class="dux-step-content">
-                                    <h4>Estado e Performance</h4>
-                                    <p>Redux, Context API e otimizações</p>
-                                </div>
-                            </div>
-                            <div class="dux-path-step">
-                                <span class="dux-step-number">4</span>
-                                <div class="dux-step-content">
-                                    <h4>Testes e Type Safety</h4>
-                                    <p>Jest, Testing Library e TypeScript</p>
-                                </div>
-                            </div>
-                            <div class="dux-path-step">
-                                <span class="dux-step-number">5+</span>
-                                <div class="dux-step-content">
-                                    <h4>Tópicos Avançados</h4>
-                                    <p>PWAs, WebAssembly e mais</p>
-                                </div>
+                        <div class="video-info">
+                            <h3>Introdução ao JavaScript Moderno</h3>
+                            <p class="instructor">João Silva</p>
+                            <div class="video-meta">
+                                <span class="views">15.2k visualizações</span>
+                                <span class="date">2 dias atrás</span>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
 
-            <!-- Mentores Comunitários -->
-            <section class="dux-section" id="mentores">
-                <div class="dux-section-header">
-                    <h2>Mentores da Comunidade</h2>
-                    <p>Conecte-se com desenvolvedores experientes dispostos a ajudar</p>
-                    <div class="dux-section-actions">
-                        <button class="dux-view-all">
-                            Ver todos mentores
-                            <span class="material-icons-round">arrow_forward</span>
-                        </button>
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img src="https://i.ytimg.com/vi/1Rs2ND1ryYc/hqdefault.jpg" alt="CSS Grid">
+                            <div class="play-button">
+                                <span class="material-icons-round">play_circle</span>
+                            </div>
+                            <span class="duration">18:30</span>
+                        </div>
+                        <div class="video-info">
+                            <h3>Dominando CSS Grid Layout</h3>
+                            <p class="instructor">Maria Oliveira</p>
+                            <div class="video-meta">
+                                <span class="views">8.7k visualizações</span>
+                                <span class="date">1 semana atrás</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="dux-mentors-grid">
-                    <article class="dux-mentor-card">
-                        <div class="dux-mentor-header">
-                            <div class="dux-mentor-avatar">
-                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto de Amanda Silva" width="80" height="80">
-                            </div>
-                            <div class="dux-mentor-badges">
-                                <span class="dux-mentor-badge">
-                                    <span class="material-icons-round">verified</span>
-                                    Verificado
-                                </span>
-                            </div>
-                        </div>
-                        <div class="dux-mentor-content">
-                            <h3>Amanda Silva</h3>
-                            <p class="dux-mentor-title">Engenheira Frontend na TechCorp</p>
-                            <div class="dux-mentor-skills">
-                                <span class="dux-mentor-skill">React</span>
-                                <span class="dux-mentor-skill">TypeScript</span>
-                                <span class="dux-mentor-skill">Acessibilidade</span>
-                            </div>
-                            <p class="dux-mentor-bio">Especialista em design systems e arquitetura frontend. Apaixonada por compartilhar conhecimento.</p>
-                        </div>
-                        <div class="dux-mentor-footer">
-                            <button class="dux-mentor-action">
-                                <span class="material-icons-round">forum</span>
-                                Enviar mensagem
-                            </button>
-                            <button class="dux-mentor-action primary">
-                                <span class="material-icons-round">schedule</span>
-                                Agendar
-                            </button>
-                        </div>
-                    </article>
-                    
-                    <article class="dux-mentor-card">
-                        <div class="dux-mentor-header">
-                            <div class="dux-mentor-avatar">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto de Carlos Mendes" width="80" height="80">
-                            </div>
-                            <div class="dux-mentor-badges">
-                                <span class="dux-mentor-badge">
-                                    <span class="material-icons-round">verified</span>
-                                    Verificado
-                                </span>
-                            </div>
-                        </div>
-                        <div class="dux-mentor-content">
-                            <h3>Carlos Mendes</h3>
-                            <p class="dux-mentor-title">Arquiteto de Software na DevSolutions</p>
-                            <div class="dux-mentor-skills">
-                                <span class="dux-mentor-skill">Node.js</span>
-                                <span class="dux-mentor-skill">Microserviços</span>
-                                <span class="dux-mentor-skill">Docker</span>
-                            </div>
-                            <p class="dux-mentor-bio">Especialista em backend escalável e arquiteturas distribuídas. Adora ajudar iniciantes a entender conceitos complexos.</p>
-                        </div>
-                        <div class="dux-mentor-footer">
-                            <button class="dux-mentor-action">
-                                <span class="material-icons-round">forum</span>
-                                Enviar mensagem
-                            </button>
-                            <button class="dux-mentor-action primary">
-                                <span class="material-icons-round">schedule</span>
-                                Agendar
-                            </button>
-                        </div>
-                    </article>
-                    
-                    <article class="dux-mentor-card">
-                        <div class="dux-mentor-header">
-                            <div class="dux-mentor-avatar">
-                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Foto de Juliana Oliveira" width="80" height="80">
-                            </div>
-                            <div class="dux-mentor-badges">
-                                <span class="dux-mentor-badge">
-                                    <span class="material-icons-round">verified</span>
-                                    Verificado
-                                </span>
-                                <span class="dux-mentor-badge">
-                                    <span class="material-icons-round">stars</span>
-                                    Top Mentor
-                                </span>
-                            </div>
-                        </div>
-                        <div class="dux-mentor-content">
-                            <h3>Juliana Oliveira</h3>
-                            <p class="dux-mentor-title">Cientista de Dados na DataInsights</p>
-                            <div class="dux-mentor-skills">
-                                <span class="dux-mentor-skill">Python</span>
-                                <span class="dux-mentor-skill">Machine Learning</span>
-                                <span class="dux-mentor-skill">Pandas</span>
-                            </div>
-                            <p class="dux-mentor-bio">Especialista em análise de dados e modelos preditivos. Acredita no aprendizado através de projetos práticos.</p>
-                        </div>
-                        <div class="dux-mentor-footer">
-                            <button class="dux-mentor-action">
-                                <span class="material-icons-round">forum</span>
-                                Enviar mensagem
-                            </button>
-                            <button class="dux-mentor-action primary">
-                                <span class="material-icons-round">schedule</span>
-                                Agendar
-                            </button>
-                        </div>
-                    </article>
-                </div>
-            </section>
 
-            <!-- Comunidade -->
-            <section class="dux-section dux-section-community" id="comunidade">
-                <div class="dux-community-container">
-                    <div class="dux-community-content">
-                        <h2>Junte-se à nossa comunidade colaborativa</h2>
-                        <p>Na DUX, você não está sozinho. Conecte-se com outros desenvolvedores, compartilhe conhecimento e cresça junto.</p>
-                        
-                        <div class="dux-community-features">
-                            <div class="dux-feature">
-                                <span class="material-icons-round">forum</span>
-                                <h4>Fórum Ativo</h4>
-                                <p>Tire dúvidas e ajude outros desenvolvedores em nossa comunidade acolhedora.</p>
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img src="https://i.ytimg.com/vi/7ghhRHRP6t4/hqdefault.jpg" alt="Python Functions">
+                            <div class="play-button">
+                                <span class="material-icons-round">play_circle</span>
                             </div>
-                            <div class="dux-feature">
-                                <span class="material-icons-round">groups</span>
-                                <h4>Grupos de Estudo</h4>
-                                <p>Participe de grupos focados em tecnologias específicas e aprenda colaborativamente.</p>
-                            </div>
-                            <div class="dux-feature">
-                                <span class="material-icons-round">code</span>
-                                <h4>Code Reviews</h4>
-                                <p>Receba feedback detalhado sobre seu código de desenvolvedores experientes.</p>
-                            </div>
+                            <span class="duration">22:15</span>
                         </div>
-                        
-                        <div class="dux-community-actions">
-                            <button class="dux-primary-btn large">
-                                <span class="material-icons-round">group_add</span>
-                                Entrar na comunidade
-                            </button>
-                            <button class="dux-secondary-btn large">
-                                <span class="material-icons-round">live_tv</span>
-                                Ver eventos ao vivo
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="dux-community-illustration">
-                        <div class="dux-community-message">
-                            <div class="dux-message-avatar">
-                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Membro da comunidade" width="40" height="40">
-                            </div>
-                            <div class="dux-message-content">
-                                <div class="dux-message-header">
-                                    <span>Ana Costa</span>
-                                    <span class="dux-message-time">2h atrás</span>
-                                </div>
-                                <p>Alguém pode me ajudar com um problema de estado no React? Estou travada há horas...</p>
-                            </div>
-                        </div>
-                        
-                        <div class="dux-community-message">
-                            <div class="dux-message-avatar">
-                                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Membro da comunidade" width="40" height="40">
-                            </div>
-                            <div class="dux-message-content">
-                                <div class="dux-message-header">
-                                    <span>Pedro Alves</span>
-                                    <span class="dux-message-time">1h atrás</span>
-                                </div>
-                                <p>Claro Ana! Pode compartilhar um trecho do código? Vamos resolver juntos.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="dux-community-message">
-                            <div class="dux-message-avatar">
-                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Membro da comunidade" width="40" height="40">
-                            </div>
-                            <div class="dux-message-content">
-                                <div class="dux-message-header">
-                                    <span>Ana Costa</span>
-                                    <span class="dux-message-time">30min atrás</span>
-                                </div>
-                                <p>Muito obrigada Pedro! Sua solução funcionou perfeitamente. Aprendi muito!</p>
+                        <div class="video-info">
+                            <h3>Funções em Python - Do Básico ao Avançado</h3>
+                            <p class="instructor">Carlos Mendes</p>
+                            <div class="video-meta">
+                                <span class="views">12.1k visualizações</span>
+                                <span class="date">3 dias atrás</span>
                             </div>
                         </div>
                     </div>
@@ -713,294 +264,126 @@
             </section>
         </main>
 
-        <!-- Footer -->
-        <footer class="dux-footer">
-            <div class="dux-footer-container">
-                <div class="dux-footer-brand">
-                    <a href="#" class="dux-brand">
-                        <svg class="dux-logo-icon" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
-                            <path d="M16 0L0 16L16 32L32 16L16 0Z" fill="#4361EE"/>
-                            <path d="M16 8L8 16L16 24L24 16L16 8Z" fill="#FFFFFF"/>
-                        </svg>
-                        <span class="dux-brand-text">DUX</span>
-                    </a>
-                    <p class="dux-footer-slogan">Conhecimento livre e colaborativo</p>
-                </div>
-                
-                <div class="dux-footer-links">
-                    <div class="dux-footer-column">
-                        <h4>Aprenda</h4>
-                        <ul>
-                            <li><a href="#">Labs Práticos</a></li>
-                            <li><a href="#">Trilhas de Aprendizado</a></li>
-                            <li><a href="#">Projetos Comunitários</a></li>
-                            <li><a href="#">Mentorias</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="dux-footer-column">
-                        <h4>Comunidade</h4>
-                        <ul>
-                            <li><a href="#">Fórum</a></li>
-                            <li><a href="#">Grupos de Estudo</a></li>
-                            <li><a href="#">Eventos</a></li>
-                            <li><a href="#">Blog</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="dux-footer-column">
-                        <h4>Sobre</h4>
-                        <ul>
-                            <li><a href="#">Nossa Missão</a></li>
-                            <li><a href="#">Equipe</a></li>
-                            <li><a href="#">Contribuir</a></li>
-                            <li><a href="#">Contato</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="dux-footer-social">
-                    <h4>Conecte-se</h4>
-                    <div class="dux-social-links">
-                        <a href="#" aria-label="Twitter">
-                            <span class="material-icons-round">twitter</span>
-                        </a>
-                        <a href="#" aria-label="GitHub">
-                            <span class="material-icons-round">code</span>
-                        </a>
-                        <a href="#" aria-label="Discord">
-                            <span class="material-icons-round">forum</span>
-                        </a>
-                        <a href="#" aria-label="YouTube">
-                            <span class="material-icons-round">play_circle</span>
-                        </a>
-                    </div>
+        <!-- User Menu (Hidden by default) -->
+        <div class="user-menu">
+            <div class="menu-header">
+                <div class="avatar">JD</div>
+                <div class="user-info">
+                    <h4>John Doe</h4>
+                    <p>john.doe@example.com</p>
                 </div>
             </div>
-            
-            <div class="dux-footer-bottom">
-                <p>© 2023 DUX Plataforma. Todos os direitos reservados.</p>
-                <div class="dux-footer-legal">
-                    <a href="#">Termos de Uso</a>
-                    <a href="#">Política de Privacidade</a>
-                    <a href="#">Código de Conduta</a>
-                </div>
-            </div>
-        </footer>
+            <nav class="menu-nav">
+                <a href="./library.html" class="menu-item">
+                    <span class="material-icons-round">menu_book</span>
+                    Livraria
+                </a>
+                <a href="./gallery.html" class="menu-item">
+                    <span class="material-icons-round">photo_library</span>
+                    Galeria
+                </a>
+                <a href="./marketplace.html" class="menu-item">
+                    <span class="material-icons-round">store</span>
+                    Marketplace
+                </a>
+                <a href="./profile.html" class="menu-item">
+                    <span class="material-icons-round">account_circle</span>
+                    Meu Perfil
+                </a>
+                <a href="./bookmark.html" class="menu-item">
+                    <span class="material-icons-round">bookmark</span>
+                    Salvos
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="material-icons-round">history</span>
+                    Histórico
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="material-icons-round">settings</span>
+                    Configurações
+                </a>
+                <a href="./index.html" class="menu-item">
+                    <span class="material-icons-round">logout</span>
+                    Sair
+                </a>
+            </nav>
+        </div>
     </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Elementos globais
-            const body = document.body;
-            const menuToggle = document.querySelector('.dux-menu-toggle');
-            const navMenu = document.querySelector('.dux-main-nav');
-            const themeToggle = document.querySelector('.dux-theme-toggle');
-            const profileButton = document.querySelector('.dux-user-profile');
-            const profileMenu = document.querySelector('.dux-profile-menu');
-            const filterTabs = document.querySelectorAll('.dux-filter-tab');
-            const pathNavItems = document.querySelectorAll('.dux-path-nav-item');
-            const navLinks = document.querySelectorAll('.dux-nav-item a');
+    // DOM Elements
+    const userProfile = document.querySelector('.user-profile');
+    const userMenu = document.querySelector('.user-menu');
+    const searchBtn = document.querySelector('.search-btn');
+    const categoryItems = document.querySelectorAll('.category-item');
+    const controlBtns = document.querySelectorAll('.control-btn');
+    const courseCards = document.querySelectorAll('.course-card');
+    const videoCards = document.querySelectorAll('.video-card');
+    
+    // Toggle User Menu
+    userProfile.addEventListener('click', function(e) {
+        e.stopPropagation();
+        userMenu.classList.toggle('active');
+    });
+    
+    // Close User Menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!userMenu.contains(e.target) && !userProfile.contains(e.target)) {
+            userMenu.classList.remove('active');
+        }
+    });
+    
+    // Search Button
+    searchBtn.addEventListener('click', function() {
+        // In a real app, this would open a search modal
+        console.log('Search clicked');
+    });
+    
+    // Category Navigation
+    categoryItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            categoryItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
             
-            // Estado do tema
-            let isDarkTheme = localStorage.getItem('darkTheme') === 'true';
-            
-            // Aplicar tema salvo
-            if (isDarkTheme) {
-                body.classList.add('dark-theme');
-                updateThemeToggle(true);
-            }
-            
-            // Menu mobile
-            menuToggle.addEventListener('click', () => {
-                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-                menuToggle.setAttribute('aria-expanded', !isExpanded);
-                navMenu.classList.toggle('active');
-                
-                // Fechar menu de perfil se aberto
-                if (profileMenu.classList.contains('active')) {
-                    profileMenu.classList.remove('active');
-                    profileButton.setAttribute('aria-expanded', 'false');
-                }
-            });
-            
-            // Alternância de tema
-            themeToggle.addEventListener('click', () => {
-                isDarkTheme = !isDarkTheme;
-                body.classList.toggle('dark-theme');
-                localStorage.setItem('darkTheme', isDarkTheme);
-                updateThemeToggle(isDarkTheme);
-            });
-            
-            function updateThemeToggle(isDark) {
-                themeToggle.setAttribute('aria-label', isDark ? 'Alternar para tema claro' : 'Alternar para tema escuro');
-                themeToggle.innerHTML = isDark ? '<span class="material-icons-round">light_mode</span>' : '<span class="material-icons-round">dark_mode</span>';
-            }
-            
-            // Menu de perfil
-            profileButton.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const isExpanded = profileButton.getAttribute('aria-expanded') === 'true';
-                profileButton.setAttribute('aria-expanded', !isExpanded);
-                profileMenu.classList.toggle('active');
-                
-                // Fechar menu de navegação se aberto
-                if (navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                }
-            });
-            
-            // Fechar menus ao clicar fora
-            document.addEventListener('click', (e) => {
-                // Fechar menu de perfil
-                if (!profileMenu.contains(e.target) && e.target !== profileButton) {
-                    profileMenu.classList.remove('active');
-                    profileButton.setAttribute('aria-expanded', 'false');
-                }
-                
-                // Fechar menu de navegação
-                if (!navMenu.contains(e.target) && e.target !== menuToggle) {
-                    navMenu.classList.remove('active');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                }
-            });
-            
-            // Fechar menus ao pressionar Esc
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    profileMenu.classList.remove('active');
-                    profileButton.setAttribute('aria-expanded', 'false');
-                    navMenu.classList.remove('active');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                }
-            });
-            
-            // Filtros de projetos
-            filterTabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    filterTabs.forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
-                    // Aqui iria a lógica para filtrar os projetos
-                    filterProjects(tab.textContent.trim());
-                });
-            });
-            
-            function filterProjects(filter) {
-                console.log(`Filtrando por: ${filter}`);
-                // Implementação real de filtragem iria aqui
-            }
-            
-            // Navegação de trilhas
-            pathNavItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    pathNavItems.forEach(i => i.classList.remove('active'));
-                    item.classList.add('active');
-                    // Aqui iria a lógica para carregar a trilha selecionada
-                    loadPath(item.textContent.trim());
-                });
-            });
-            
-            function loadPath(pathName) {
-                console.log(`Carregando trilha: ${pathName}`);
-                // Implementação real de carregamento de trilha iria aqui
-            }
-            
-            // Scroll suave para seções
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    const targetId = link.getAttribute('href');
-                    if (targetId.startsWith('#')) {
-                        e.preventDefault();
-                        
-                        // Fechar menu mobile se aberto
-                        if (navMenu.classList.contains('active')) {
-                            navMenu.classList.remove('active');
-                            menuToggle.setAttribute('aria-expanded', 'false');
-                        }
-                        
-                        const targetSection = document.querySelector(targetId);
-                        if (targetSection) {
-                            targetSection.scrollIntoView({
-                                behavior: 'smooth'
-                            });
-                            
-                            // Atualizar item ativo na navegação
-                            navLinks.forEach(lnk => lnk.parentElement.classList.remove('active'));
-                            link.parentElement.classList.add('active');
-                        }
-                    }
-                });
-            });
-            
-            // Ativar item de navegação com base na seção visível
-            window.addEventListener('scroll', throttle(() => {
-                const scrollPosition = window.scrollY + 100;
-                
-                // Verificar cada seção
-                document.querySelectorAll('section').forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.offsetHeight;
-                    const sectionId = section.getAttribute('id');
-                    
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                        navLinks.forEach(link => {
-                            link.parentElement.classList.remove('active');
-                            if (link.getAttribute('href') === `#${sectionId}`) {
-                                link.parentElement.classList.add('active');
-                            }
-                        });
-                    }
-                });
-                
-                // Carregar mais conteúdo ao chegar no final
-                const windowHeight = window.innerHeight;
-                const documentHeight = document.body.scrollHeight;
-                
-                if (scrollPosition + windowHeight > documentHeight - 500) {
-                    loadMoreContent();
-                }
-            }, 100));
-            
-            // Função para carregar mais conteúdo
-            function loadMoreContent() {
-                console.log('Carregando mais conteúdo...');
-                // Implementação real de carregamento infinito iria aqui
-            }
-            
-            // Função utilitária para throttle
-            function throttle(func, limit) {
-                let lastFunc;
-                let lastRan;
-                return function() {
-                    const context = this;
-                    const args = arguments;
-                    if (!lastRan) {
-                        func.apply(context, args);
-                        lastRan = Date.now();
-                    } else {
-                        clearTimeout(lastFunc);
-                        lastFunc = setTimeout(function() {
-                            if ((Date.now() - lastRan) >= limit) {
-                                func.apply(context, args);
-                                lastRan = Date.now();
-                            }
-                        }, limit - (Date.now() - lastRan));
-                    }
-                };
-            }
-            
-            // Inicialização adicional
-            initCodeWindow();
-            
-            // Simular conteúdo na janela de código
-            function initCodeWindow() {
-                const codeContent = document.querySelector('.dux-code-content');
-                if (codeContent) {
-                    const sampleCode = `// Bem-vindo ao DUX\nfunction initLab() {\n  // Configure seu ambiente\n  const config = {\n    language: 'javascript',\n    libraries: ['lodash', 'axios'],\n    autoSave: true\n  };\n\n  // Comece a codar!\n  console.log('Hello DUX!');\n\n  // Explore nossas APIs\n  api.get('/labs').then(data => {\n    renderLabs(data);\n  });\n}`;
-                    codeContent.textContent = sampleCode;
-                }
-            }
+            // In a real app, this would filter content by category
+            console.log('Category selected:', this.textContent.trim());
         });
+    });
+    
+    // Difficulty Filter
+    controlBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            controlBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // In a real app, this would filter courses by difficulty
+            console.log('Filter applied:', this.textContent.trim());
+        });
+    });
+    
+    // Course Card Interaction
+    courseCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // In a real app, this would navigate to course details
+            console.log('Course selected:', this.querySelector('h3').textContent);
+        });
+    });
+    
+    // Video Card Interaction
+    videoCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // In a real app, this would play the video
+            console.log('Video selected:', this.querySelector('h3').textContent);
+        });
+    });
+    
+    // Simulate loading
+    setTimeout(() => {
+        document.body.classList.add('loaded');
+    }, 500);
+});
     </script>
 </body>
 </html>
